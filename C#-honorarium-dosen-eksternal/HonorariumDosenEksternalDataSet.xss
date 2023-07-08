@@ -22,7 +22,7 @@
     <Shape ID="DesignTable:getListGolongan" ZOrder="18" X="3302" Y="70" Height="263" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="169" />
     <Shape ID="DesignTable:getListJenisDosen" ZOrder="17" X="3672" Y="70" Height="290" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="223" />
     <Shape ID="DesignTable:getListMatkul" ZOrder="16" X="4042" Y="70" Height="182" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="115" />
-    <Shape ID="DesignTable:getListPerusahaan" ZOrder="15" X="4412" Y="70" Height="263" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="88" />
+    <Shape ID="DesignTable:getListPerusahaan" ZOrder="15" X="4412" Y="70" Height="191" Width="251" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:getListProdi" ZOrder="14" X="4782" Y="70" Height="209" Width="298" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="142" />
     <Shape ID="DesignTable:getListUsers" ZOrder="13" X="5150" Y="70" Height="263" Width="299" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="169" />
     <Shape ID="DesignTable:getReportDosen" ZOrder="12" X="5519" Y="70" Height="398" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="331" />

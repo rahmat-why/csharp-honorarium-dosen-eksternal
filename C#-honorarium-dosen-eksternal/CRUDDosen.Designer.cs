@@ -29,11 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.col_id_dosen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_nama_dosen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_nama_jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_nama_bank = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_cabang_bank = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_no_rekening = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_npwp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tanggal_gabung_kampus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tanggal_gabung_industri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_atasnama = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_kota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_asal_perusahaan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_foto_dosen = new System.Windows.Forms.DataGridViewImageColumn();
             this.getListDosenBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.honorariumDosenEksternalDataSet = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSet();
             this.label8 = new System.Windows.Forms.Label();
@@ -74,21 +89,6 @@
             this.getListDosenTableAdapter = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSetTableAdapters.getListDosenTableAdapter();
             this.getListJenisDosenTableAdapter = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSetTableAdapters.getListJenisDosenTableAdapter();
             this.getListPerusahaanTableAdapter = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSetTableAdapters.getListPerusahaanTableAdapter();
-            this.col_id_dosen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nama_dosen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nama_jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nama_bank = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_cabang_bank = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_no_rekening = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_npwp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_tanggal_gabung_kampus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_tanggal_gabung_industri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_atasnama = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_kota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_asal_perusahaan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_foto_dosen = new System.Windows.Forms.DataGridViewImageColumn();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getListDosenBindingSource2)).BeginInit();
@@ -125,17 +125,17 @@
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.guna2DataGridView1.AutoGenerateColumns = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.guna2DataGridView1.ColumnHeadersHeight = 58;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -155,14 +155,14 @@
             this.col_asal_perusahaan,
             this.col_foto_dosen});
             this.guna2DataGridView1.DataSource = this.getListDosenBindingSource2;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(22, 172);
             this.guna2DataGridView1.Margin = new System.Windows.Forms.Padding(2);
@@ -194,6 +194,112 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
+            // 
+            // col_id_dosen
+            // 
+            this.col_id_dosen.DataPropertyName = "id_dosen";
+            this.col_id_dosen.HeaderText = "ID";
+            this.col_id_dosen.MinimumWidth = 8;
+            this.col_id_dosen.Name = "col_id_dosen";
+            this.col_id_dosen.Visible = false;
+            // 
+            // col_nama_dosen
+            // 
+            this.col_nama_dosen.DataPropertyName = "nama_dosen";
+            this.col_nama_dosen.HeaderText = "Nama";
+            this.col_nama_dosen.MinimumWidth = 8;
+            this.col_nama_dosen.Name = "col_nama_dosen";
+            // 
+            // col_email
+            // 
+            this.col_email.DataPropertyName = "email";
+            this.col_email.HeaderText = "Email";
+            this.col_email.MinimumWidth = 8;
+            this.col_email.Name = "col_email";
+            // 
+            // col_nama_jenis
+            // 
+            this.col_nama_jenis.DataPropertyName = "nama_jenis";
+            this.col_nama_jenis.HeaderText = "Nama Jenis";
+            this.col_nama_jenis.MinimumWidth = 8;
+            this.col_nama_jenis.Name = "col_nama_jenis";
+            // 
+            // col_nama_bank
+            // 
+            this.col_nama_bank.DataPropertyName = "nama_bank";
+            this.col_nama_bank.HeaderText = "Nama Bank";
+            this.col_nama_bank.MinimumWidth = 8;
+            this.col_nama_bank.Name = "col_nama_bank";
+            // 
+            // col_cabang_bank
+            // 
+            this.col_cabang_bank.DataPropertyName = "cabang_bank";
+            this.col_cabang_bank.HeaderText = "Cabang Bank";
+            this.col_cabang_bank.MinimumWidth = 8;
+            this.col_cabang_bank.Name = "col_cabang_bank";
+            // 
+            // col_no_rekening
+            // 
+            this.col_no_rekening.DataPropertyName = "no_rekening";
+            this.col_no_rekening.HeaderText = "No Rekening";
+            this.col_no_rekening.MinimumWidth = 8;
+            this.col_no_rekening.Name = "col_no_rekening";
+            // 
+            // col_npwp
+            // 
+            this.col_npwp.DataPropertyName = "npwp";
+            this.col_npwp.HeaderText = "Npwp";
+            this.col_npwp.MinimumWidth = 8;
+            this.col_npwp.Name = "col_npwp";
+            // 
+            // col_tanggal_gabung_kampus
+            // 
+            this.col_tanggal_gabung_kampus.DataPropertyName = "tanggal_gabung_kampus";
+            this.col_tanggal_gabung_kampus.HeaderText = "Gabung Kampus";
+            this.col_tanggal_gabung_kampus.MinimumWidth = 8;
+            this.col_tanggal_gabung_kampus.Name = "col_tanggal_gabung_kampus";
+            // 
+            // col_tanggal_gabung_industri
+            // 
+            this.col_tanggal_gabung_industri.DataPropertyName = "tanggal_gabung_industri";
+            this.col_tanggal_gabung_industri.HeaderText = "Gabung Industri";
+            this.col_tanggal_gabung_industri.MinimumWidth = 8;
+            this.col_tanggal_gabung_industri.Name = "col_tanggal_gabung_industri";
+            // 
+            // col_status
+            // 
+            this.col_status.DataPropertyName = "status";
+            this.col_status.HeaderText = "Status";
+            this.col_status.MinimumWidth = 8;
+            this.col_status.Name = "col_status";
+            // 
+            // col_atasnama
+            // 
+            this.col_atasnama.DataPropertyName = "atasnama";
+            this.col_atasnama.HeaderText = "Atas Nama";
+            this.col_atasnama.MinimumWidth = 8;
+            this.col_atasnama.Name = "col_atasnama";
+            // 
+            // col_kota
+            // 
+            this.col_kota.DataPropertyName = "kota";
+            this.col_kota.HeaderText = "Kota";
+            this.col_kota.MinimumWidth = 8;
+            this.col_kota.Name = "col_kota";
+            // 
+            // col_asal_perusahaan
+            // 
+            this.col_asal_perusahaan.DataPropertyName = "asal_perusahaan";
+            this.col_asal_perusahaan.HeaderText = "Asal Perusahaan";
+            this.col_asal_perusahaan.MinimumWidth = 8;
+            this.col_asal_perusahaan.Name = "col_asal_perusahaan";
+            // 
+            // col_foto_dosen
+            // 
+            this.col_foto_dosen.DataPropertyName = "foto_dosen";
+            this.col_foto_dosen.HeaderText = "foto_dosen";
+            this.col_foto_dosen.Name = "col_foto_dosen";
+            this.col_foto_dosen.Visible = false;
             // 
             // getListDosenBindingSource2
             // 
@@ -842,112 +948,6 @@
             // getListPerusahaanTableAdapter
             // 
             this.getListPerusahaanTableAdapter.ClearBeforeFill = true;
-            // 
-            // col_id_dosen
-            // 
-            this.col_id_dosen.DataPropertyName = "id_dosen";
-            this.col_id_dosen.HeaderText = "ID";
-            this.col_id_dosen.MinimumWidth = 8;
-            this.col_id_dosen.Name = "col_id_dosen";
-            this.col_id_dosen.Visible = false;
-            // 
-            // col_nama_dosen
-            // 
-            this.col_nama_dosen.DataPropertyName = "nama_dosen";
-            this.col_nama_dosen.HeaderText = "Nama";
-            this.col_nama_dosen.MinimumWidth = 8;
-            this.col_nama_dosen.Name = "col_nama_dosen";
-            // 
-            // col_email
-            // 
-            this.col_email.DataPropertyName = "email";
-            this.col_email.HeaderText = "Email";
-            this.col_email.MinimumWidth = 8;
-            this.col_email.Name = "col_email";
-            // 
-            // col_nama_jenis
-            // 
-            this.col_nama_jenis.DataPropertyName = "nama_jenis";
-            this.col_nama_jenis.HeaderText = "Nama Jenis";
-            this.col_nama_jenis.MinimumWidth = 8;
-            this.col_nama_jenis.Name = "col_nama_jenis";
-            // 
-            // col_nama_bank
-            // 
-            this.col_nama_bank.DataPropertyName = "nama_bank";
-            this.col_nama_bank.HeaderText = "Nama Bank";
-            this.col_nama_bank.MinimumWidth = 8;
-            this.col_nama_bank.Name = "col_nama_bank";
-            // 
-            // col_cabang_bank
-            // 
-            this.col_cabang_bank.DataPropertyName = "cabang_bank";
-            this.col_cabang_bank.HeaderText = "Cabang Bank";
-            this.col_cabang_bank.MinimumWidth = 8;
-            this.col_cabang_bank.Name = "col_cabang_bank";
-            // 
-            // col_no_rekening
-            // 
-            this.col_no_rekening.DataPropertyName = "no_rekening";
-            this.col_no_rekening.HeaderText = "No Rekening";
-            this.col_no_rekening.MinimumWidth = 8;
-            this.col_no_rekening.Name = "col_no_rekening";
-            // 
-            // col_npwp
-            // 
-            this.col_npwp.DataPropertyName = "npwp";
-            this.col_npwp.HeaderText = "Npwp";
-            this.col_npwp.MinimumWidth = 8;
-            this.col_npwp.Name = "col_npwp";
-            // 
-            // col_tanggal_gabung_kampus
-            // 
-            this.col_tanggal_gabung_kampus.DataPropertyName = "tanggal_gabung_kampus";
-            this.col_tanggal_gabung_kampus.HeaderText = "Gabung Kampus";
-            this.col_tanggal_gabung_kampus.MinimumWidth = 8;
-            this.col_tanggal_gabung_kampus.Name = "col_tanggal_gabung_kampus";
-            // 
-            // col_tanggal_gabung_industri
-            // 
-            this.col_tanggal_gabung_industri.DataPropertyName = "tanggal_gabung_industri";
-            this.col_tanggal_gabung_industri.HeaderText = "Gabung Industri";
-            this.col_tanggal_gabung_industri.MinimumWidth = 8;
-            this.col_tanggal_gabung_industri.Name = "col_tanggal_gabung_industri";
-            // 
-            // col_status
-            // 
-            this.col_status.DataPropertyName = "status";
-            this.col_status.HeaderText = "Status";
-            this.col_status.MinimumWidth = 8;
-            this.col_status.Name = "col_status";
-            // 
-            // col_atasnama
-            // 
-            this.col_atasnama.DataPropertyName = "atasnama";
-            this.col_atasnama.HeaderText = "Atas Nama";
-            this.col_atasnama.MinimumWidth = 8;
-            this.col_atasnama.Name = "col_atasnama";
-            // 
-            // col_kota
-            // 
-            this.col_kota.DataPropertyName = "kota";
-            this.col_kota.HeaderText = "Kota";
-            this.col_kota.MinimumWidth = 8;
-            this.col_kota.Name = "col_kota";
-            // 
-            // col_asal_perusahaan
-            // 
-            this.col_asal_perusahaan.DataPropertyName = "asal_perusahaan";
-            this.col_asal_perusahaan.HeaderText = "Asal Perusahaan";
-            this.col_asal_perusahaan.MinimumWidth = 8;
-            this.col_asal_perusahaan.Name = "col_asal_perusahaan";
-            // 
-            // col_foto_dosen
-            // 
-            this.col_foto_dosen.DataPropertyName = "foto_dosen";
-            this.col_foto_dosen.HeaderText = "foto_dosen";
-            this.col_foto_dosen.Name = "col_foto_dosen";
-            this.col_foto_dosen.Visible = false;
             // 
             // CRUDDosen
             // 

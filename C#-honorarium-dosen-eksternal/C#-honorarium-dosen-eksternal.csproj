@@ -87,6 +87,7 @@
     <Compile Include="Adminpage.Designer.cs">
       <DependentUpon>Adminpage.cs</DependentUpon>
     </Compile>
+    <Compile Include="SendEmail.cs" />
     <Compile Include="CRUDDosen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +190,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportSlipGaji.rdlc" />
+    <EmbeddedResource Include="ReportSlipGaji.resx">
+      <DependentUpon>ReportSlipGaji.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="HonorariumDosenEksternalDataSet.xsc">
       <DependentUpon>HonorariumDosenEksternalDataSet.xsd</DependentUpon>
     </None>

@@ -18,7 +18,7 @@
     <Shape ID="DesignTable:GetDosenByID" ZOrder="22" X="1822" Y="70" Height="425" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="358" />
     <Shape ID="DesignTable:getListAbsensi" ZOrder="21" X="2192" Y="70" Height="425" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="358" />
     <Shape ID="DesignTable:getListAbsensi2" ZOrder="20" X="2562" Y="70" Height="425" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="358" />
-    <Shape ID="DesignTable:getListDosen" ZOrder="19" X="2932" Y="70" Height="479" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="358" />
+    <Shape ID="DesignTable:getListDosen" ZOrder="19" X="2932" Y="70" Height="362" Width="220" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:getListGolongan" ZOrder="18" X="3302" Y="70" Height="263" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="169" />
     <Shape ID="DesignTable:getListJenisDosen" ZOrder="17" X="3672" Y="70" Height="290" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="223" />
     <Shape ID="DesignTable:getListMatkul" ZOrder="16" X="4042" Y="70" Height="182" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="115" />
@@ -27,7 +27,7 @@
     <Shape ID="DesignTable:getListUsers" ZOrder="13" X="5150" Y="70" Height="263" Width="299" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="169" />
     <Shape ID="DesignTable:getReportDosen" ZOrder="12" X="5519" Y="70" Height="398" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="331" />
     <Shape ID="DesignTable:getReportProdi" ZOrder="11" X="5889" Y="70" Height="209" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="142" />
-    <Shape ID="DesignTable:getReportSlipGaji" ZOrder="10" X="6259" Y="70" Height="425" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="358" />
+    <Shape ID="DesignTable:getReportSlipGaji" ZOrder="10" X="6259" Y="70" Height="324" Width="251" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:getReportTransfer" ZOrder="9" X="6629" Y="70" Height="317" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="250" />
     <Shape ID="DesignTable:VerifyUser" ZOrder="8" X="6999" Y="70" Height="236" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="169" />
     <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="1" X="7369" Y="70" Height="361" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="16" />

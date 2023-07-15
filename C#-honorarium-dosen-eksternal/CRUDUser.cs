@@ -49,19 +49,20 @@ namespace C__honorarium_dosen_eksternal
             return newId;
         }
 
+        string emp = "";
+
         private void CRUDUser_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'honorariumDosenEksternalDataSet.users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.honorariumDosenEksternalDataSet.users);
+           
             try
             {
-                this.getListUsersTableAdapter.Filter(this.honorariumDosenEksternalDataSet.getListUsers, namaToolStripTextBox.Text);
+                loadUser(emp);
             }
             catch (System.Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-            GenerateId();
+       
             btnSave.Enabled = true;
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
@@ -116,27 +117,22 @@ namespace C__honorarium_dosen_eksternal
 
         }
 
-        private void filterToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.getListUsersTableAdapter.Filter(this.honorariumDosenEksternalDataSet.getListUsers, namaToolStripTextBox.Text);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-        }
+   
 
         //Fungsi Clear
         private void clear()
         {
-            txtIDUser.Text = "";
+            txtIDUser.Text = "Otomatis";
             txtNamaUser.Text = "";
             txtUsername.Text = "";
             txtPassword.Text = "";
             cmbRole.Text = "";
            
+        }
+
+        private void loadUser(string param)
+        {
+            this.getListUsersTableAdapter.Filter(this.honorariumDosenEksternalDataSet.getListUsers, param);
         }
 
         //Create User
@@ -159,13 +155,14 @@ namespace C__honorarium_dosen_eksternal
                 MessageBox.Show("Data saved successfully", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clear();
+                loadUser(emp);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Unable to saved : " + ex.Message);
             }
 
-            this.getListUsersTableAdapter.Filter(this.honorariumDosenEksternalDataSet.getListUsers, namaToolStripTextBox.Text);
+            this.getListUsersTableAdapter.Filter(this.honorariumDosenEksternalDataSet.getListUsers, emp);
         }
 
         //Delete User
@@ -185,6 +182,7 @@ namespace C__honorarium_dosen_eksternal
                 MessageBox.Show("Data Update successfully", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 clear();
+                loadUser(emp);
             }
             catch (Exception ex)
             {
@@ -202,7 +200,7 @@ namespace C__honorarium_dosen_eksternal
             SqlCommand update= new SqlCommand("sp_UpdateUser", connection);
             update.CommandType = CommandType.StoredProcedure;
 
-
+            update.Parameters.AddWithValue("id_user" , txtIDUser.Text);
             update.Parameters.AddWithValue("nama", txtNamaUser.Text);
             update.Parameters.AddWithValue("username", txtUsername.Text);
             update.Parameters.AddWithValue("password", txtPassword.Text);
@@ -214,8 +212,9 @@ namespace C__honorarium_dosen_eksternal
                 update.ExecuteNonQuery();
                 MessageBox.Show("Update Data successfully", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clear();
-                btnSave.Enabled = false;
+               clear();
+               loadUser(emp) ;
+           
                 
 
             }
@@ -232,6 +231,32 @@ namespace C__honorarium_dosen_eksternal
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
 
+        }
+
+        private void tblUser_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = tblUser.Rows[e.RowIndex];
+                string id_user = selectedRow.Cells["col_id_user"].Value.ToString();
+                string nama_user = selectedRow.Cells["col_nama_user"].Value.ToString();
+                string username = selectedRow.Cells["col_username"].Value.ToString();
+                string role = selectedRow.Cells["col_role"].Value.ToString();
+
+                txtIDUser.Text = id_user;
+                txtNamaUser.Text = nama_user;
+                txtUsername.Text = username;
+                cmbRole.Text = role;
+
+                btnSave.Enabled = false;
+                btnUpdate.Enabled = true;
+                btnDelete.Enabled = true;
+            }
+        }
+
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            loadUser(txtSearch.Text);
         }
     }
 }

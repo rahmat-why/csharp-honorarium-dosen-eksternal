@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace C__honorarium_dosen_eksternal
@@ -31,16 +32,22 @@ namespace C__honorarium_dosen_eksternal
         private void btnLogout_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Yakin ingin keluar?", "Logout!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             if (dialogResult == DialogResult.Yes)
             {
-              
+                // Tampilkan form login
+                LoginForm loginForm = new LoginForm();
+                loginForm.Show();
+
+                // Tutup form saat ini (Form saat ini adalah Form yang memiliki tombol Logout)
                 this.Close();
             }
             else if (dialogResult == DialogResult.No)
             {
-
+                // Tidak ada tindakan yang diperlukan jika pengguna memilih "No"
             }
         }
+
 
         private void btnMatkul_Click(object sender, EventArgs e)
         {
@@ -49,15 +56,6 @@ namespace C__honorarium_dosen_eksternal
             PanelMenu.Controls.Add(matkul);
             matkul.BringToFront();
             matkul.Show();
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-           CRUDInsentif insentif = new CRUDInsentif();
-            insentif.TopLevel = false;
-            PanelMenu.Controls.Add(insentif);
-            insentif.BringToFront();
-            insentif.Show();
         }
 
         private void btnProdi_Click(object sender, EventArgs e)
@@ -99,11 +97,15 @@ namespace C__honorarium_dosen_eksternal
             PanelMenu.Controls.Add(perusahaan);
             perusahaan.BringToFront();
             perusahaan.Show();
-           /*Absensi absensi = new Absensi();
-            absensi.TopLevel = false;
-            PanelMenu.Controls.Add(absensi);
-            absensi.BringToFront();
-            absensi.Show();*/
+        }
+
+        private void btnInsentifGolongan_Click(object sender, EventArgs e)
+        {
+            CRUDInsentif insentif = new CRUDInsentif();
+            insentif.TopLevel = false;
+            PanelMenu.Controls.Add(insentif);
+            insentif.BringToFront();
+            insentif.Show();
         }
     }
 }

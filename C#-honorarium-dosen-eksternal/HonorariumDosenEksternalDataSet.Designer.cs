@@ -18172,7 +18172,7 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_absensi, nama_dosen, nama_matkul, nama_prodi, kelas, tanggal_mengajar, " +
@@ -18184,6 +18184,28 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@end_date", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_jenis_dosen", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@filter", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT id_absensi, nama_dosen, nama_matkul, nama_prodi, kelas, tanggal_mengajar, " +
+                "sks, kompensasi_mengajar, insentif_kehadiran, transport_mengajar, pph21, persent" +
+                "ase_pph21 FROM dbo.getListAbsensi(@start_date, @end_date, @id_jenis_dosen, @filt" +
+                "er)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@start_date", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@end_date", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_jenis_dosen", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@filter", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT id_absensi, nama_dosen, nama_matkul, nama_prodi, kelas, tanggal_mengajar, " +
+                "sks, kompensasi_mengajar, insentif_kehadiran, transport_mengajar, pph21, persent" +
+                "ase_pph21 FROM dbo.getListAbsensi(@start_date, @end_date, @id_jenis_dosen, @filt" +
+                "er)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@start_date", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@end_date", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_jenis_dosen", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@filter", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18256,6 +18278,80 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
             HonorariumDosenEksternalDataSet.getListAbsensiDataTable dataTable = new HonorariumDosenEksternalDataSet.getListAbsensiDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(HonorariumDosenEksternalDataSet.getListAbsensiDataTable dataTable, string start_date, string end_date, string id_jenis_dosen, string filter) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((start_date == null)) {
+                throw new global::System.ArgumentNullException("start_date");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(start_date));
+            }
+            if ((end_date == null)) {
+                throw new global::System.ArgumentNullException("end_date");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(end_date));
+            }
+            if ((id_jenis_dosen == null)) {
+                throw new global::System.ArgumentNullException("id_jenis_dosen");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(id_jenis_dosen));
+            }
+            if ((filter == null)) {
+                throw new global::System.ArgumentNullException("filter");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(filter));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(HonorariumDosenEksternalDataSet.getListAbsensiDataTable dataTable, string start_date, string end_date, string id_jenis_dosen, string filter) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((start_date == null)) {
+                throw new global::System.ArgumentNullException("start_date");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(start_date));
+            }
+            if ((end_date == null)) {
+                throw new global::System.ArgumentNullException("end_date");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(end_date));
+            }
+            if ((id_jenis_dosen == null)) {
+                throw new global::System.ArgumentNullException("id_jenis_dosen");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(id_jenis_dosen));
+            }
+            if ((filter == null)) {
+                throw new global::System.ArgumentNullException("filter");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(filter));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
     }
     
@@ -19111,7 +19207,7 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_jenis_dosen, nama_jenis, kompensasi_mengajar, transport_mengajar, perse" +
@@ -19133,6 +19229,48 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
                 "sDosen(@nama_jenis)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_jenis", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT id_jenis_dosen, nama_jenis, kompensasi_mengajar, transport_mengajar, perse" +
+                "ntase_pph21_npwp, persentase_pph21_nonnpwp, referensi_dosen FROM dbo.getListJeni" +
+                "sDosen(@nama_jenis)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_jenis", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT id_jenis_dosen, nama_jenis, kompensasi_mengajar, transport_mengajar, perse" +
+                "ntase_pph21_npwp, persentase_pph21_nonnpwp, referensi_dosen FROM dbo.getListJeni" +
+                "sDosen(@nama_jenis)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_jenis", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT id_jenis_dosen, nama_jenis, kompensasi_mengajar, transport_mengajar, perse" +
+                "ntase_pph21_npwp, persentase_pph21_nonnpwp, referensi_dosen FROM dbo.getListJeni" +
+                "sDosen(@nama_jenis)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_jenis", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT id_jenis_dosen, nama_jenis, kompensasi_mengajar, transport_mengajar, perse" +
+                "ntase_pph21_npwp, persentase_pph21_nonnpwp, referensi_dosen FROM dbo.getListJeni" +
+                "sDosen(@nama_jenis)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_jenis", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "SELECT id_jenis_dosen, nama_jenis, kompensasi_mengajar, transport_mengajar, perse" +
+                "ntase_pph21_npwp, persentase_pph21_nonnpwp, referensi_dosen FROM dbo.getListJeni" +
+                "sDosen(@nama_jenis)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_jenis", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "SELECT id_jenis_dosen, nama_jenis, kompensasi_mengajar, transport_mengajar, perse" +
+                "ntase_pph21_npwp, persentase_pph21_nonnpwp, referensi_dosen FROM dbo.getListJeni" +
+                "sDosen(@nama_jenis)";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_jenis", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19196,6 +19334,120 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy1(HonorariumDosenEksternalDataSet.getListJenisDosenDataTable dataTable, string nama_jenis) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((nama_jenis == null)) {
+                throw new global::System.ArgumentNullException("nama_jenis");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nama_jenis));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy2(HonorariumDosenEksternalDataSet.getListJenisDosenDataTable dataTable, string nama_jenis) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((nama_jenis == null)) {
+                throw new global::System.ArgumentNullException("nama_jenis");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nama_jenis));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy3(HonorariumDosenEksternalDataSet.getListJenisDosenDataTable dataTable, string nama_jenis) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((nama_jenis == null)) {
+                throw new global::System.ArgumentNullException("nama_jenis");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nama_jenis));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy4(HonorariumDosenEksternalDataSet.getListJenisDosenDataTable dataTable, string nama_jenis) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((nama_jenis == null)) {
+                throw new global::System.ArgumentNullException("nama_jenis");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nama_jenis));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy5(HonorariumDosenEksternalDataSet.getListJenisDosenDataTable dataTable, string nama_jenis) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((nama_jenis == null)) {
+                throw new global::System.ArgumentNullException("nama_jenis");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nama_jenis));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy6(HonorariumDosenEksternalDataSet.getListJenisDosenDataTable dataTable, string nama_jenis) {
+            this.Adapter.SelectCommand = this.CommandCollection[7];
+            if ((nama_jenis == null)) {
+                throw new global::System.ArgumentNullException("nama_jenis");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nama_jenis));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy7(HonorariumDosenEksternalDataSet.getListJenisDosenDataTable dataTable, string nama_jenis) {
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             if ((nama_jenis == null)) {
                 throw new global::System.ArgumentNullException("nama_jenis");
             }
@@ -19347,7 +19599,7 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_matkul, nama_matkul, sks FROM dbo.getListMatkul(@nama_matkul)";
@@ -19364,6 +19616,11 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
             this._commandCollection[2].CommandText = "SELECT id_matkul, nama_matkul, sks FROM dbo.getListMatkul(@nama_matkul)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_matkul", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT id_matkul, nama_matkul, sks FROM dbo.getListMatkul(@nama_matkul)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_matkul", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19425,8 +19682,27 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int Filter(HonorariumDosenEksternalDataSet.getListMatkulDataTable dataTable, string nama_matkul) {
+        public virtual int FillBy1(HonorariumDosenEksternalDataSet.getListMatkulDataTable dataTable, string nama_matkul) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((nama_matkul == null)) {
+                throw new global::System.ArgumentNullException("nama_matkul");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nama_matkul));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Filter(HonorariumDosenEksternalDataSet.getListMatkulDataTable dataTable, string nama_matkul) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((nama_matkul == null)) {
                 throw new global::System.ArgumentNullException("nama_matkul");
             }
@@ -19986,7 +20262,7 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_prodi, nama_prodi, singkatan, transport FROM dbo.getListProdi(@nama_pro" +
@@ -20005,6 +20281,18 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
                 "di)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_prodi", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT id_prodi, nama_prodi, singkatan, transport FROM dbo.getListProdi(@nama_pro" +
+                "di)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_prodi", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT id_prodi, nama_prodi, singkatan, transport FROM dbo.getListProdi(@nama_pro" +
+                "di)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_prodi", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20068,6 +20356,44 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy1(HonorariumDosenEksternalDataSet.getListProdiDataTable dataTable, string nama_prodi) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((nama_prodi == null)) {
+                throw new global::System.ArgumentNullException("nama_prodi");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nama_prodi));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy2(HonorariumDosenEksternalDataSet.getListProdiDataTable dataTable, string nama_prodi) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((nama_prodi == null)) {
+                throw new global::System.ArgumentNullException("nama_prodi");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(nama_prodi));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy3(HonorariumDosenEksternalDataSet.getListProdiDataTable dataTable, string nama_prodi) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((nama_prodi == null)) {
                 throw new global::System.ArgumentNullException("nama_prodi");
             }
@@ -20459,7 +20785,7 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_dosen, nama_dosen, kompensasi_mengajar, transport_mengajar, insentif_ke" +
@@ -20469,6 +20795,15 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@start", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@end", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_jenis_dosen", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT id_dosen, nama_dosen, kompensasi_mengajar, transport_mengajar, insentif_ke" +
+                "hadiran, total, gross_up, pph21, net_income, persentase_pph21, npwp FROM dbo.get" +
+                "ReportDosen(@start, @end, @id_jenis_dosen)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@start", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@end", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_jenis_dosen", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20529,6 +20864,37 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
             HonorariumDosenEksternalDataSet.getReportDosenDataTable dataTable = new HonorariumDosenEksternalDataSet.getReportDosenDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(HonorariumDosenEksternalDataSet.getReportDosenDataTable dataTable, string start, string end, string id_jenis_dosen) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((start == null)) {
+                throw new global::System.ArgumentNullException("start");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(start));
+            }
+            if ((end == null)) {
+                throw new global::System.ArgumentNullException("end");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(end));
+            }
+            if ((id_jenis_dosen == null)) {
+                throw new global::System.ArgumentNullException("id_jenis_dosen");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(id_jenis_dosen));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
     }
     
@@ -21141,7 +21507,7 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_dosen, nama_dosen, nama_bank, cabang_bank, kota, no_rekening, atasnama," +
@@ -21150,6 +21516,14 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@start", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@end", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_jenis_dosen", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT id_dosen, nama_dosen, nama_bank, cabang_bank, kota, no_rekening, atasnama," +
+                " total FROM dbo.getReportTransfer(@start, @end, @id_jenis_dosen)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@start", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@end", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_jenis_dosen", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21210,6 +21584,37 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
             HonorariumDosenEksternalDataSet.getReportTransferDataTable dataTable = new HonorariumDosenEksternalDataSet.getReportTransferDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(HonorariumDosenEksternalDataSet.getReportTransferDataTable dataTable, string start, string end, string id_jenis_dosen) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((start == null)) {
+                throw new global::System.ArgumentNullException("start");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(start));
+            }
+            if ((end == null)) {
+                throw new global::System.ArgumentNullException("end");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(end));
+            }
+            if ((id_jenis_dosen == null)) {
+                throw new global::System.ArgumentNullException("id_jenis_dosen");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(id_jenis_dosen));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
     }
     

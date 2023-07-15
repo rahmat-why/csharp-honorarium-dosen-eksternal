@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace C__honorarium_dosen_eksternal
 {
     public partial class CRUDProdi : Form
     {
+        string connectionString = "integrated security=false; Data Source=10.8.9.99;User ID=sa;Password=polman; initial catalog=HonorariumDosenEksternal";
+        string id_prodi, nama_prodi, singkatan, transport;
         public CRUDProdi()
         {
             InitializeComponent();
@@ -49,11 +52,15 @@ namespace C__honorarium_dosen_eksternal
             }
         }
 
+        string emp = "";
         private void CRUDProdi_Load(object sender, EventArgs e)
         {
+            btnSave.Enabled = true;
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
             try
             {
-                this.getListProdiTableAdapter.FillBy(this.honorariumDosenEksternalDataSet.getListProdi, nama_prodiToolStripTextBox.Text);
+                loadProdi(emp);
             }
             catch (System.Exception ex)
             {
@@ -62,9 +69,158 @@ namespace C__honorarium_dosen_eksternal
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        // clear
+        private void clear()
+        {
+            txtIDProdi.Text = "Otomatis";
+            txtNamaProdi.Text = "";
+            txtSingkatan.Text = "";
+            cmbTransport.Text = "";
+        }
+
+
+        // update prodi
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand com = new SqlCommand();
+            com.Connection = connection;  // Assign the SqlConnection object
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "sp_UpdateProdi";  // Set the stored procedure name
+
+            com.Parameters.AddWithValue("@id_prodi", txtIDProdi.Text);
+            com.Parameters.AddWithValue("@nama_prodi", txtNamaProdi.Text);
+            com.Parameters.AddWithValue("@singkatan", txtSingkatan.Text);
+            com.Parameters.AddWithValue("@transport", cmbTransport.SelectedItem.ToString());
+            try
+            {
+                connection.Open();
+                com.ExecuteNonQuery();
+                MessageBox.Show("Update data berhasil ", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clear();
+                loadProdi(emp);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubungi tim IT! " + ex.Message);
+            }
+
+        }
+
+
+        // delete prodi
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+             DialogResult result1 = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+             if (result1 == DialogResult.Yes)
+             {
+                try
+                    {
+                        SqlConnection connection = new SqlConnection(connectionString);
+                        SqlCommand com = new SqlCommand();
+                        com.Connection = connection;
+                        com.CommandText = "sp_DeleteProdi";
+                        com.CommandType = CommandType.StoredProcedure;
+
+                        com.Parameters.AddWithValue("@id_prodi", txtIDProdi.Text);
+
+                        connection.Open();
+                        int result = Convert.ToInt32(com.ExecuteNonQuery());
+                        connection.Close();
+
+                        if (result != 0)
+                        {
+                            MessageBox.Show("Data Berhasil Dihapus!");
+                            clear();
+                            btnDelete.Enabled = true;
+                            btnSave.Enabled = false;
+                            btnUpdate.Enabled = false;
+                            loadProdi(emp);
+                        }
+                    }
+                     catch (Exception ex)
+                    {
+                            MessageBox.Show("Hubungi tim IT! " + ex.Message);
+                    }
+             }
+        }
+
+        // clear
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
+            btnSave.Enabled = true;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+
+        //Search
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            loadProdi(txtSearch.Text);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tblProdi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = tblProdi.Rows[e.RowIndex];
+                id_prodi = selectedRow.Cells["col_id_prodi"].Value.ToString();
+                nama_prodi = selectedRow.Cells["col_nama_prodi"].Value.ToString();
+                singkatan = selectedRow.Cells["col_singkatan"].Value.ToString();
+                 transport = selectedRow.Cells["col_transport"].Value.ToString() ;
+
+                txtIDProdi.Text = id_prodi;
+                txtNamaProdi.Text = nama_prodi;
+                txtSingkatan.Text = singkatan;
+                cmbTransport.Text = transport;
+
+
+                btnSave.Enabled = false;
+                btnUpdate.Enabled = true;
+                btnDelete.Enabled = true;
+            }
+        }
+
+
+        //Load Data
+        private void loadProdi(string param)
+        {
+            this.getListProdiTableAdapter.FillBy(this.honorariumDosenEksternalDataSet.getListProdi, param);
+        }
+    
+
+        // save prodi
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand com = new SqlCommand();
+            com.Connection = connection;  // Assign the SqlConnection object
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "sp_CreateProdi";  // Set the stored procedure name
+
+            com.Parameters.AddWithValue("@nama_prodi", txtNamaProdi.Text);
+            com.Parameters.AddWithValue("@singkatan", txtSingkatan.Text);
+            com.Parameters.AddWithValue("@transport", cmbTransport.Text);
+            try
+            {
+                connection.Open();
+                com.ExecuteNonQuery();
+                MessageBox.Show("Simpan data berhasil ", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                clear();
+                loadProdi(emp);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubungi tim IT! " + ex.Message);
+            }
         }
     }
 }

@@ -154,6 +154,11 @@ namespace C__honorarium_dosen_eksternal
             btnDelete.Enabled = false;
         }
 
+        private void guna2Panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -534,8 +539,8 @@ namespace C__honorarium_dosen_eksternal
                 com.Parameters.AddWithValue("@cabang_bank", txtCabangBank.Text);
                 com.Parameters.AddWithValue("@no_rekening", txtNoRekening.Text);
                 com.Parameters.AddWithValue("@npwp", txtNpwp.Text);
-                com.Parameters.AddWithValue("@tanggal_gabung_kampus", txtGabungKampus.Text);
-                com.Parameters.AddWithValue("@tanggal_gabung_industri", txtGabungIndustri.Text);
+                com.Parameters.AddWithValue("@tanggal_gabung_kampus", txtGabungKampus.Value);
+                com.Parameters.AddWithValue("@tanggal_gabung_industri", txtGabungIndustri.Value);
                 com.Parameters.AddWithValue("@status", cbStatus.SelectedItem.ToString());
                 com.Parameters.AddWithValue("@atasnama", txtAtasNama.Text);
                 com.Parameters.AddWithValue("@kota", txtKota.Text);

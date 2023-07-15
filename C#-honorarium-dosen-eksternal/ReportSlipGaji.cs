@@ -34,12 +34,13 @@ namespace C__honorarium_dosen_eksternal
             string[] splitPath = currentPath.Split(new string[] { "\\bin\\" }, StringSplitOptions.None);
             currentPath = splitPath[0];
 
-            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("PERIODE", txtTanggalAwal.Text+" - "+txtTanggalAkhir.Text));
-            this.getReportSlipGajiTableAdapter.FillBy(this.honorariumDosenEksternalDataSet.getReportSlipGaji, cbDosen.SelectedValue.ToString(), txtTanggalAwal.Text, txtTanggalAkhir.Text);
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("PERIODE", txtTanggalAwal.Value.ToString() +" - "+txtTanggalAkhir.Text));
+            this.getReportSlipGajiTableAdapter.FillBy(this.honorariumDosenEksternalDataSet.getReportSlipGaji, cbDosen.SelectedValue.ToString(), txtTanggalAwal.Value.ToString(), txtTanggalAkhir.Value.ToString());
             this.reportViewer1.RefreshReport();
             string pdfPath = currentPath + "\\" + cbDosen.Text + ".pdf";
             SaveReportToPDF(pdfPath);
         }
+
 
         private void SaveReportToPDF(string filePath)
         {
@@ -63,6 +64,26 @@ namespace C__honorarium_dosen_eksternal
             string body = "Berikut ini lampiran slip gaji anda:";
             SendEmail sendEmail = new SendEmail("rahmatwahyubudiyanto@gmail.com", subject, body);
             sendEmail.send(cbDosen.Text);
+        }
+
+        private void txtTanggalAwal_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbDosen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

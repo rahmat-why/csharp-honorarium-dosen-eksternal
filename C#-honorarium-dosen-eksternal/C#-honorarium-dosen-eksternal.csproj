@@ -87,6 +87,33 @@
     <Compile Include="Adminpage.Designer.cs">
       <DependentUpon>Adminpage.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAAAPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DAAAPage.Designer.cs">
+      <DependentUpon>DAAAPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HonorariumDosenEksternalDataSet.cs">
+      <DependentUpon>HonorariumDosenEksternalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDosen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportDosen.Designer.cs">
+      <DependentUpon>ReportDosen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportProdi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportProdi.Designer.cs">
+      <DependentUpon>ReportProdi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportTransfer.Designer.cs">
+      <DependentUpon>ReportTransfer.cs</DependentUpon>
+    </Compile>
     <Compile Include="SendEmail.cs" />
     <Compile Include="CRUDDosen.cs">
       <SubType>Form</SubType>
@@ -177,6 +204,9 @@
     <EmbeddedResource Include="CRUDUser.resx">
       <DependentUpon>CRUDUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DAAAPage.resx">
+      <DependentUpon>DAAAPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,9 +220,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportDosen.rdlc" />
+    <EmbeddedResource Include="ReportDosen.resx">
+      <DependentUpon>ReportDosen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportProdi.rdlc" />
+    <EmbeddedResource Include="ReportProdi.resx">
+      <DependentUpon>ReportProdi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTransfer.rdlc" />
     <EmbeddedResource Include="ReportSlipGaji.rdlc" />
     <EmbeddedResource Include="ReportSlipGaji.resx">
       <DependentUpon>ReportSlipGaji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTransfer.resx">
+      <DependentUpon>ReportTransfer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="HonorariumDosenEksternalDataSet.xsc">
       <DependentUpon>HonorariumDosenEksternalDataSet.xsd</DependentUpon>
@@ -286,6 +328,11 @@
     <None Include="Resources\broom.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\office-building.png" />
+    <None Include="Resources\globe.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\file.png" />
+    <None Include="Resources\filter-filled-tool-symbol.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

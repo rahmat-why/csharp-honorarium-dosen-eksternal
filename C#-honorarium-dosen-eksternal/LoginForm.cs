@@ -58,14 +58,9 @@ namespace C__honorarium_dosen_eksternal
                         else if (role == "DAAA")
                         {
                             // Mengatur keadaan halaman sesuai dengan peran (role)
-                            // ...
+                            DAAAPage daaaPage = new DAAAPage();
+                            daaaPage.Show();
                             MessageBox.Show("Selamat datang, DAAA!");
-                        }
-                        else
-                        {
-                            // Mengatur keadaan halaman sesuai dengan peran (role)
-                            // ...
-                            MessageBox.Show("Selamat datang, Pengguna!");
                         }
                         this.Hide();
                     }

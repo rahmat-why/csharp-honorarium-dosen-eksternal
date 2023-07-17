@@ -101,8 +101,7 @@ namespace C__honorarium_dosen_eksternal
             return "";
         }
 
-
-        private void btnFilter_Click(object sender, EventArgs e)
+        private void btnFilter_Click_1(object sender, EventArgs e)
         {
             DateTime tanggal_awal = txtTglAwal.Value;
             string tanggal_Awal = txtTglAwal.Value.ToString("yyyy-MM-dd");
@@ -110,7 +109,7 @@ namespace C__honorarium_dosen_eksternal
             string IDjenis = cbIDJenis.SelectedValue.ToString();
             string nama_jenis = cbIDJenis.Text;
             string tahun_akademik = GetTahunAkademik(tanggal_awal);
-           
+
 
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter("TAHUN", tahun_akademik));
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter("PERIODE", txtTglAwal.Text + " - " + txtTglAkhir.Text));
@@ -120,16 +119,41 @@ namespace C__honorarium_dosen_eksternal
             DataTable reportTransferTable = this.honorariumDosenEksternalDataSet.getReportTransfer; // Ganti dengan objek DataTable yang sesuai dengan hasil query
 
             int totalTransfer = 0;
-
             foreach (DataRow row in reportTransferTable.Rows)
             {
                 int transfer = Convert.ToInt32(row["total"]); // Ganti "total_transfer" dengan nama kolom yang sesuai pada hasil query
                 totalTransfer += transfer;
             }
+
             string terbilang = FormatTerbilang(totalTransfer);
+            if(totalTransfer == 0)
+            {
+                terbilang = "-";
+            }
+
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter("TERBILANG", terbilang));
 
             this.reportViewer1.RefreshReport();
+        }
+
+        private void cbIDJenis_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTglAkhir_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

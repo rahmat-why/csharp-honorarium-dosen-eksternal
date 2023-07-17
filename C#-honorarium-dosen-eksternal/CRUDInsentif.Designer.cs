@@ -33,12 +33,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnClear = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.txtTahunBatasBawah = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTahunBatasAtas = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtInsentifKehadiran = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtIDGolongan = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNamaGolongan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.InsentifKehadiran = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.tblGolongan = new Guna.UI2.WinForms.Guna2DataGridView();
             this.col_id_golongan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_nama_golongan = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,15 +55,7 @@
             this.col_tahun_atas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getListGolonganBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.honorariumDosenEksternalDataSet = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSet();
-            this.InsentifKehadiran = new System.Windows.Forms.Label();
             this.getListGolonganTableAdapter = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSetTableAdapters.getListGolonganTableAdapter();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnClear = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
-            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblGolongan)).BeginInit();
@@ -83,8 +83,112 @@
             this.guna2Panel1.Location = new System.Drawing.Point(18, 18);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(528, 1016);
+            this.guna2Panel1.Size = new System.Drawing.Size(528, 996);
             this.guna2Panel1.TabIndex = 37;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Nirmala UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(30, -422);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(263, 60);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "Data Dosen";
+            // 
+            // btnClear
+            // 
+            this.btnClear.AutoRoundedCorners = true;
+            this.btnClear.BackColor = System.Drawing.Color.White;
+            this.btnClear.BorderColor = System.Drawing.Color.Navy;
+            this.btnClear.BorderRadius = 20;
+            this.btnClear.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnClear.BorderThickness = 1;
+            this.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClear.FillColor = System.Drawing.SystemColors.HighlightText;
+            this.btnClear.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.broom;
+            this.btnClear.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnClear.Location = new System.Drawing.Point(22, 577);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(483, 43);
+            this.btnClear.TabIndex = 47;
+            this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.AutoRoundedCorners = true;
+            this.btnSave.BorderColor = System.Drawing.Color.Navy;
+            this.btnSave.BorderRadius = 20;
+            this.btnSave.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnSave.BorderThickness = 1;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.FillColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSave.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.diskette__1_;
+            this.btnSave.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnSave.Location = new System.Drawing.Point(22, 525);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(158, 43);
+            this.btnSave.TabIndex = 44;
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.AutoRoundedCorners = true;
+            this.btnUpdate.BorderColor = System.Drawing.Color.Navy;
+            this.btnUpdate.BorderRadius = 20;
+            this.btnUpdate.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnUpdate.BorderThickness = 1;
+            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdate.FillColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnUpdate.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.circle__1_;
+            this.btnUpdate.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnUpdate.Location = new System.Drawing.Point(188, 525);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(153, 43);
+            this.btnUpdate.TabIndex = 45;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AutoRoundedCorners = true;
+            this.btnDelete.BorderColor = System.Drawing.Color.Navy;
+            this.btnDelete.BorderRadius = 20;
+            this.btnDelete.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnDelete.BorderThickness = 1;
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelete.FillColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDelete.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnDelete.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.delete__2_;
+            this.btnDelete.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnDelete.Location = new System.Drawing.Point(345, 525);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(160, 43);
+            this.btnDelete.TabIndex = 46;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
             // txtTahunBatasBawah
             // 
@@ -103,7 +207,7 @@
             this.txtTahunBatasBawah.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTahunBatasBawah.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtTahunBatasBawah.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTahunBatasBawah.Location = new System.Drawing.Point(24, 333);
+            this.txtTahunBatasBawah.Location = new System.Drawing.Point(24, 332);
             this.txtTahunBatasBawah.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txtTahunBatasBawah.Name = "txtTahunBatasBawah";
             this.txtTahunBatasBawah.PasswordChar = '\0';
@@ -216,7 +320,7 @@
             this.txtNamaGolongan.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNamaGolongan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtNamaGolongan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNamaGolongan.Location = new System.Drawing.Point(24, 199);
+            this.txtNamaGolongan.Location = new System.Drawing.Point(24, 198);
             this.txtNamaGolongan.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txtNamaGolongan.Name = "txtNamaGolongan";
             this.txtNamaGolongan.PasswordChar = '\0';
@@ -227,6 +331,16 @@
             this.txtNamaGolongan.TabIndex = 39;
             this.txtNamaGolongan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamaGolongan_KeyPress);
             // 
+            // InsentifKehadiran
+            // 
+            this.InsentifKehadiran.AutoSize = true;
+            this.InsentifKehadiran.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InsentifKehadiran.Location = new System.Drawing.Point(14, 35);
+            this.InsentifKehadiran.Name = "InsentifKehadiran";
+            this.InsentifKehadiran.Size = new System.Drawing.Size(499, 52);
+            this.InsentifKehadiran.TabIndex = 36;
+            this.InsentifKehadiran.Text = "Data Insentif Kehadiran";
+            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BorderColor = System.Drawing.SystemColors.ActiveCaption;
@@ -236,10 +350,46 @@
             this.guna2Panel2.Controls.Add(this.label6);
             this.guna2Panel2.Controls.Add(this.txtSearch);
             this.guna2Panel2.Controls.Add(this.tblGolongan);
-            this.guna2Panel2.Location = new System.Drawing.Point(554, 18);
+            this.guna2Panel2.Location = new System.Drawing.Point(553, 18);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(998, 985);
+            this.guna2Panel2.Size = new System.Drawing.Size(961, 996);
             this.guna2Panel2.TabIndex = 38;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(621, 43);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 28);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Search";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.AutoRoundedCorners = true;
+            this.txtSearch.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSearch.BorderColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtSearch.BorderRadius = 23;
+            this.txtSearch.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Location = new System.Drawing.Point(698, 35);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderText = "Search Name";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(238, 49);
+            this.txtSearch.TabIndex = 45;
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp_1);
             // 
             // tblGolongan
             // 
@@ -272,12 +422,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tblGolongan.DefaultCellStyle = dataGridViewCellStyle3;
             this.tblGolongan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.tblGolongan.Location = new System.Drawing.Point(14, 110);
+            this.tblGolongan.Location = new System.Drawing.Point(14, 95);
             this.tblGolongan.Name = "tblGolongan";
             this.tblGolongan.RowHeadersVisible = false;
             this.tblGolongan.RowHeadersWidth = 62;
             this.tblGolongan.RowTemplate.Height = 28;
-            this.tblGolongan.Size = new System.Drawing.Size(928, 884);
+            this.tblGolongan.Size = new System.Drawing.Size(922, 882);
             this.tblGolongan.TabIndex = 41;
             this.tblGolongan.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.tblGolongan.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -347,161 +497,16 @@
             this.honorariumDosenEksternalDataSet.DataSetName = "HonorariumDosenEksternalDataSet";
             this.honorariumDosenEksternalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // InsentifKehadiran
-            // 
-            this.InsentifKehadiran.AutoSize = true;
-            this.InsentifKehadiran.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InsentifKehadiran.Location = new System.Drawing.Point(14, 35);
-            this.InsentifKehadiran.Name = "InsentifKehadiran";
-            this.InsentifKehadiran.Size = new System.Drawing.Size(499, 52);
-            this.InsentifKehadiran.TabIndex = 36;
-            this.InsentifKehadiran.Text = "Data Insentif Kehadiran";
-            // 
             // getListGolonganTableAdapter
             // 
             this.getListGolonganTableAdapter.ClearBeforeFill = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Nirmala UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(30, -421);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(263, 60);
-            this.label7.TabIndex = 48;
-            this.label7.Text = "Data Dosen";
-            // 
-            // btnClear
-            // 
-            this.btnClear.AutoRoundedCorners = true;
-            this.btnClear.BackColor = System.Drawing.Color.White;
-            this.btnClear.BorderColor = System.Drawing.Color.Navy;
-            this.btnClear.BorderRadius = 20;
-            this.btnClear.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnClear.BorderThickness = 1;
-            this.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnClear.FillColor = System.Drawing.SystemColors.HighlightText;
-            this.btnClear.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.broom;
-            this.btnClear.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnClear.Location = new System.Drawing.Point(24, 523);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(483, 43);
-            this.btnClear.TabIndex = 47;
-            this.btnClear.Text = "Clear";
-            // 
-            // btnSave
-            // 
-            this.btnSave.AutoRoundedCorners = true;
-            this.btnSave.BorderColor = System.Drawing.Color.Navy;
-            this.btnSave.BorderRadius = 20;
-            this.btnSave.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnSave.BorderThickness = 1;
-            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.FillColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSave.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.diskette__1_;
-            this.btnSave.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnSave.Location = new System.Drawing.Point(24, 470);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(158, 43);
-            this.btnSave.TabIndex = 44;
-            this.btnSave.Text = "Save";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.AutoRoundedCorners = true;
-            this.btnUpdate.BorderColor = System.Drawing.Color.Navy;
-            this.btnUpdate.BorderRadius = 20;
-            this.btnUpdate.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnUpdate.BorderThickness = 1;
-            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdate.FillColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdate.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.circle__1_;
-            this.btnUpdate.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnUpdate.Location = new System.Drawing.Point(189, 470);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(153, 43);
-            this.btnUpdate.TabIndex = 45;
-            this.btnUpdate.Text = "Update";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.AutoRoundedCorners = true;
-            this.btnDelete.BorderColor = System.Drawing.Color.Navy;
-            this.btnDelete.BorderRadius = 20;
-            this.btnDelete.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnDelete.BorderThickness = 1;
-            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelete.FillColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDelete.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnDelete.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.delete__2_;
-            this.btnDelete.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnDelete.Location = new System.Drawing.Point(347, 470);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(160, 43);
-            this.btnDelete.TabIndex = 46;
-            this.btnDelete.Text = "Delete";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(621, 43);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 28);
-            this.label6.TabIndex = 44;
-            this.label6.Text = "Search";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.AutoRoundedCorners = true;
-            this.txtSearch.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSearch.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtSearch.BorderRadius = 24;
-            this.txtSearch.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(697, 35);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "Search Name";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(238, 50);
-            this.txtSearch.TabIndex = 45;
             // 
             // CRUDInsentif
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(1504, 992);
+            this.ClientSize = new System.Drawing.Size(1526, 1024);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -30,7 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Adminpage));
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.PanelMenu = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtLabelNama = new System.Windows.Forms.Label();
             this.txtPerusahaan = new Guna.UI2.WinForms.Guna2Button();
             this.btnKategoriDosen = new Guna.UI2.WinForms.Guna2Button();
@@ -41,7 +44,10 @@
             this.btnInsentifGolongan = new Guna.UI2.WinForms.Guna2Button();
             this.btnMatkul = new Guna.UI2.WinForms.Guna2Button();
             this.btnProdi = new Guna.UI2.WinForms.Guna2Button();
+            this.PanelMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +55,8 @@
             // 
             this.guna2Panel2.BackColor = System.Drawing.SystemColors.HighlightText;
             this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.guna2Panel2.Controls.Add(this.guna2Panel3);
+            this.guna2Panel2.Controls.Add(this.guna2Panel1);
             this.guna2Panel2.Controls.Add(this.txtLabelNama);
             this.guna2Panel2.Controls.Add(this.txtPerusahaan);
             this.guna2Panel2.Controls.Add(this.btnKategoriDosen);
@@ -66,16 +74,40 @@
             this.guna2Panel2.Size = new System.Drawing.Size(372, 1024);
             this.guna2Panel2.TabIndex = 8;
             // 
-            // PanelMenu
+            // guna2Panel3
             // 
-            this.PanelMenu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.PanelMenu.BorderColor = System.Drawing.Color.Black;
-            this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelMenu.Location = new System.Drawing.Point(372, 0);
-            this.PanelMenu.Margin = new System.Windows.Forms.Padding(4, 3, 3, 3);
-            this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(1526, 1024);
-            this.PanelMenu.TabIndex = 9;
+            this.guna2Panel3.Controls.Add(this.label2);
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 157);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(369, 45);
+            this.guna2Panel3.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Role :";
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 108);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(370, 45);
+            this.guna2Panel1.TabIndex = 11;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nama : ";
             // 
             // txtLabelNama
             // 
@@ -100,7 +132,7 @@
             this.txtPerusahaan.ForeColor = System.Drawing.Color.Black;
             this.txtPerusahaan.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.office_building;
             this.txtPerusahaan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtPerusahaan.Location = new System.Drawing.Point(3, 714);
+            this.txtPerusahaan.Location = new System.Drawing.Point(3, 790);
             this.txtPerusahaan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPerusahaan.Name = "txtPerusahaan";
             this.txtPerusahaan.Size = new System.Drawing.Size(366, 78);
@@ -124,7 +156,7 @@
             this.btnKategoriDosen.ForeColor = System.Drawing.Color.Black;
             this.btnKategoriDosen.Image = ((System.Drawing.Image)(resources.GetObject("btnKategoriDosen.Image")));
             this.btnKategoriDosen.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnKategoriDosen.Location = new System.Drawing.Point(3, 538);
+            this.btnKategoriDosen.Location = new System.Drawing.Point(3, 614);
             this.btnKategoriDosen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnKategoriDosen.Name = "btnKategoriDosen";
             this.btnKategoriDosen.Size = new System.Drawing.Size(366, 78);
@@ -147,7 +179,7 @@
             this.btnDosen.ForeColor = System.Drawing.Color.Black;
             this.btnDosen.Image = ((System.Drawing.Image)(resources.GetObject("btnDosen.Image")));
             this.btnDosen.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDosen.Location = new System.Drawing.Point(3, 274);
+            this.btnDosen.Location = new System.Drawing.Point(3, 350);
             this.btnDosen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDosen.Name = "btnDosen";
             this.btnDosen.Size = new System.Drawing.Size(366, 78);
@@ -160,9 +192,9 @@
             // 
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 30);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(369, 79);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(324, 54);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
@@ -204,7 +236,7 @@
             this.btnUser.ForeColor = System.Drawing.Color.Black;
             this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
             this.btnUser.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnUser.Location = new System.Drawing.Point(3, 186);
+            this.btnUser.Location = new System.Drawing.Point(3, 262);
             this.btnUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(366, 78);
@@ -228,7 +260,7 @@
             this.btnInsentifGolongan.ForeColor = System.Drawing.Color.Black;
             this.btnInsentifGolongan.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.globe;
             this.btnInsentifGolongan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnInsentifGolongan.Location = new System.Drawing.Point(3, 626);
+            this.btnInsentifGolongan.Location = new System.Drawing.Point(3, 702);
             this.btnInsentifGolongan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnInsentifGolongan.Name = "btnInsentifGolongan";
             this.btnInsentifGolongan.Size = new System.Drawing.Size(366, 78);
@@ -252,7 +284,7 @@
             this.btnMatkul.ForeColor = System.Drawing.Color.Black;
             this.btnMatkul.Image = ((System.Drawing.Image)(resources.GetObject("btnMatkul.Image")));
             this.btnMatkul.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMatkul.Location = new System.Drawing.Point(3, 450);
+            this.btnMatkul.Location = new System.Drawing.Point(3, 526);
             this.btnMatkul.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnMatkul.Name = "btnMatkul";
             this.btnMatkul.Size = new System.Drawing.Size(366, 78);
@@ -276,7 +308,7 @@
             this.btnProdi.ForeColor = System.Drawing.Color.Black;
             this.btnProdi.Image = ((System.Drawing.Image)(resources.GetObject("btnProdi.Image")));
             this.btnProdi.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnProdi.Location = new System.Drawing.Point(3, 362);
+            this.btnProdi.Location = new System.Drawing.Point(3, 438);
             this.btnProdi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnProdi.Name = "btnProdi";
             this.btnProdi.Size = new System.Drawing.Size(366, 78);
@@ -284,6 +316,18 @@
             this.btnProdi.Text = "Program Studi";
             this.btnProdi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnProdi.Click += new System.EventHandler(this.btnProdi_Click);
+            // 
+            // PanelMenu
+            // 
+            this.PanelMenu.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.PanelMenu.BorderColor = System.Drawing.Color.Black;
+            this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelMenu.Location = new System.Drawing.Point(372, 0);
+            this.PanelMenu.Margin = new System.Windows.Forms.Padding(4, 3, 3, 3);
+            this.PanelMenu.Name = "PanelMenu";
+            this.PanelMenu.Size = new System.Drawing.Size(1526, 1024);
+            this.PanelMenu.TabIndex = 9;
+            this.PanelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelMenu_Paint);
             // 
             // Adminpage
             // 
@@ -299,6 +343,10 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2Panel3.PerformLayout();
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -318,5 +366,9 @@
         private Guna.UI2.WinForms.Guna2Panel PanelMenu;
         private Guna.UI2.WinForms.Guna2Button txtPerusahaan;
         private System.Windows.Forms.Label txtLabelNama;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private System.Windows.Forms.Label label1;
     }
 }

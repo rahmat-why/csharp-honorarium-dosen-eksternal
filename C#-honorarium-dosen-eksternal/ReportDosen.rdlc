@@ -80,34 +80,34 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>4.19333cm</Width>
+                  <Width>3.62314cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.19333cm</Width>
+                  <Width>2.7846cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.42404cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.40054cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.25811cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.19308cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.66933cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.40173cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>1.79621cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.19333cm</Width>
+                  <Width>3.2262cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -153,7 +153,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Kompensasi Mengajar</Value>
+                                  <Value>Kompensasi </Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -183,7 +183,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Transport mengajar</Value>
+                                  <Value>Transport </Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -213,7 +213,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Insentif Kehadiran</Value>
+                                  <Value>Insentif </Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -363,7 +363,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Persentase P ph21</Value>
+                                  <Value> % Pph21</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -488,8 +488,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="Rp. " &amp; Format(Fields!transport_mengajar.Value, "#,##0.00")</Value>
-                                  <Style />
+                                  <Value>="Rp. " &amp; Format(Fields!transport_mengajar.Value, "#,##0")</Value>
+                                  <Style>
+                                    <Format>'Rp'0;('Rp'0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -505,6 +507,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-ID</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -518,8 +521,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="Rp. " &amp; Format(Fields!insentif_kehadiran.Value, "#,##0.00")</Value>
-                                  <Style />
+                                  <Value>="Rp. " &amp; Format(Fields!insentif_kehadiran.Value, "#,##0")</Value>
+                                  <Style>
+                                    <Format>'Rp'0;('Rp'0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -535,6 +540,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-ID</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -548,8 +554,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="Rp. " &amp; Format(Fields!total.Value, "#,##0.00")</Value>
-                                  <Style />
+                                  <Value>="Rp. " &amp; Format(Fields!total.Value, "#,##0")</Value>
+                                  <Style>
+                                    <Format>'Rp'0;('Rp'0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -565,6 +573,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-ID</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -578,8 +587,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="Rp. " &amp; Format(Fields!gross_up.Value, "#,##0.00")</Value>
-                                  <Style />
+                                  <Value>="Rp. " &amp; Format(Fields!gross_up.Value, "#,##0")</Value>
+                                  <Style>
+                                    <Format>'Rp'0;('Rp'0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -595,6 +606,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-ID</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1098,8 +1110,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="Rp. " &amp; Format(Sum(Fields!transport_mengajar.Value), "#,##0.00")</Value>
-                                  <Style />
+                                  <Value>="Rp. " &amp; Format(Sum(Fields!transport_mengajar.Value), "#,##0")</Value>
+                                  <Style>
+                                    <Format>'Rp'0;('Rp'0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1115,6 +1129,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-ID</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1128,8 +1143,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="Rp. " &amp; Format(Sum(Fields!insentif_kehadiran.Value), "#,##0.00")</Value>
-                                  <Style />
+                                  <Value>="Rp. " &amp; Format(Sum(Fields!insentif_kehadiran.Value), "#,##0")</Value>
+                                  <Style>
+                                    <Format>'Rp'0;('Rp'0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1145,8 +1162,10 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-ID</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1158,8 +1177,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="Rp. " &amp; Format(Sum(Fields!total.Value), "#,##0.00")</Value>
-                                  <Style />
+                                  <Value>="Rp. " &amp; Format(Sum(Fields!total.Value), "#,##0")</Value>
+                                  <Style>
+                                    <Format>'Rp'0;('Rp'0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1175,6 +1196,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-ID</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1188,8 +1210,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="Rp. " &amp; Format(Sum(Fields!gross_up.Value), "#,##0.00")</Value>
-                                  <Style />
+                                  <Value>="Rp. " &amp; Format(Sum(Fields!gross_up.Value), "#,##0")</Value>
+                                  <Style>
+                                    <Format>'Rp'0;('Rp'0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1205,6 +1229,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-ID</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1248,8 +1273,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>="Rp. " &amp; Format(Sum(Fields!net_income.Value), "#,##0.00")</Value>
-                                  <Style />
+                                  <Value>="Rp. " &amp; Format(Sum(Fields!net_income.Value), "#,##0")</Value>
+                                  <Style>
+                                    <Format>'Rp'0;('Rp'0)</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1265,6 +1292,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <rd:FormatSymbolCulture>en-ID</rd:FormatSymbolCulture>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1365,9 +1393,9 @@
             </TablixRowHierarchy>
             <DataSetName>DatasetReportDosen</DataSetName>
             <Top>4.97981cm</Top>
-            <Left>0.26328cm</Left>
+            <Left>0.88988cm</Left>
             <Height>2.4cm</Height>
-            <Width>30.08cm</Width>
+            <Width>25.777cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1376,8 +1404,9 @@
           </Tablix>
           <Line Name="Line1">
             <Top>3.81564cm</Top>
+            <Left>0.76729cm</Left>
             <Height>0cm</Height>
-            <Width>30.08cm</Width>
+            <Width>25.89958cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1405,8 +1434,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox21</rd:DefaultName>
-            <Top>0.30551cm</Top>
-            <Left>13.05153cm</Left>
+            <Top>0.27023cm</Top>
+            <Left>11.07406cm</Left>
             <Height>0.6cm</Height>
             <Width>4.68722cm</Width>
             <ZIndex>2</ZIndex>
@@ -1436,13 +1465,13 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Right</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>2.14078cm</Top>
-            <Left>7.85278cm</Left>
+            <Top>2.1055cm</Top>
+            <Left>3.95682cm</Left>
             <Height>0.6cm</Height>
             <Width>5.53389cm</Width>
             <ZIndex>3</ZIndex>
@@ -1472,13 +1501,13 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Right</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.54078cm</Top>
-            <Left>8.90305cm</Left>
+            <Top>1.5055cm</Top>
+            <Left>6.11111cm</Left>
             <Height>0.6cm</Height>
             <Width>10.16631cm</Width>
             <ZIndex>4</ZIndex>
@@ -1508,13 +1537,13 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Right</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.94078cm</Top>
-            <Left>10.8364cm</Left>
+            <Top>0.83495cm</Top>
+            <Left>7.93289cm</Left>
             <Height>0.6cm</Height>
             <Width>5.53388cm</Width>
             <ZIndex>5</ZIndex>
@@ -1547,8 +1576,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>JenisDosen</rd:DefaultName>
-            <Top>0.94078cm</Top>
-            <Left>15.88667cm</Left>
+            <Top>0.83495cm</Top>
+            <Left>13.57261cm</Left>
             <Height>0.6cm</Height>
             <Width>6.39819cm</Width>
             <ZIndex>6</ZIndex>
@@ -1580,8 +1609,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>TAHUN</rd:DefaultName>
-            <Top>1.54078cm</Top>
-            <Left>18.64995cm</Left>
+            <Top>1.5055cm</Top>
+            <Left>16.31269cm</Left>
             <Height>0.6cm</Height>
             <Width>4.35208cm</Width>
             <ZIndex>7</ZIndex>
@@ -1613,8 +1642,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>PERIODE</rd:DefaultName>
-            <Top>2.14078cm</Top>
-            <Left>12.21176cm</Left>
+            <Top>2.1055cm</Top>
+            <Left>9.53481cm</Left>
             <Height>0.6cm</Height>
             <Width>13.67491cm</Width>
             <ZIndex>8</ZIndex>
@@ -1646,7 +1675,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox58</rd:DefaultName>
             <Top>9.56592cm</Top>
-            <Left>13.04078cm</Left>
+            <Left>11.88032cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>9</ZIndex>
@@ -1679,7 +1708,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox58</rd:DefaultName>
             <Top>12.11764cm</Top>
-            <Left>11.40305cm</Left>
+            <Left>10.24259cm</Left>
             <Height>0.6cm</Height>
             <Width>5.82949cm</Width>
             <ZIndex>10</ZIndex>

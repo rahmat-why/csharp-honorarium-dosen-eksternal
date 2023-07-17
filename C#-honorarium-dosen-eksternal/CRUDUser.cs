@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -14,7 +15,8 @@ namespace C__honorarium_dosen_eksternal
 {
     public partial class CRUDUser : Form
     {
-        
+        string connectionString = ConfigurationManager.AppSettings["Connectionstring"];
+
         public CRUDUser()
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace C__honorarium_dosen_eksternal
 
             try
             {
-                string connectionString = "integrated security=true; data source=.; initial catalog= HonorariumDosenEksternal";
+               
                 SqlConnection connection = new SqlConnection(connectionString);
                 string query = "SELECT dbo.GenerateUserID() AS newId";
                 connection.Open();
@@ -135,104 +137,6 @@ namespace C__honorarium_dosen_eksternal
             this.getListUsersTableAdapter.Filter(this.honorariumDosenEksternalDataSet.getListUsers, param);
         }
 
-        //Create User
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            string connectionstring = "integrated security =false; data source = 10.8.9.99; initial catalog = HonorariumDosenEksternal; user=sa; password=polman";
-            SqlConnection connection = new SqlConnection(connectionstring);
-
-            SqlCommand insert = new SqlCommand("sp_CreateUser", connection);
-            insert.CommandType = CommandType.StoredProcedure;
-
-            insert.Parameters.AddWithValue("nama", txtNamaUser.Text);
-            insert.Parameters.AddWithValue("username", txtUsername.Text);
-            insert.Parameters.AddWithValue("password", txtPassword.Text);
-            insert.Parameters.AddWithValue("Role", cmbRole.Text);
-            try
-            {
-                connection.Open();
-                insert.ExecuteNonQuery();
-                MessageBox.Show("Data saved successfully", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clear();
-                loadUser(emp);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unable to saved : " + ex.Message);
-            }
-
-            this.getListUsersTableAdapter.Filter(this.honorariumDosenEksternalDataSet.getListUsers, emp);
-        }
-
-        //Delete User
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            string connectionstring = "integrated security =false; data source = 10.8.9.99; initial catalog = HonorariumDosenEksternal; user=sa; password=polman";
-            SqlConnection connection = new SqlConnection(connectionstring);
-
-            SqlCommand delete = new SqlCommand("sp_DeleteUser", connection);
-            delete.CommandType = CommandType.StoredProcedure;
-
-            delete.Parameters.AddWithValue("id_user" , txtIDUser.Text);
-            try
-            {
-                connection.Open();
-                delete.ExecuteNonQuery();
-                MessageBox.Show("Data Update successfully", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clear();
-                loadUser(emp);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unable to update: " + ex.Message);
-            }
-        }
-
-        //Update User
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-            string connectionstring = "integrated security =false; data source = 10.8.9.99; initial catalog = HonorariumDosenEksternal; user=sa; password=polman";
-            SqlConnection connection = new SqlConnection(connectionstring);
-
-            SqlCommand update= new SqlCommand("sp_UpdateUser", connection);
-            update.CommandType = CommandType.StoredProcedure;
-
-            update.Parameters.AddWithValue("id_user" , txtIDUser.Text);
-            update.Parameters.AddWithValue("nama", txtNamaUser.Text);
-            update.Parameters.AddWithValue("username", txtUsername.Text);
-            update.Parameters.AddWithValue("password", txtPassword.Text);
-            update.Parameters.AddWithValue("Role", cmbRole.Text);
-
-            try
-            {
-                connection.Open();
-                update.ExecuteNonQuery();
-                MessageBox.Show("Update Data successfully", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-               clear();
-               loadUser(emp) ;
-           
-                
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unable to saved: " + ex.Message);
-            }
-
-        }
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            clear();
-            btnSave.Enabled = true;
-            btnUpdate.Enabled = false;
-            btnDelete.Enabled = false;
-
-        }
-
         private void tblUser_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -257,6 +161,85 @@ namespace C__honorarium_dosen_eksternal
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
             loadUser(txtSearch.Text);
+        }
+
+
+        //Create User
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            SqlCommand insert = new SqlCommand("sp_CreateUser", connection);
+            insert.CommandType = CommandType.StoredProcedure;
+
+            insert.Parameters.AddWithValue("nama", txtNamaUser.Text);
+            insert.Parameters.AddWithValue("username", txtUsername.Text);
+            insert.Parameters.AddWithValue("password", txtPassword.Text);
+            insert.Parameters.AddWithValue("Role", cmbRole.Text);
+            try
+            {
+                connection.Open();
+                insert.ExecuteNonQuery();
+                MessageBox.Show("Data berhasil diSave", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = true;
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
+                clear();
+                loadUser(emp);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to saved : " + ex.Message);
+            }
+
+            this.getListUsersTableAdapter.Filter(this.honorariumDosenEksternalDataSet.getListUsers, emp);
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            clear();
+            btnSave.Enabled = true;
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
+        }
+
+        //Update User
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            SqlCommand update = new SqlCommand("sp_UpdateUser", connection);
+            update.CommandType = CommandType.StoredProcedure;
+
+            update.Parameters.AddWithValue("id_user", txtIDUser.Text);
+            update.Parameters.AddWithValue("nama", txtNamaUser.Text);
+            update.Parameters.AddWithValue("username", txtUsername.Text);
+            update.Parameters.AddWithValue("password", txtPassword.Text);
+            update.Parameters.AddWithValue("Role", cmbRole.Text);
+
+            try
+            {
+                connection.Open();
+                update.ExecuteNonQuery();
+                MessageBox.Show("Data berhasil diDelete", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = true;
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
+                clear();
+                loadUser(emp);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to saved: " + ex.Message);
+            }
+        }
+
+        //Delete User
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

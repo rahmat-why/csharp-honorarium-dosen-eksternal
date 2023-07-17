@@ -27,22 +27,6 @@ namespace C__honorarium_dosen_eksternal
             this.reportViewer1.RefreshReport();
         }
 
-        private void btnFilter_Click(object sender, EventArgs e)
-        {
-            DateTime tanggal_awal = txtTanggalAwal.Value;
-            string tanggal_Awal = txtTanggalAwal.Value.ToString("yyyy-MM-dd");
-            string tanggal_akhir = txtTanggalAkhir.Value.ToString("yyyy-MM-dd");
-            string jenis = cmbJenisDosen.SelectedValue.ToString();
-            string nama_jenis = cmbJenisDosen.Text;
-            string tahun_akademik = GetTahunAkademik(tanggal_awal);
-
-            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("TAHUN", tahun_akademik));
-            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("PERIODE", txtTanggalAwal.Text + " - " + txtTanggalAkhir.Text));
-            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("JenisDosen", nama_jenis));
-            this.getReportProdiTableAdapter.Fill(this.honorariumDosenEksternalDataSet.getReportProdi, tanggal_Awal, tanggal_akhir, jenis);
-            this.reportViewer1.RefreshReport();
-        }
-
         public static string GetTahunAkademik(DateTime date)
         {
             int year = date.Year;
@@ -67,33 +51,23 @@ namespace C__honorarium_dosen_eksternal
             DateTime end = start.AddMonths(1).AddDays(15 - start.Day);
             txtTanggalAkhir.Value = end;
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void btnFilter_Click_1(object sender, EventArgs e)
         {
+            DateTime tanggal_awal = txtTanggalAwal.Value;
+            string tanggal_Awal = txtTanggalAwal.Value.ToString("yyyy-MM-dd");
+            string tanggal_akhir = txtTanggalAkhir.Value.ToString("yyyy-MM-dd");
+            string jenis = cmbJenisDosen.SelectedValue.ToString();
+            string nama_jenis = cmbJenisDosen.Text;
+            string tahun_akademik = GetTahunAkademik(tanggal_awal);
 
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("TAHUN", tahun_akademik));
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("PERIODE", txtTanggalAwal.Text + " - " + txtTanggalAkhir.Text));
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("JenisDosen", nama_jenis));
+            this.getReportProdiTableAdapter.Fill(this.honorariumDosenEksternalDataSet.getReportProdi, tanggal_Awal, tanggal_akhir, jenis);
+            this.reportViewer1.RefreshReport();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbJenisDosen_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTanggalAkhir_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTanggalAwal_ValueChanged(object sender, EventArgs e)
+        private void reportViewer1_Load(object sender, EventArgs e)
         {
 
         }

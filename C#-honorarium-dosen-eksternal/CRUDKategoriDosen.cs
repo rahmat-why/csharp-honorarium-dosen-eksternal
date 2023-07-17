@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -14,7 +15,7 @@ namespace C__honorarium_dosen_eksternal
 {
     public partial class CRUDKategoriDosen : Form
     {
-        string connectionString = "integrated security=false; Data Source=10.8.9.99;User ID=sa;Password=polman; initial catalog=HonorariumDosenEksternal";
+        string connectionString = ConfigurationManager.AppSettings["Connectionstring"];
         string id_jenis_dosen, nama_jenis, kompensasi_mengajar, transport_mengajar, persentasePph21Npwp, persentasePph21NoNpwp, referensi_dosen;
 
       
@@ -139,10 +140,10 @@ namespace C__honorarium_dosen_eksternal
                     if (result != 0)
                     {
                         MessageBox.Show("Data berhasil dihapus!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        clear();
-                        btnDelete.Enabled = true;
-                        btnSave.Enabled = false;
+                        btnSave.Enabled = true;
+                        btnDelete.Enabled = false;
                         btnUpdate.Enabled = false;
+                        clear();
                         loadkategori(emp);
                     }
                 }
@@ -255,8 +256,6 @@ namespace C__honorarium_dosen_eksternal
                 btnDelete.Enabled = true;
             }
         }
-
-
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
             loadkategori(txtSearch.Text);
@@ -306,6 +305,9 @@ namespace C__honorarium_dosen_eksternal
                 com.ExecuteNonQuery();
                 MessageBox.Show("Data saved successfully", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = true;
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
                 clear();
                 loadkategori(emp);
             }

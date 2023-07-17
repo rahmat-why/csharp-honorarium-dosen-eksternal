@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.tblUser = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -41,15 +41,19 @@
             this.col_Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getListUsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.honorariumDosenEksternalDataSet = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSet();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnClear = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbRole = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNamaUser = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtIDUser = new Guna.UI2.WinForms.Guna2TextBox();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -74,7 +78,7 @@
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1526, 1048);
+            this.guna2Panel2.Size = new System.Drawing.Size(1300, 740);
             this.guna2Panel2.TabIndex = 0;
             // 
             // guna2Panel3
@@ -88,23 +92,23 @@
             this.guna2Panel3.Controls.Add(this.txtSearch);
             this.guna2Panel3.Location = new System.Drawing.Point(500, 12);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(1014, 1024);
+            this.guna2Panel3.Size = new System.Drawing.Size(1014, 1025);
             this.guna2Panel3.TabIndex = 2;
             // 
             // tblUser
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.tblUser.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.tblUser.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.tblUser.AutoGenerateColumns = false;
             this.tblUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.tblUser.ColumnHeadersHeight = 22;
             this.tblUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tblUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -113,21 +117,21 @@
             this.col_Username,
             this.col_Role});
             this.tblUser.DataSource = this.getListUsersBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tblUser.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tblUser.DefaultCellStyle = dataGridViewCellStyle12;
             this.tblUser.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.tblUser.Location = new System.Drawing.Point(17, 95);
+            this.tblUser.Location = new System.Drawing.Point(16, 95);
             this.tblUser.Name = "tblUser";
             this.tblUser.RowHeadersVisible = false;
             this.tblUser.RowHeadersWidth = 62;
             this.tblUser.RowTemplate.Height = 28;
-            this.tblUser.Size = new System.Drawing.Size(971, 908);
+            this.tblUser.Size = new System.Drawing.Size(970, 908);
             this.tblUser.TabIndex = 41;
             this.tblUser.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.tblUser.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -194,21 +198,11 @@
             this.honorariumDosenEksternalDataSet.DataSetName = "HonorariumDosenEksternalDataSet";
             this.honorariumDosenEksternalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Nirmala UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(227, 60);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Data User";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(661, 40);
+            this.label7.Location = new System.Drawing.Point(438, 25);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 28);
             this.label7.TabIndex = 34;
@@ -230,7 +224,7 @@
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(738, 32);
+            this.txtSearch.Location = new System.Drawing.Point(514, 17);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
@@ -246,6 +240,10 @@
             this.guna2Panel1.BorderRadius = 25;
             this.guna2Panel1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.guna2Panel1.BorderThickness = 1;
+            this.guna2Panel1.Controls.Add(this.btnClear);
+            this.guna2Panel1.Controls.Add(this.btnSave);
+            this.guna2Panel1.Controls.Add(this.btnUpdate);
+            this.guna2Panel1.Controls.Add(this.btnDelete);
             this.guna2Panel1.Controls.Add(this.label5);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.cmbRole);
@@ -257,14 +255,106 @@
             this.guna2Panel1.CustomBorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.guna2Panel1.Location = new System.Drawing.Point(12, 12);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(482, 1024);
+            this.guna2Panel1.Size = new System.Drawing.Size(482, 1025);
             this.guna2Panel1.TabIndex = 29;
+            // 
+            // btnClear
+            // 
+            this.btnClear.AutoRoundedCorners = true;
+            this.btnClear.BackColor = System.Drawing.Color.White;
+            this.btnClear.BorderColor = System.Drawing.Color.Navy;
+            this.btnClear.BorderRadius = 20;
+            this.btnClear.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnClear.BorderThickness = 1;
+            this.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClear.FillColor = System.Drawing.SystemColors.HighlightText;
+            this.btnClear.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.broom;
+            this.btnClear.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnClear.Location = new System.Drawing.Point(27, 617);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(423, 43);
+            this.btnClear.TabIndex = 48;
+            this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
+            // 
+            // btnSave
+            // 
+            this.btnSave.AutoRoundedCorners = true;
+            this.btnSave.BorderColor = System.Drawing.Color.Navy;
+            this.btnSave.BorderRadius = 20;
+            this.btnSave.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnSave.BorderThickness = 1;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.FillColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSave.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.diskette__1_;
+            this.btnSave.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnSave.Location = new System.Drawing.Point(27, 557);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(135, 43);
+            this.btnSave.TabIndex = 45;
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.AutoRoundedCorners = true;
+            this.btnUpdate.BorderColor = System.Drawing.Color.Navy;
+            this.btnUpdate.BorderRadius = 20;
+            this.btnUpdate.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnUpdate.BorderThickness = 1;
+            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdate.FillColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnUpdate.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.circle__1_;
+            this.btnUpdate.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnUpdate.Location = new System.Drawing.Point(172, 557);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(134, 43);
+            this.btnUpdate.TabIndex = 46;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AutoRoundedCorners = true;
+            this.btnDelete.BorderColor = System.Drawing.Color.Navy;
+            this.btnDelete.BorderRadius = 20;
+            this.btnDelete.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnDelete.BorderThickness = 1;
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelete.FillColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDelete.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnDelete.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.delete__2_;
+            this.btnDelete.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnDelete.Location = new System.Drawing.Point(315, 557);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(135, 43);
+            this.btnDelete.TabIndex = 47;
+            this.btnDelete.Text = "Delete";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(25, 411);
+            this.label5.Location = new System.Drawing.Point(26, 413);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 28);
             this.label5.TabIndex = 19;
@@ -316,7 +406,7 @@
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.Location = new System.Drawing.Point(29, 334);
+            this.txtPassword.Location = new System.Drawing.Point(28, 334);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -343,7 +433,7 @@
             this.txtNamaUser.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNamaUser.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNamaUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNamaUser.Location = new System.Drawing.Point(29, 199);
+            this.txtNamaUser.Location = new System.Drawing.Point(28, 198);
             this.txtNamaUser.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtNamaUser.Name = "txtNamaUser";
             this.txtNamaUser.PasswordChar = '\0';
@@ -352,6 +442,16 @@
             this.txtNamaUser.Size = new System.Drawing.Size(426, 52);
             this.txtNamaUser.TabIndex = 12;
             this.txtNamaUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamaUser_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Nirmala UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(20, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(227, 60);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Data User";
             // 
             // txtUsername
             // 
@@ -369,7 +469,7 @@
             this.txtUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUsername.Location = new System.Drawing.Point(29, 266);
+            this.txtUsername.Location = new System.Drawing.Point(28, 266);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
@@ -428,7 +528,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1526, 1048);
+            this.ClientSize = new System.Drawing.Size(1300, 740);
             this.Controls.Add(this.guna2Panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CRUDUser";
@@ -475,5 +575,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_nama_user;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Role;
+        private Guna.UI2.WinForms.Guna2Button btnClear;
+        private Guna.UI2.WinForms.Guna2Button btnSave;
+        private Guna.UI2.WinForms.Guna2Button btnUpdate;
+        private Guna.UI2.WinForms.Guna2Button btnDelete;
     }
 }

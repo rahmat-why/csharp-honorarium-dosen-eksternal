@@ -21,11 +21,6 @@ namespace C__honorarium_dosen_eksternal
             InitializeComponent();
         }
 
-        private void txtNamaJenis_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         public void ShowDefaultAbsensi()
         {
             DateTime currentDate = DateTime.Now;
@@ -34,85 +29,6 @@ namespace C__honorarium_dosen_eksternal
 
             DateTime end = start.AddMonths(1).AddDays(15 - start.Day);
             txtTanggalAkhir.Value = end;
-        }
-
-        // Save Absensi
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand com = new SqlCommand();
-            com.Connection = connection;
-            com.CommandText = "sp_CreateAbsensi";
-            com.CommandType = CommandType.StoredProcedure;
-
-            com.Parameters.AddWithValue("@id_dosen", (string)cmbIDDosen.SelectedValue);
-            com.Parameters.AddWithValue("@id_matkul", (string)cmbIDMatkul.SelectedValue);
-            com.Parameters.AddWithValue("@id_prodi", (string)cmbIDProdi.SelectedValue);
-            com.Parameters.AddWithValue("@kelas", txtKelas.Text);
-            com.Parameters.AddWithValue("@tanggal_mengajar", txtTanggalMengajar.Value);
-            com.Parameters.AddWithValue("@sks", txtSKS.Text);
-
-            com.Parameters.AddWithValue("@id_user", "USR005");
-            
-
-            try
-            {
-                connection.Open();
-                com.ExecuteNonQuery();
-                MessageBox.Show("Simpan data berhasil ", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clear();
-                loadAbsensi(txtTanggalAwal.Value.ToString("yyyy-MM-dd"), txtTanggalAkhir.Value.ToString("yyyy-MM-dd"), cmbJenis.SelectedValue.ToString(), "");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hubungi tim IT! " + ex.Message);
-            }
-        }
-
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            clear();
-            btnSave.Enabled = true;
-            btnDelete.Enabled = false;
-        }
-
-
-        // Delete absensi
- 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            DialogResult result1 = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result1 == DialogResult.Yes)
-            {
-                try
-                {
-                    SqlConnection connection = new SqlConnection(connectionString);
-                    SqlCommand com = new SqlCommand();
-                    com.Connection = connection;
-                    com.CommandText = "sp_DeleteAbsensi";
-                    com.CommandType = CommandType.StoredProcedure;
-
-                    com.Parameters.AddWithValue("@id_absensi", txtIDAbsensi.Text);
-
-                    connection.Open();
-                    int result = Convert.ToInt32(com.ExecuteNonQuery());
-                    connection.Close();
-
-                    if (result != 0)
-                    {
-                        MessageBox.Show("Data Berhasil Dihapus!");
-                        clear();
-                        loadAbsensi(txtTanggalAwal.Value.ToString("yyyy-MM-dd"), txtTanggalAkhir.Value.ToString("yyyy-MM-dd"), cmbJenis.SelectedValue.ToString(), "");
-
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Hubungi tim IT! " + ex.Message);
-                }
-            }
         }
 
         //tbl Absensi
@@ -141,14 +57,82 @@ namespace C__honorarium_dosen_eksternal
             }
         }
 
-        private void txtTanggalAwal_ValueChanged(object sender, EventArgs e)
+       // Save absensi
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand com = new SqlCommand();
+            com.Connection = connection;
+            com.CommandText = "sp_CreateAbsensi";
+            com.CommandType = CommandType.StoredProcedure;
 
+            com.Parameters.AddWithValue("@id_dosen", (string)cmbIDDosen.SelectedValue);
+            com.Parameters.AddWithValue("@id_matkul", (string)cmbIDMatkul.SelectedValue);
+            com.Parameters.AddWithValue("@id_prodi", (string)cmbIDProdi.SelectedValue);
+            com.Parameters.AddWithValue("@kelas", txtKelas.Text);
+            com.Parameters.AddWithValue("@tanggal_mengajar", txtTanggalMengajar.Value);
+            com.Parameters.AddWithValue("@sks", txtSKS.Text);
+            com.Parameters.AddWithValue("@id_user", "USR005");
+            try
+            {
+                connection.Open();
+                com.ExecuteNonQuery();
+                MessageBox.Show("Data berhasil diSave ", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = true;
+                btnDelete.Enabled = false;
+                clear();
+                loadAbsensi(txtTanggalAwal.Value.ToString("yyyy-MM-dd"), txtTanggalAkhir.Value.ToString("yyyy-MM-dd"), cmbJenis.SelectedValue.ToString(), "");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubungi tim IT! " + ex.Message);
+            }
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
 
+        // Delete Absensi
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result1 = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result1 == DialogResult.Yes)
+            {
+                try
+                {
+                    SqlConnection connection = new SqlConnection(connectionString);
+                    SqlCommand com = new SqlCommand();
+                    com.Connection = connection;
+                    com.CommandText = "sp_DeleteAbsensi";
+                    com.CommandType = CommandType.StoredProcedure;
+
+                    com.Parameters.AddWithValue("@id_absensi", txtIDAbsensi.Text);
+
+                    connection.Open();
+                    int result = Convert.ToInt32(com.ExecuteNonQuery());
+                    connection.Close();
+
+                    if (result != 0)
+                    {
+                        MessageBox.Show("Data Berhasil Dihapus!");
+                        btnSave.Enabled = true;
+                        btnDelete.Enabled = false;
+                        clear();
+                        loadAbsensi(txtTanggalAwal.Value.ToString("yyyy-MM-dd"), txtTanggalAkhir.Value.ToString("yyyy-MM-dd"), cmbJenis.SelectedValue.ToString(), "");
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Hubungi tim IT! " + ex.Message);
+                }
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
+            btnSave.Enabled = true;
+            btnDelete.Enabled = false;
         }
 
         private void clear()

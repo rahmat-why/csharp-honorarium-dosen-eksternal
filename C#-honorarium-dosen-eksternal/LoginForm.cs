@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -21,6 +22,7 @@ namespace C__honorarium_dosen_eksternal
         private void LoginForm_Load(object sender, EventArgs e)
         {
             txtPassword.UseSystemPasswordChar = true;
+            txtUser.Focus();
         }
 
         private void txtUser_TextChanged(object sender, EventArgs e)
@@ -81,7 +83,7 @@ namespace C__honorarium_dosen_eksternal
 
         private void btnShow_Click(object sender, EventArgs e)
         {
-             if (txtPassword.UseSystemPasswordChar)
+            if (txtPassword.UseSystemPasswordChar)
             {
                 txtPassword.UseSystemPasswordChar = false;
                 btnShow.Image = Properties.Resources.show;
@@ -91,11 +93,10 @@ namespace C__honorarium_dosen_eksternal
                 txtPassword.UseSystemPasswordChar = true;
                 btnShow.Image = Properties.Resources.hide;
             }
-
         }
         public DataTable VerifyUser(string username, string password) // cek username password
         {
-            string connectionString = "Data Source=10.8.9.99;Initial Catalog=HonorariumDosenEksternal;User ID=sa;Password=polman";
+            string connectionString = ConfigurationManager.AppSettings["Connectionstring"];
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();

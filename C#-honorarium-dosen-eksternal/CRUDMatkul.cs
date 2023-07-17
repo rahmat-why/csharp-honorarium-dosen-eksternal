@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -14,7 +15,7 @@ namespace C__honorarium_dosen_eksternal
 {
     public partial class CRUDMatkul : Form
     {
-        string connectionString = "integrated security=false; Data Source=10.8.9.99;User ID=sa;Password=polman; initial catalog=HonorariumDosenEksternal";
+        string connectionString = ConfigurationManager.AppSettings["Connectionstring"];
         string id_matkul, nama_matkul, Sks;
         public CRUDMatkul()
         {
@@ -83,47 +84,8 @@ namespace C__honorarium_dosen_eksternal
             txtSks.Text = "";
         }
 
-        // update matkul
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand com = new SqlCommand();
-            com.Connection = connection;  // Assign the SqlConnection object
-            com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "sp_UpdateMatkul";  // Set the stored procedure name
-
-            com.Parameters.AddWithValue("@id_matkul", txtIDMatkul.Text);
-            com.Parameters.AddWithValue("@nama_matkul", txtMataKuliah.Text);
-            com.Parameters.AddWithValue("@sks", txtSks.Text);
-            try
-            {
-                connection.Open();
-                com.ExecuteNonQuery();
-                MessageBox.Show("Update berhasil", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clear();
-                loadMatkul(emp);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hubungi tim IT! " + ex.Message);
-            }
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            clear();
-            btnSave.Enabled = true;
-            btnUpdate.Enabled = false;
-            btnDelete.Enabled = false;
-        }
-
-        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            loadMatkul(txtSearch.Text);
-        }
-
-        //delete matkul
+      
+        // Delete Matkul
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DialogResult result1 = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -146,10 +108,10 @@ namespace C__honorarium_dosen_eksternal
                     if (result != 0)
                     {
                         MessageBox.Show("Data Berhasil Dihapus!");
-                        clear();
-                        btnDelete.Enabled = true;
-                        btnSave.Enabled = false;
+                        btnSave.Enabled = true;
+                        btnDelete.Enabled = false;
                         btnUpdate.Enabled = false;
+                        clear();
                         loadMatkul(emp);
                     }
                 }
@@ -164,6 +126,77 @@ namespace C__honorarium_dosen_eksternal
         {
             loadMatkul(txtSearch.Text);
         }
+
+        // Update Matkul
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand com = new SqlCommand();
+            com.Connection = connection;  // Assign the SqlConnection object
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "sp_UpdateMatkul";  // Set the stored procedure name
+
+            com.Parameters.AddWithValue("@id_matkul", txtIDMatkul.Text);
+            com.Parameters.AddWithValue("@nama_matkul", txtMataKuliah.Text);
+            com.Parameters.AddWithValue("@sks", txtSks.Text);
+            try
+            {
+                connection.Open();
+                com.ExecuteNonQuery();
+                MessageBox.Show("Update berhasil", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = true;
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
+                clear();
+                loadMatkul(emp);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubungi tim IT! " + ex.Message);
+            }
+        }
+
+        // Clear
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
+            btnSave.Enabled = true;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+    
+
+        //Save Matku
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand com = new SqlCommand();
+            com.Connection = connection;  // Assign the SqlConnection object
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "sp_CreateMatkul";  // Set the stored procedure name
+
+            com.Parameters.AddWithValue("@nama_matkul", txtMataKuliah.Text);
+            com.Parameters.AddWithValue("@sks", txtSks.Text);
+            try
+            {
+                connection.Open();
+                com.ExecuteNonQuery();
+                MessageBox.Show("Data saved successfully", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = true;
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
+                clear();
+                loadMatkul(emp);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubungi tim IT! " + ex.Message);
+            }
+
+        }
+   
 
         private void tblMatkul_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -182,36 +215,6 @@ namespace C__honorarium_dosen_eksternal
                 btnUpdate.Enabled = true;
                 btnDelete.Enabled = true;
             }
-        }
-    
-
-
-
-        // save matkul
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand com = new SqlCommand();
-            com.Connection = connection;  // Assign the SqlConnection object
-            com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "sp_CreateMatkul";  // Set the stored procedure name
-
-            com.Parameters.AddWithValue("@nama_matkul", txtMataKuliah.Text);
-            com.Parameters.AddWithValue("@sks" , txtSks.Text);
-            try
-            {
-                connection.Open();
-                com.ExecuteNonQuery();
-                MessageBox.Show("Data saved successfully", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clear();
-                loadMatkul(emp);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hubungi tim IT! " + ex.Message);
-            }
-
         }
     }
 }

@@ -15,16 +15,22 @@ namespace C__honorarium_dosen_eksternal
     {
         string connectionString = "integrated security=false; Data Source=10.8.9.99;User ID=sa;Password=polman; initial catalog=HonorariumDosenEksternal";
         string id_golongan, nama_golongan, insentif, tahun_bawah, tahun_atas;
+
+       
         public CRUDInsentif()
         {
             InitializeComponent();
         }
-
+         
+        
 
         string emp = "";
         private void CRUDInsentif_Load(object sender, EventArgs e)
         {
-       
+
+            btnSave.Enabled = true;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
             try
             {
                 loadInsentif(emp);
@@ -60,87 +66,6 @@ namespace C__honorarium_dosen_eksternal
             }
         }
 
-        // Update Golongan
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand com = new SqlCommand();
-            com.Connection = connection;  // Assign the SqlConnection object
-            com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "sp_UpdateGolongan";  // Set the stored procedure name
-
-            com.Parameters.AddWithValue("@id_golongan", txtIDGolongan.Text);
-            com.Parameters.AddWithValue("@nama", txtNamaGolongan.Text);
-            com.Parameters.AddWithValue("@insentif_kehadiran", txtInsentifKehadiran.Text);
-            com.Parameters.AddWithValue("@tahun_batas_bawah", txtTahunBatasBawah.Text);
-            com.Parameters.AddWithValue("@tahun_batas_atas", txtTahunBatasAtas.Text);
-            try
-            {
-                connection.Open();
-                com.ExecuteNonQuery();
-                MessageBox.Show("Update data berhasil ", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clear();
-                loadInsentif(emp);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hubungi tim IT! " + ex.Message);
-            }
-        }
-
-        //Delete Golongan
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            DialogResult result1 = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result1 == DialogResult.Yes)
-            {
-                try
-                {
-                    SqlConnection connection = new SqlConnection(connectionString);
-                    SqlCommand com = new SqlCommand();
-                    com.Connection = connection;
-                    com.CommandText = "sp_DeleteGolongan";
-                    com.CommandType = CommandType.StoredProcedure;
-
-                    com.Parameters.AddWithValue("@id_golongan", txtIDGolongan.Text);
-
-                    connection.Open();
-                    int result = Convert.ToInt32(com.ExecuteNonQuery());
-                    connection.Close();
-
-                    if (result != 0)
-                    {
-                        MessageBox.Show("Data Berhasil Dihapus!");
-                        clear();
-                        btnDelete.Enabled = true;
-                        btnSave.Enabled = false;
-                        btnUpdate.Enabled = false;
-                        loadInsentif(emp);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Hubungi tim IT! " + ex.Message);
-                }
-            }
-        }
-
-        // Clear
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            clear();
-            btnSave.Enabled = true;
-            btnUpdate.Enabled = false;
-            btnDelete.Enabled = false;
-        }
-
-        // Search
-        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
-        {
-            loadInsentif(txtSearch.Text);
-        }
-
         // Table Golongan
         private void tblGolongan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -163,6 +88,123 @@ namespace C__honorarium_dosen_eksternal
                 btnSave.Enabled = false;
                 btnUpdate.Enabled = true;
                 btnDelete.Enabled = true;
+            }
+        }
+
+
+        // Update golongan
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand com = new SqlCommand();
+            com.Connection = connection;  // Assign the SqlConnection object
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "sp_UpdateGolongan";  // Set the stored procedure name
+
+            com.Parameters.AddWithValue("@id_golongan", txtIDGolongan.Text);
+            com.Parameters.AddWithValue("@nama", txtNamaGolongan.Text);
+            com.Parameters.AddWithValue("@insentif_kehadiran", txtInsentifKehadiran.Text);
+            com.Parameters.AddWithValue("@tahun_batas_bawah", txtTahunBatasBawah.Text);
+            com.Parameters.AddWithValue("@tahun_batas_atas", txtTahunBatasAtas.Text);
+            try
+            {
+                connection.Open();
+                com.ExecuteNonQuery();
+                MessageBox.Show("Update data berhasil ", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = true;
+                btnUpdate.Enabled = false;
+                btnDelete.Enabled = true;
+                clear();
+                loadInsentif(emp);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubungi tim IT! " + ex.Message);
+            }
+        }
+
+        // Search
+        private void txtSearch_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            loadInsentif(txtSearch.Text);
+        }
+
+        //clear
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
+            btnSave.Enabled = true;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result1 = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result1 == DialogResult.Yes)
+            {
+                try
+                {
+                    SqlConnection connection = new SqlConnection(connectionString);
+                    SqlCommand com = new SqlCommand();
+                    com.Connection = connection;
+                    com.CommandText = "sp_DeleteGolongan";
+                    com.CommandType = CommandType.StoredProcedure;
+
+                    com.Parameters.AddWithValue("@id_golongan", txtIDGolongan.Text);
+
+                    connection.Open();
+                    int result = Convert.ToInt32(com.ExecuteNonQuery());
+                    connection.Close();
+
+                    if (result != 0)
+                    {
+                        MessageBox.Show("Data Berhasil Dihapus!");
+                      
+
+                        btnSave.Enabled = true;
+                        btnDelete.Enabled = false;
+                        btnUpdate.Enabled = false;
+                        clear();
+                        loadInsentif(emp);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Hubungi tim IT! " + ex.Message);
+                }
+            }
+        }
+
+        // save golongan
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand com = new SqlCommand();
+            com.Connection = connection;  // Assign the SqlConnection object
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "sp_CreateGolongan";  // Set the stored procedure name
+
+            com.Parameters.AddWithValue("@nama", txtNamaGolongan.Text);
+            com.Parameters.AddWithValue("@insentif_kehadiran", txtInsentifKehadiran.Text);
+            com.Parameters.AddWithValue("@tahun_batas_bawah", txtTahunBatasBawah.Text);
+            com.Parameters.AddWithValue("@tahun_batas_atas", txtTahunBatasAtas.Text);
+            try
+            {
+                connection.Open();
+                com.ExecuteNonQuery();
+                MessageBox.Show("Simpan data berhasil ", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = true;
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
+                clear();
+                loadInsentif(emp);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubungi tim IT! " + ex.Message);
             }
         }
 
@@ -194,35 +236,6 @@ namespace C__honorarium_dosen_eksternal
             txtInsentifKehadiran.Text = "";
             txtTahunBatasBawah.Text = "";
             txtTahunBatasAtas.Text = "";
-        }
-
-
-        //Save Golongan
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand com = new SqlCommand();
-            com.Connection = connection;  // Assign the SqlConnection object
-            com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "sp_CreateGolongan";  // Set the stored procedure name
-
-            com.Parameters.AddWithValue("@nama", txtNamaGolongan.Text);
-            com.Parameters.AddWithValue("@insentif_kehadiran", txtInsentifKehadiran.Text);
-            com.Parameters.AddWithValue("@tahun_batas_bawah", txtTahunBatasBawah.Text);
-            com.Parameters.AddWithValue("@tahun_batas_atas", txtTahunBatasAtas.Text);
-            try
-            {
-                connection.Open();
-                com.ExecuteNonQuery();
-                MessageBox.Show("Simpan data berhasil ", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clear();
-                loadInsentif(emp);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hubungi tim IT! " + ex.Message);
-            }
         }
     }
 }

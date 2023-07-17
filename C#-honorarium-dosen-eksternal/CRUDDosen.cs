@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -19,7 +20,7 @@ namespace C__honorarium_dosen_eksternal
 {
     public partial class CRUDDosen : Form
     {
-        string connectionString = "integrated security=false; Data Source=10.8.9.99;User ID=sa;Password=polman; initial catalog=HonorariumDosenEksternal";
+        string connectionString = ConfigurationManager.AppSettings["Connectionstring"];
         string id_dosen, nama_dosen, email, id_jenis_dosen, nama_bank, cabang_bank, no_rekening, npwp, tanggal_gabung_kampus, tanggal_gabung_industri, status, atasnama, kota, id_perusahaan, foto_dosen;
         string nama_jenis, nama_perusahaan, asal_perusahaan;
 
@@ -159,11 +160,15 @@ namespace C__honorarium_dosen_eksternal
 
         }
 
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-
                 DataGridViewRow selectedRow = guna2DataGridView1.Rows[e.RowIndex];
 
                 id_dosen = selectedRow.Cells["col_id_dosen"].Value.ToString();
@@ -181,7 +186,7 @@ namespace C__honorarium_dosen_eksternal
                 kota = selectedRow.Cells["col_kota"].Value.ToString();
                 asal_perusahaan = selectedRow.Cells["col_asal_perusahaan"].Value.ToString();
 
-                txtGabungKampus.Text = tanggal_gabung_kampus;
+               // txtGabungKampus.Text = tanggal_gabung_kampus;
                 //txtGabungIndustri.Text = tanggal_gabung_industri;
 
                 txtIDDosen.Text = id_dosen;
@@ -237,7 +242,12 @@ namespace C__honorarium_dosen_eksternal
                             imgDosen.Image = Image.FromStream(ms);
                         }
                     }
-                }catch(Exception exc)
+                    else
+                    {
+                        imgDosen.Image = null;
+                    }
+                }
+                catch (Exception exc)
                 {
                     imgDosen.Image = null;
                 }

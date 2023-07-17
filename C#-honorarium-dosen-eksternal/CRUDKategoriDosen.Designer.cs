@@ -47,9 +47,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnClear = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
+            this.asdf = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.asdf = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.tblKategoriDosen = new Guna.UI2.WinForms.Guna2DataGridView();
             this.col_id_jenis_dosen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,10 +67,6 @@
             this.honorariumDosenEksternalDataSet1 = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSet();
             this.jenisdosenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jenis_dosenTableAdapter = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSetTableAdapters.jenis_dosenTableAdapter();
-            this.btnClear = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.getListJenisDosenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.honorariumDosenEksternalDataSet)).BeginInit();
             this.guna2Panel3.SuspendLayout();
@@ -123,7 +123,7 @@
             this.txtIDJenisDosen.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDJenisDosen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtIDJenisDosen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIDJenisDosen.Location = new System.Drawing.Point(28, 164);
+            this.txtIDJenisDosen.Location = new System.Drawing.Point(28, 165);
             this.txtIDJenisDosen.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txtIDJenisDosen.Name = "txtIDJenisDosen";
             this.txtIDJenisDosen.PasswordChar = '\0';
@@ -157,7 +157,7 @@
             this.txtTranspotMengajar.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtTranspotMengajar.PlaceholderText = "Transport Mengajar";
             this.txtTranspotMengajar.SelectedText = "";
-            this.txtTranspotMengajar.Size = new System.Drawing.Size(389, 49);
+            this.txtTranspotMengajar.Size = new System.Drawing.Size(388, 49);
             this.txtTranspotMengajar.TabIndex = 42;
             this.txtTranspotMengajar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTranspotMengajar_KeyPress);
             // 
@@ -185,7 +185,7 @@
             this.txtKompensasiMengajar.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtKompensasiMengajar.PlaceholderText = "Kompensasi Mengajar";
             this.txtKompensasiMengajar.SelectedText = "";
-            this.txtKompensasiMengajar.Size = new System.Drawing.Size(389, 49);
+            this.txtKompensasiMengajar.Size = new System.Drawing.Size(388, 49);
             this.txtKompensasiMengajar.TabIndex = 43;
             this.txtKompensasiMengajar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTKompensasiMengajar_KeyPress);
             // 
@@ -206,7 +206,7 @@
             this.txtPersentasePPH21NPWP.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPersentasePPH21NPWP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtPersentasePPH21NPWP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPersentasePPH21NPWP.Location = new System.Drawing.Point(28, 404);
+            this.txtPersentasePPH21NPWP.Location = new System.Drawing.Point(28, 405);
             this.txtPersentasePPH21NPWP.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txtPersentasePPH21NPWP.Name = "txtPersentasePPH21NPWP";
             this.txtPersentasePPH21NPWP.PasswordChar = '\0';
@@ -234,7 +234,7 @@
             this.txtPresentasePPH21NonNpwp.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPresentasePPH21NonNpwp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtPresentasePPH21NonNpwp.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPresentasePPH21NonNpwp.Location = new System.Drawing.Point(28, 464);
+            this.txtPresentasePPH21NonNpwp.Location = new System.Drawing.Point(28, 465);
             this.txtPresentasePPH21NonNpwp.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.txtPresentasePPH21NonNpwp.Name = "txtPresentasePPH21NonNpwp";
             this.txtPresentasePPH21NonNpwp.PasswordChar = '\0';
@@ -261,9 +261,9 @@
             this.cmbReferensiDosen.Items.AddRange(new object[] {
             "UMUM",
             "INDUSTRI"});
-            this.cmbReferensiDosen.Location = new System.Drawing.Point(179, 536);
+            this.cmbReferensiDosen.Location = new System.Drawing.Point(207, 535);
             this.cmbReferensiDosen.Name = "cmbReferensiDosen";
-            this.cmbReferensiDosen.Size = new System.Drawing.Size(278, 36);
+            this.cmbReferensiDosen.Size = new System.Drawing.Size(250, 36);
             this.cmbReferensiDosen.TabIndex = 48;
             this.cmbReferensiDosen.ValueMember = "referensi_dosen";
             // 
@@ -281,7 +281,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 536);
+            this.label5.Location = new System.Drawing.Point(22, 535);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(150, 28);
             this.label5.TabIndex = 49;
@@ -291,7 +291,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 298);
+            this.label1.Location = new System.Drawing.Point(22, 298);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 28);
             this.label1.TabIndex = 50;
@@ -301,7 +301,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(23, 352);
+            this.label2.Location = new System.Drawing.Point(22, 352);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 28);
             this.label2.TabIndex = 51;
@@ -311,7 +311,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(429, 413);
+            this.label3.Location = new System.Drawing.Point(429, 412);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 28);
             this.label3.TabIndex = 52;
@@ -350,11 +350,114 @@
             this.guna2Panel3.Controls.Add(this.txtTranspotMengajar);
             this.guna2Panel3.Controls.Add(this.txtIDJenisDosen);
             this.guna2Panel3.Controls.Add(this.txtNamaJenis);
-            this.guna2Panel3.Location = new System.Drawing.Point(18, 19);
+            this.guna2Panel3.Location = new System.Drawing.Point(18, 18);
             this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(485, 1011);
+            this.guna2Panel3.Size = new System.Drawing.Size(484, 992);
             this.guna2Panel3.TabIndex = 42;
+            // 
+            // btnClear
+            // 
+            this.btnClear.AutoRoundedCorners = true;
+            this.btnClear.BackColor = System.Drawing.Color.White;
+            this.btnClear.BorderColor = System.Drawing.Color.Navy;
+            this.btnClear.BorderRadius = 20;
+            this.btnClear.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnClear.BorderThickness = 1;
+            this.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClear.FillColor = System.Drawing.SystemColors.HighlightText;
+            this.btnClear.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.broom;
+            this.btnClear.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnClear.Location = new System.Drawing.Point(28, 700);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(429, 43);
+            this.btnClear.TabIndex = 40;
+            this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.AutoRoundedCorners = true;
+            this.btnSave.BorderColor = System.Drawing.Color.Navy;
+            this.btnSave.BorderRadius = 20;
+            this.btnSave.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnSave.BorderThickness = 1;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.FillColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSave.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.diskette__1_;
+            this.btnSave.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnSave.Location = new System.Drawing.Point(28, 640);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(135, 43);
+            this.btnSave.TabIndex = 37;
+            this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.AutoRoundedCorners = true;
+            this.btnUpdate.BorderColor = System.Drawing.Color.Navy;
+            this.btnUpdate.BorderRadius = 20;
+            this.btnUpdate.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnUpdate.BorderThickness = 1;
+            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdate.FillColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnUpdate.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.circle__1_;
+            this.btnUpdate.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnUpdate.Location = new System.Drawing.Point(170, 640);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(146, 43);
+            this.btnUpdate.TabIndex = 38;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AutoRoundedCorners = true;
+            this.btnDelete.BorderColor = System.Drawing.Color.Navy;
+            this.btnDelete.BorderRadius = 20;
+            this.btnDelete.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnDelete.BorderThickness = 1;
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelete.FillColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDelete.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnDelete.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.delete__2_;
+            this.btnDelete.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnDelete.Location = new System.Drawing.Point(322, 640);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(135, 43);
+            this.btnDelete.TabIndex = 39;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
+            // 
+            // asdf
+            // 
+            this.asdf.AutoSize = true;
+            this.asdf.Font = new System.Drawing.Font("Nirmala UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.asdf.Location = new System.Drawing.Point(18, 43);
+            this.asdf.Name = "asdf";
+            this.asdf.Size = new System.Drawing.Size(454, 60);
+            this.asdf.TabIndex = 36;
+            this.asdf.Text = "Data Kategori Dosen\r\n";
             // 
             // txtSearch
             // 
@@ -393,16 +496,6 @@
             this.label6.TabIndex = 34;
             this.label6.Text = "Search";
             // 
-            // asdf
-            // 
-            this.asdf.AutoSize = true;
-            this.asdf.Font = new System.Drawing.Font("Nirmala UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.asdf.Location = new System.Drawing.Point(18, 43);
-            this.asdf.Name = "asdf";
-            this.asdf.Size = new System.Drawing.Size(454, 60);
-            this.asdf.TabIndex = 36;
-            this.asdf.Text = "Data Kategori Dosen\r\n";
-            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BorderColor = System.Drawing.SystemColors.ActiveCaption;
@@ -412,9 +505,9 @@
             this.guna2Panel2.Controls.Add(this.tblKategoriDosen);
             this.guna2Panel2.Controls.Add(this.label6);
             this.guna2Panel2.Controls.Add(this.txtSearch);
-            this.guna2Panel2.Location = new System.Drawing.Point(510, 22);
+            this.guna2Panel2.Location = new System.Drawing.Point(511, 18);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(998, 1008);
+            this.guna2Panel2.Size = new System.Drawing.Size(999, 992);
             this.guna2Panel2.TabIndex = 43;
             // 
             // tblKategoriDosen
@@ -451,13 +544,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tblKategoriDosen.DefaultCellStyle = dataGridViewCellStyle3;
             this.tblKategoriDosen.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.tblKategoriDosen.Location = new System.Drawing.Point(22, 92);
+            this.tblKategoriDosen.Location = new System.Drawing.Point(36, 92);
             this.tblKategoriDosen.Name = "tblKategoriDosen";
             this.tblKategoriDosen.ReadOnly = true;
             this.tblKategoriDosen.RowHeadersVisible = false;
             this.tblKategoriDosen.RowHeadersWidth = 62;
             this.tblKategoriDosen.RowTemplate.Height = 28;
-            this.tblKategoriDosen.Size = new System.Drawing.Size(960, 891);
+            this.tblKategoriDosen.Size = new System.Drawing.Size(946, 651);
             this.tblKategoriDosen.TabIndex = 41;
             this.tblKategoriDosen.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.tblKategoriDosen.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -563,105 +656,12 @@
             // 
             this.jenis_dosenTableAdapter.ClearBeforeFill = true;
             // 
-            // btnClear
-            // 
-            this.btnClear.AutoRoundedCorners = true;
-            this.btnClear.BackColor = System.Drawing.Color.White;
-            this.btnClear.BorderColor = System.Drawing.Color.Navy;
-            this.btnClear.BorderRadius = 20;
-            this.btnClear.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnClear.BorderThickness = 1;
-            this.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnClear.FillColor = System.Drawing.SystemColors.HighlightText;
-            this.btnClear.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.Black;
-            this.btnClear.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.broom;
-            this.btnClear.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnClear.Location = new System.Drawing.Point(28, 662);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(429, 43);
-            this.btnClear.TabIndex = 40;
-            this.btnClear.Text = "Clear";
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.AutoRoundedCorners = true;
-            this.btnDelete.BorderColor = System.Drawing.Color.Navy;
-            this.btnDelete.BorderRadius = 20;
-            this.btnDelete.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnDelete.BorderThickness = 1;
-            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelete.FillColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDelete.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnDelete.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.delete__2_;
-            this.btnDelete.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnDelete.Location = new System.Drawing.Point(322, 601);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(135, 43);
-            this.btnDelete.TabIndex = 39;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.AutoRoundedCorners = true;
-            this.btnUpdate.BorderColor = System.Drawing.Color.Navy;
-            this.btnUpdate.BorderRadius = 20;
-            this.btnUpdate.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnUpdate.BorderThickness = 1;
-            this.btnUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdate.FillColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUpdate.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.circle__1_;
-            this.btnUpdate.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnUpdate.Location = new System.Drawing.Point(169, 601);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(145, 43);
-            this.btnUpdate.TabIndex = 38;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.AutoRoundedCorners = true;
-            this.btnSave.BorderColor = System.Drawing.Color.Navy;
-            this.btnSave.BorderRadius = 20;
-            this.btnSave.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.btnSave.BorderThickness = 1;
-            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.FillColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSave.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.Black;
-            this.btnSave.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.diskette__1_;
-            this.btnSave.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnSave.Location = new System.Drawing.Point(28, 601);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(135, 43);
-            this.btnSave.TabIndex = 37;
-            this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // CRUDKategoriDosen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(1526, 1048);
+            this.ClientSize = new System.Drawing.Size(1526, 1024);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -13,7 +14,7 @@ namespace C__honorarium_dosen_eksternal
 {
     public partial class CRUDPerusahaan : Form
     {
-        string connectionString = "integrated security=false; Data Source=10.8.9.99;User ID=sa;Password=polman; initial catalog=HonorariumDosenEksternal";
+        string connectionString = ConfigurationManager.AppSettings["Connectionstring"];
         string ID_perusahaan, nama_perusahaan;
 
         public CRUDPerusahaan()
@@ -61,7 +62,6 @@ namespace C__honorarium_dosen_eksternal
             txtIDPerusahaan.Text = "Otomatis";
             txtNamaPerusahaan.Text = "";
         }
-
         private void tblPerusahaan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -78,41 +78,12 @@ namespace C__honorarium_dosen_eksternal
                 btnDelete.Enabled = true;
             }
         }
-
-        private void btnClear_Click(object sender, EventArgs e)
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            clear();
-            btnSave.Enabled = true;
-            btnUpdate.Enabled = false;
-            btnDelete.Enabled = false;
+            loadPerusahaan(txtSearch.Text);
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand com = new SqlCommand();
-            com.Connection = connection;  // Assign the SqlConnection object
-            com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "sp_UpdatePerusahaan";  // Set the stored procedure name
-
-            com.Parameters.AddWithValue("@id_perusahaan", txtIDPerusahaan.Text);
-            com.Parameters.AddWithValue("@nama_perusahaan", txtNamaPerusahaan.Text);
-           
-            try
-            {
-                connection.Open();
-                com.ExecuteNonQuery();
-                MessageBox.Show("Update berhasil", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                clear();
-                loadPerusahaan(emp);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hubungi tim IT! " + ex.Message);
-            }
-        }
-
+        //Delete Perusahaan
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DialogResult result1 = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -135,26 +106,60 @@ namespace C__honorarium_dosen_eksternal
                     if (result != 0)
                     {
                         MessageBox.Show("Data Berhasil Dihapus!");
-                        clear();
-                        btnDelete.Enabled = true;
-                        btnSave.Enabled = false;
+                        btnSave.Enabled = true;
+                        btnDelete.Enabled = false;
                         btnUpdate.Enabled = false;
+                        clear();
                         loadPerusahaan(emp);
                     }
                 }
                 catch (Exception ex)
-                { 
+                {
                     MessageBox.Show("Hubungi tim IT! " + ex.Message);
                 }
             }
         }
 
-        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        //Update Perusahanaan
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            loadPerusahaan(txtSearch.Text);
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand com = new SqlCommand();
+            com.Connection = connection;  // Assign the SqlConnection object
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "sp_UpdatePerusahaan";  // Set the stored procedure name
+
+            com.Parameters.AddWithValue("@id_perusahaan", txtIDPerusahaan.Text);
+            com.Parameters.AddWithValue("@nama_perusahaan", txtNamaPerusahaan.Text);
+
+            try
+            {
+                connection.Open();
+                com.ExecuteNonQuery();
+                MessageBox.Show("Update berhasil", "Information",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = true;
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
+                clear();
+                loadPerusahaan(emp);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubungi tim IT! " + ex.Message);
+            }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            clear();
+            btnSave.Enabled = true;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+
+        // Save Perusahaan
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -171,6 +176,9 @@ namespace C__honorarium_dosen_eksternal
                         connection.Open();
                         com.ExecuteNonQuery();
                         MessageBox.Show("Save data berhasil", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnSave.Enabled = true;
+                        btnDelete.Enabled = false;
+                        btnUpdate.Enabled = false;
                         clear();
                         loadPerusahaan(emp);
                     }

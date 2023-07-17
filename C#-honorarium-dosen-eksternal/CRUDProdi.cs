@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace C__honorarium_dosen_eksternal
 {
     public partial class CRUDProdi : Form
     {
-        string connectionString = "integrated security=false; Data Source=10.8.9.99;User ID=sa;Password=polman; initial catalog=HonorariumDosenEksternal";
+        string connectionString = ConfigurationManager.AppSettings["Connectionstring"];
         string id_prodi, nama_prodi, singkatan, transport;
         public CRUDProdi()
         {
@@ -79,8 +80,55 @@ namespace C__honorarium_dosen_eksternal
         }
 
 
-        // update prodi
-        private void btnUpdate_Click(object sender, EventArgs e)
+
+
+        //Search
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            loadProdi(txtSearch.Text);
+        }
+
+
+
+        // delete prodi
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result1 = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result1 == DialogResult.Yes)
+            {
+                try
+                {
+                    SqlConnection connection = new SqlConnection(connectionString);
+                    SqlCommand com = new SqlCommand();
+                    com.Connection = connection;
+                    com.CommandText = "sp_DeleteProdi";
+                    com.CommandType = CommandType.StoredProcedure;
+
+                    com.Parameters.AddWithValue("@id_prodi", txtIDProdi.Text);
+
+                    connection.Open();
+                    int result = Convert.ToInt32(com.ExecuteNonQuery());
+                    connection.Close();
+
+                    if (result != 0)
+                    {
+                        MessageBox.Show("Data berhasil diDelete!");
+                        btnSave.Enabled = true;
+                        btnDelete.Enabled = false;
+                        btnUpdate.Enabled = false;
+                        clear();
+                        loadProdi(emp);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Hubungi tim IT! " + ex.Message);
+                }
+            }
+        }
+
+        //btn Update
+        private void btnUpdate_Click_1(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand com = new SqlCommand();
@@ -96,8 +144,11 @@ namespace C__honorarium_dosen_eksternal
             {
                 connection.Open();
                 com.ExecuteNonQuery();
-                MessageBox.Show("Update data berhasil ", "Information",
+                MessageBox.Show("Data berhasil diUpdate! ", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = true;
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
                 clear();
                 loadProdi(emp);
             }
@@ -108,96 +159,8 @@ namespace C__honorarium_dosen_eksternal
 
         }
 
-
-        // delete prodi
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-             DialogResult result1 = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-             if (result1 == DialogResult.Yes)
-             {
-                try
-                    {
-                        SqlConnection connection = new SqlConnection(connectionString);
-                        SqlCommand com = new SqlCommand();
-                        com.Connection = connection;
-                        com.CommandText = "sp_DeleteProdi";
-                        com.CommandType = CommandType.StoredProcedure;
-
-                        com.Parameters.AddWithValue("@id_prodi", txtIDProdi.Text);
-
-                        connection.Open();
-                        int result = Convert.ToInt32(com.ExecuteNonQuery());
-                        connection.Close();
-
-                        if (result != 0)
-                        {
-                            MessageBox.Show("Data Berhasil Dihapus!");
-                            clear();
-                            btnDelete.Enabled = true;
-                            btnSave.Enabled = false;
-                            btnUpdate.Enabled = false;
-                            loadProdi(emp);
-                        }
-                    }
-                     catch (Exception ex)
-                    {
-                            MessageBox.Show("Hubungi tim IT! " + ex.Message);
-                    }
-             }
-        }
-
-        // clear
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            clear();
-            btnSave.Enabled = true;
-            btnUpdate.Enabled = false;
-            btnDelete.Enabled = false;
-        }
-
-        //Search
-        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
-        {
-            loadProdi(txtSearch.Text);
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tblProdi_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow selectedRow = tblProdi.Rows[e.RowIndex];
-                id_prodi = selectedRow.Cells["col_id_prodi"].Value.ToString();
-                nama_prodi = selectedRow.Cells["col_nama_prodi"].Value.ToString();
-                singkatan = selectedRow.Cells["col_singkatan"].Value.ToString();
-                 transport = selectedRow.Cells["col_transport"].Value.ToString() ;
-
-                txtIDProdi.Text = id_prodi;
-                txtNamaProdi.Text = nama_prodi;
-                txtSingkatan.Text = singkatan;
-                cmbTransport.Text = transport;
-
-
-                btnSave.Enabled = false;
-                btnUpdate.Enabled = true;
-                btnDelete.Enabled = true;
-            }
-        }
-
-
-        //Load Data
-        private void loadProdi(string param)
-        {
-            this.getListProdiTableAdapter.FillBy(this.honorariumDosenEksternalDataSet.getListProdi, param);
-        }
-    
-
-        // save prodi
-        private void btnSave_Click(object sender, EventArgs e)
+        //btn Save
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand com = new SqlCommand();
@@ -212,8 +175,11 @@ namespace C__honorarium_dosen_eksternal
             {
                 connection.Open();
                 com.ExecuteNonQuery();
-                MessageBox.Show("Simpan data berhasil ", "Information",
+                MessageBox.Show("Data berhasil diSave", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = true;
+                btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
                 clear();
                 loadProdi(emp);
             }
@@ -221,6 +187,43 @@ namespace C__honorarium_dosen_eksternal
             {
                 MessageBox.Show("Hubungi tim IT! " + ex.Message);
             }
+        }
+
+
+        // clear
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            clear();
+            btnSave.Enabled = true;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+
+        private void tblProdi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = tblProdi.Rows[e.RowIndex];
+                id_prodi = selectedRow.Cells["col_id_prodi"].Value.ToString();
+                nama_prodi = selectedRow.Cells["col_nama_prodi"].Value.ToString();
+                singkatan = selectedRow.Cells["col_singkatan"].Value.ToString();
+                transport = selectedRow.Cells["col_transport"].Value.ToString();
+
+                txtIDProdi.Text = id_prodi;
+                txtNamaProdi.Text = nama_prodi;
+                txtSingkatan.Text = singkatan;
+                cmbTransport.Text = transport;
+
+
+                btnSave.Enabled = false;
+                btnUpdate.Enabled = true;
+                btnDelete.Enabled = true;
+            }
+        }
+        //Load Data
+        private void loadProdi(string param)
+        {
+            this.getListProdiTableAdapter.FillBy(this.honorariumDosenEksternalDataSet.getListProdi, param);
         }
     }
 }

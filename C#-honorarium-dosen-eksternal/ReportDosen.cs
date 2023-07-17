@@ -24,6 +24,7 @@ namespace C__honorarium_dosen_eksternal
             this.getListJenisDosenTableAdapter.FillBy7(this.honorariumDosenEksternalDataSet.getListJenisDosen, emp);
             ShowDefaultDosen();
             this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
         }
         public static string GetTahunAkademik(DateTime date)
         {
@@ -49,7 +50,7 @@ namespace C__honorarium_dosen_eksternal
             txtTanggalAkhir.Value = end;
         }
 
-        private void btnFilter_Click(object sender, EventArgs e)
+        private void btnFilter_Click_1(object sender, EventArgs e)
         {
             DateTime tanggal_awal = txtTanggalAwal.Value;
             string tanggal_Awal = txtTanggalAwal.Value.ToString("yyyy-MM-dd");
@@ -62,8 +63,18 @@ namespace C__honorarium_dosen_eksternal
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter("PERIODE", txtTanggalAwal.Text + " - " + txtTanggalAkhir.Text));
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter("JenisDosen", nama_jenis));
 
-            this.getReportDosenTableAdapter.FillBy(this.honorariumDosenEksternalDataSet.getReportDosen,tanggal_Awal, tanggal_akhir, jenis );
+            this.getReportDosenTableAdapter.FillBy(this.honorariumDosenEksternalDataSet.getReportDosen, tanggal_Awal, tanggal_akhir, jenis);
             this.reportViewer1.RefreshReport();
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbJenisDosen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

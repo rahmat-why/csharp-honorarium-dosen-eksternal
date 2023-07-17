@@ -32,14 +32,20 @@
             this.PanelMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnLaporanSlipGaji = new Guna.UI2.WinForms.Guna2Button();
             this.btnLaporanDosen = new Guna.UI2.WinForms.Guna2Button();
             this.btnAbsensi = new Guna.UI2.WinForms.Guna2Button();
             this.btnLaporanTransfer = new Guna.UI2.WinForms.Guna2Button();
             this.btnLaporanProdi = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.guna2Panel3.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelMenu
@@ -50,7 +56,7 @@
             this.PanelMenu.Location = new System.Drawing.Point(372, 0);
             this.PanelMenu.Margin = new System.Windows.Forms.Padding(4, 3, 3, 3);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(1098, 981);
+            this.PanelMenu.Size = new System.Drawing.Size(1526, 1024);
             this.PanelMenu.TabIndex = 11;
             this.PanelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelMenu_Paint);
             // 
@@ -58,8 +64,10 @@
             // 
             this.guna2Panel2.BackColor = System.Drawing.SystemColors.HighlightText;
             this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.guna2Panel2.Controls.Add(this.btnLogout);
+            this.guna2Panel2.Controls.Add(this.guna2Panel3);
+            this.guna2Panel2.Controls.Add(this.guna2Panel1);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
+            this.guna2Panel2.Controls.Add(this.btnLogout);
             this.guna2Panel2.Controls.Add(this.btnLaporanSlipGaji);
             this.guna2Panel2.Controls.Add(this.btnLaporanDosen);
             this.guna2Panel2.Controls.Add(this.btnAbsensi);
@@ -69,7 +77,7 @@
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(372, 981);
+            this.guna2Panel2.Size = new System.Drawing.Size(372, 1024);
             this.guna2Panel2.TabIndex = 10;
             this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
@@ -90,22 +98,11 @@
             this.btnLogout.Location = new System.Drawing.Point(3, 900);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(366, 76);
+            this.btnLogout.Size = new System.Drawing.Size(366, 75);
             this.btnLogout.TabIndex = 10;
             this.btnLogout.Text = "Logout";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(1, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(369, 79);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 9;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // btnLaporanSlipGaji
             // 
@@ -122,10 +119,10 @@
             this.btnLaporanSlipGaji.ForeColor = System.Drawing.Color.Black;
             this.btnLaporanSlipGaji.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.file;
             this.btnLaporanSlipGaji.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLaporanSlipGaji.Location = new System.Drawing.Point(1, 540);
+            this.btnLaporanSlipGaji.Location = new System.Drawing.Point(2, 621);
             this.btnLaporanSlipGaji.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLaporanSlipGaji.Name = "btnLaporanSlipGaji";
-            this.btnLaporanSlipGaji.Size = new System.Drawing.Size(367, 78);
+            this.btnLaporanSlipGaji.Size = new System.Drawing.Size(368, 78);
             this.btnLaporanSlipGaji.TabIndex = 8;
             this.btnLaporanSlipGaji.Text = "Laporan Slip Gaji";
             this.btnLaporanSlipGaji.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -145,7 +142,7 @@
             this.btnLaporanDosen.ForeColor = System.Drawing.Color.Black;
             this.btnLaporanDosen.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.file;
             this.btnLaporanDosen.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLaporanDosen.Location = new System.Drawing.Point(4, 272);
+            this.btnLaporanDosen.Location = new System.Drawing.Point(4, 353);
             this.btnLaporanDosen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLaporanDosen.Name = "btnLaporanDosen";
             this.btnLaporanDosen.Size = new System.Drawing.Size(369, 78);
@@ -168,7 +165,7 @@
             this.btnAbsensi.ForeColor = System.Drawing.Color.Black;
             this.btnAbsensi.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.calendar;
             this.btnAbsensi.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAbsensi.Location = new System.Drawing.Point(2, 184);
+            this.btnAbsensi.Location = new System.Drawing.Point(2, 266);
             this.btnAbsensi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAbsensi.Name = "btnAbsensi";
             this.btnAbsensi.Size = new System.Drawing.Size(369, 78);
@@ -192,10 +189,10 @@
             this.btnLaporanTransfer.ForeColor = System.Drawing.Color.Black;
             this.btnLaporanTransfer.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.file;
             this.btnLaporanTransfer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLaporanTransfer.Location = new System.Drawing.Point(1, 452);
+            this.btnLaporanTransfer.Location = new System.Drawing.Point(2, 533);
             this.btnLaporanTransfer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLaporanTransfer.Name = "btnLaporanTransfer";
-            this.btnLaporanTransfer.Size = new System.Drawing.Size(365, 78);
+            this.btnLaporanTransfer.Size = new System.Drawing.Size(364, 78);
             this.btnLaporanTransfer.TabIndex = 5;
             this.btnLaporanTransfer.Text = "Laporan Transfer";
             this.btnLaporanTransfer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -216,20 +213,65 @@
             this.btnLaporanProdi.ForeColor = System.Drawing.Color.Black;
             this.btnLaporanProdi.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.file;
             this.btnLaporanProdi.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLaporanProdi.Location = new System.Drawing.Point(2, 360);
+            this.btnLaporanProdi.Location = new System.Drawing.Point(2, 441);
             this.btnLaporanProdi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLaporanProdi.Name = "btnLaporanProdi";
-            this.btnLaporanProdi.Size = new System.Drawing.Size(367, 78);
+            this.btnLaporanProdi.Size = new System.Drawing.Size(368, 78);
             this.btnLaporanProdi.TabIndex = 4;
             this.btnLaporanProdi.Text = "Laporan Prodi";
             this.btnLaporanProdi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLaporanProdi.Click += new System.EventHandler(this.btnLaporanProdi_Click);
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(12, 30);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(324, 54);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 11;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.Controls.Add(this.label2);
+            this.guna2Panel3.Location = new System.Drawing.Point(0, 157);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(369, 45);
+            this.guna2Panel3.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Role :";
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.label1);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 108);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(370, 45);
+            this.guna2Panel1.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nama : ";
+            // 
             // DAAAPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1470, 981);
+            this.ClientSize = new System.Drawing.Size(1898, 1024);
             this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.guna2Panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -239,6 +281,10 @@
             this.Load += new System.EventHandler(this.DAAAPage_Load);
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2Panel3.PerformLayout();
+            this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -251,7 +297,11 @@
         private Guna.UI2.WinForms.Guna2Button btnLaporanProdi;
         private Guna.UI2.WinForms.Guna2Panel PanelMenu;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Button btnLogout;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private System.Windows.Forms.Label label1;
     }
 }

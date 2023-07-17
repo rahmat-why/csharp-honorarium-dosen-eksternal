@@ -155,3 +155,11 @@ C:\Kuliah\csharp-honorarium-dosen-eksternal\C#-honorarium-dosen-eksternal\obj\De
 C:\Kuliah\csharp-honorarium-dosen-eksternal\C#-honorarium-dosen-eksternal\obj\Debug\C#-honorarium-dosen-eksternal.csproj.CopyComplete
 C:\Kuliah\csharp-honorarium-dosen-eksternal\C#-honorarium-dosen-eksternal\obj\Debug\C#-honorarium-dosen-eksternal.exe
 C:\Kuliah\csharp-honorarium-dosen-eksternal\C#-honorarium-dosen-eksternal\obj\Debug\C#-honorarium-dosen-eksternal.pdb
+C:\Kuliah\csharp-honorarium-dosen-eksternal\C#-honorarium-dosen-eksternal\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Kuliah\csharp-honorarium-dosen-eksternal\C#-honorarium-dosen-eksternal\bin\Debug\System.Security.AccessControl.dll
+C:\Kuliah\csharp-honorarium-dosen-eksternal\C#-honorarium-dosen-eksternal\bin\Debug\System.Security.Permissions.dll
+C:\Kuliah\csharp-honorarium-dosen-eksternal\C#-honorarium-dosen-eksternal\bin\Debug\System.Security.Principal.Windows.dll
+C:\Kuliah\csharp-honorarium-dosen-eksternal\C#-honorarium-dosen-eksternal\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Kuliah\csharp-honorarium-dosen-eksternal\C#-honorarium-dosen-eksternal\bin\Debug\System.Security.AccessControl.xml
+C:\Kuliah\csharp-honorarium-dosen-eksternal\C#-honorarium-dosen-eksternal\bin\Debug\System.Security.Permissions.xml
+C:\Kuliah\csharp-honorarium-dosen-eksternal\C#-honorarium-dosen-eksternal\bin\Debug\System.Security.Principal.Windows.xml

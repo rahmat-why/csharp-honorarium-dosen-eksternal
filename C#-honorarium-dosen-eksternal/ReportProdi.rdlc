@@ -492,7 +492,7 @@
             </TablixRowHierarchy>
             <DataSetName>DatasetReportProdi</DataSetName>
             <Top>5.80884cm</Top>
-            <Left>1.24037cm</Left>
+            <Left>3.41846cm</Left>
             <Height>1.8cm</Height>
             <Width>14.21568cm</Width>
             <Style>
@@ -503,7 +503,7 @@
           </Tablix>
           <Line Name="Line1">
             <Top>4.80342cm</Top>
-            <Left>0.62301cm</Left>
+            <Left>2.8011cm</Left>
             <Height>0cm</Height>
             <Width>15.32819cm</Width>
             <ZIndex>1</ZIndex>
@@ -534,7 +534,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox9</rd:DefaultName>
             <Top>0.62301cm</Top>
-            <Left>5.44346cm</Left>
+            <Left>7.62155cm</Left>
             <Height>0.6cm</Height>
             <Width>5.12819cm</Width>
             <ZIndex>2</ZIndex>
@@ -570,7 +570,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
             <Top>1.29356cm</Top>
-            <Left>2.6162cm</Left>
+            <Left>4.79429cm</Left>
             <Height>0.6cm</Height>
             <Width>8.84497cm</Width>
             <ZIndex>3</ZIndex>
@@ -604,7 +604,7 @@
             </Paragraphs>
             <rd:DefaultName>TAHUN</rd:DefaultName>
             <Top>1.89356cm</Top>
-            <Left>11.33453cm</Left>
+            <Left>13.51262cm</Left>
             <Height>0.6cm</Height>
             <Width>2.85278cm</Width>
             <ZIndex>4</ZIndex>
@@ -637,7 +637,7 @@
             </Paragraphs>
             <rd:DefaultName>JenisDosen</rd:DefaultName>
             <Top>1.29356cm</Top>
-            <Left>11.33453cm</Left>
+            <Left>13.51262cm</Left>
             <Height>0.6cm</Height>
             <Width>3.15264cm</Width>
             <ZIndex>5</ZIndex>
@@ -672,7 +672,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
             <Top>1.92884cm</Top>
-            <Left>2.6162cm</Left>
+            <Left>4.79429cm</Left>
             <Height>0.6cm</Height>
             <Width>8.84497cm</Width>
             <ZIndex>6</ZIndex>
@@ -702,13 +702,13 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Right</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox9</rd:DefaultName>
-            <Top>2.59939cm</Top>
-            <Left>1.54577cm</Left>
+            <Top>2.56412cm</Top>
+            <Left>1.20572cm</Left>
             <Height>0.6cm</Height>
             <Width>5.12819cm</Width>
             <ZIndex>7</ZIndex>
@@ -742,7 +742,7 @@
             </Paragraphs>
             <rd:DefaultName>PERIODE</rd:DefaultName>
             <Top>2.56412cm</Top>
-            <Left>5.44346cm</Left>
+            <Left>6.5103cm</Left>
             <Height>0.6cm</Height>
             <Width>10.0126cm</Width>
             <ZIndex>8</ZIndex>
@@ -774,7 +774,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox13</rd:DefaultName>
             <Top>9.10731cm</Top>
-            <Left>2.29429cm</Left>
+            <Left>4.47238cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>9</ZIndex>
@@ -807,7 +807,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox13</rd:DefaultName>
             <Top>9.10731cm</Top>
-            <Left>10.63339cm</Left>
+            <Left>13.41971cm</Left>
             <Height>0.6cm</Height>
             <Width>3.55392cm</Width>
             <ZIndex>10</ZIndex>
@@ -822,14 +822,14 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="Textbox15">
+          <Textbox Name="PREPAREDBY">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>(Rachmi Jumaida)</Value>
+                    <Value>=Parameters!PREPAREDBY.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -838,11 +838,11 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox13</rd:DefaultName>
-            <Top>11.56215cm</Top>
-            <Left>1.24037cm</Left>
+            <rd:DefaultName>PREPAREDBY</rd:DefaultName>
+            <Top>10.96215cm</Top>
+            <Left>3.41846cm</Left>
             <Height>0.6cm</Height>
-            <Width>4.38736cm</Width>
+            <Width>4.86361cm</Width>
             <ZIndex>11</ZIndex>
             <Style>
               <Border>
@@ -855,14 +855,14 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="Textbox59">
+          <Textbox Name="CHECKEDBY">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>(Agung Kaswandi, S.T., M.T.)</Value>
+                    <Value>=Parameters!CHECKEDBY.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -871,11 +871,11 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox58</rd:DefaultName>
-            <Top>11.56215cm</Top>
-            <Left>9.62657cm</Left>
+            <rd:DefaultName>CHECKEDBY</rd:DefaultName>
+            <Top>10.97703cm</Top>
+            <Left>12.71415cm</Left>
             <Height>0.6cm</Height>
-            <Width>5.82949cm</Width>
+            <Width>4.91999cm</Width>
             <ZIndex>12</ZIndex>
             <Style>
               <Border>
@@ -892,7 +892,7 @@
         <Height>5.46528in</Height>
         <Style />
       </Body>
-      <Width>6.5in</Width>
+      <Width>8.4375in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
@@ -918,6 +918,14 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="PREPAREDBY">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CHECKEDBY">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -938,6 +946,16 @@
           <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>JenisDosen</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>PREPAREDBY</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>CHECKEDBY</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

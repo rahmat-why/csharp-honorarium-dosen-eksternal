@@ -921,8 +921,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.35842cm</Top>
-            <Left>7.1895cm</Left>
+            <Top>0.3937cm</Top>
+            <Left>7.63229cm</Left>
             <Height>0.6cm</Height>
             <Width>5.53389cm</Width>
             <ZIndex>2</ZIndex>
@@ -952,13 +952,13 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Right</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>1.02898cm</Top>
-            <Left>5.22941cm</Left>
+            <Left>5.0372cm</Left>
             <Height>0.6cm</Height>
             <Width>5.53388cm</Width>
             <ZIndex>3</ZIndex>
@@ -988,13 +988,13 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Right</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>1.62898cm</Top>
-            <Left>3.29606cm</Left>
+            <Top>1.66426cm</Top>
+            <Left>2.9073cm</Left>
             <Height>0.6cm</Height>
             <Width>10.16631cm</Width>
             <ZIndex>4</ZIndex>
@@ -1027,8 +1027,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>JenisDosen</rd:DefaultName>
-            <Top>0.9937cm</Top>
-            <Left>9.6413cm</Left>
+            <Top>1.02898cm</Top>
+            <Left>10.67691cm</Left>
             <Height>0.6cm</Height>
             <Width>6.14215cm</Width>
             <ZIndex>5</ZIndex>
@@ -1060,8 +1060,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>TAHUN</rd:DefaultName>
-            <Top>1.66426cm</Top>
-            <Left>12.40151cm</Left>
+            <Top>1.62898cm</Top>
+            <Left>12.8443cm</Left>
             <Height>0.6cm</Height>
             <Width>3.38194cm</Width>
             <ZIndex>6</ZIndex>
@@ -1090,15 +1090,15 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Right</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>2.22898cm</Top>
-            <Left>2.24579cm</Left>
+            <Top>2.33482cm</Top>
+            <Left>3.00426cm</Left>
             <Height>0.6cm</Height>
-            <Width>5.53389cm</Width>
+            <Width>3.36446cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -1129,10 +1129,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>PERIODE</rd:DefaultName>
-            <Top>2.29953cm</Top>
-            <Left>6.83691cm</Left>
-            <Height>0.6cm</Height>
-            <Width>9.60847cm</Width>
+            <Top>2.33481cm</Top>
+            <Left>6.43928cm</Left>
+            <Height>0.60001cm</Height>
+            <Width>10.44889cm</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>

@@ -67,16 +67,16 @@
             this.guna2Panel2.Controls.Add(this.label6);
             this.guna2Panel2.Controls.Add(this.txtSearch);
             this.guna2Panel2.Controls.Add(this.tblMatkul);
-            this.guna2Panel2.Location = new System.Drawing.Point(477, 50);
+            this.guna2Panel2.Location = new System.Drawing.Point(477, 49);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1037, 986);
+            this.guna2Panel2.Size = new System.Drawing.Size(1036, 986);
             this.guna2Panel2.TabIndex = 4;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(663, 40);
+            this.label6.Location = new System.Drawing.Point(497, 41);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 28);
             this.label6.TabIndex = 42;
@@ -87,7 +87,7 @@
             this.txtSearch.AutoRoundedCorners = true;
             this.txtSearch.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtSearch.BorderColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtSearch.BorderRadius = 24;
+            this.txtSearch.BorderRadius = 23;
             this.txtSearch.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.DefaultText = "";
@@ -98,14 +98,15 @@
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(746, 32);
+            this.txtSearch.Location = new System.Drawing.Point(580, 33);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Search Name";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(238, 50);
+            this.txtSearch.Size = new System.Drawing.Size(238, 49);
             this.txtSearch.TabIndex = 43;
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // tblMatkul
             // 
@@ -136,7 +137,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tblMatkul.DefaultCellStyle = dataGridViewCellStyle3;
             this.tblMatkul.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.tblMatkul.Location = new System.Drawing.Point(31, 104);
+            this.tblMatkul.Location = new System.Drawing.Point(32, 105);
             this.tblMatkul.Name = "tblMatkul";
             this.tblMatkul.RowHeadersVisible = false;
             this.tblMatkul.RowHeadersWidth = 62;
@@ -222,7 +223,7 @@
             this.guna2Panel4.Controls.Add(this.txtSks);
             this.guna2Panel4.Controls.Add(this.txtIDMatkul);
             this.guna2Panel4.Controls.Add(this.label1);
-            this.guna2Panel4.Location = new System.Drawing.Point(24, 50);
+            this.guna2Panel4.Location = new System.Drawing.Point(24, 49);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(447, 986);
             this.guna2Panel4.TabIndex = 3;
@@ -255,11 +256,12 @@
             this.btnClear.ForeColor = System.Drawing.Color.Black;
             this.btnClear.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.broom;
             this.btnClear.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnClear.Location = new System.Drawing.Point(26, 443);
+            this.btnClear.Location = new System.Drawing.Point(26, 475);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(396, 43);
             this.btnClear.TabIndex = 78;
             this.btnClear.Text = "Clear";
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSave
             // 
@@ -277,11 +279,12 @@
             this.btnSave.ForeColor = System.Drawing.Color.Black;
             this.btnSave.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.diskette__1_;
             this.btnSave.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnSave.Location = new System.Drawing.Point(26, 383);
+            this.btnSave.Location = new System.Drawing.Point(26, 415);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(122, 43);
             this.btnSave.TabIndex = 75;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
             // btnUpdate
             // 
@@ -299,11 +302,12 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.circle__1_;
             this.btnUpdate.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnUpdate.Location = new System.Drawing.Point(164, 383);
+            this.btnUpdate.Location = new System.Drawing.Point(164, 415);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(114, 43);
             this.btnUpdate.TabIndex = 76;
             this.btnUpdate.Text = "Update";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -321,11 +325,12 @@
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnDelete.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.delete__2_;
             this.btnDelete.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnDelete.Location = new System.Drawing.Point(293, 383);
+            this.btnDelete.Location = new System.Drawing.Point(292, 415);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(129, 43);
             this.btnDelete.TabIndex = 77;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtMataKuliah
             // 
@@ -348,7 +353,7 @@
             this.txtMataKuliah.Name = "txtMataKuliah";
             this.txtMataKuliah.PasswordChar = '\0';
             this.txtMataKuliah.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtMataKuliah.PlaceholderText = "Nama Matkul";
+            this.txtMataKuliah.PlaceholderText = "Nama Mata Kuliah";
             this.txtMataKuliah.SelectedText = "";
             this.txtMataKuliah.Size = new System.Drawing.Size(396, 52);
             this.txtMataKuliah.TabIndex = 22;
@@ -396,7 +401,7 @@
             this.txtIDMatkul.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtIDMatkul.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtIDMatkul.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIDMatkul.Location = new System.Drawing.Point(26, 161);
+            this.txtIDMatkul.Location = new System.Drawing.Point(26, 162);
             this.txtIDMatkul.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtIDMatkul.Name = "txtIDMatkul";
             this.txtIDMatkul.PasswordChar = '\0';
@@ -414,7 +419,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(1526, 1048);
+            this.ClientSize = new System.Drawing.Size(1300, 740);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

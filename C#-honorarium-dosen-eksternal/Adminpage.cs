@@ -107,5 +107,15 @@ namespace C__honorarium_dosen_eksternal
             insentif.BringToFront();
             insentif.Show();
         }
+
+        private void PanelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
     }
 }

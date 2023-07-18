@@ -23,7 +23,7 @@ namespace C__honorarium_dosen_eksternal
 
         private void btnAbsensi_Click(object sender, EventArgs e)
         {
-            Absensi absensi = new Absensi();
+            Absensi absensi = new Absensi(userlogin);
             absensi.TopLevel = false;
             PanelMenu.Controls.Add(absensi);
             absensi.BringToFront();

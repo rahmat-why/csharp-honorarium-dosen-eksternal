@@ -16,9 +16,11 @@ namespace C__honorarium_dosen_eksternal
         string connectionString = "integrated security=false; Data Source=10.8.9.99;User ID=sa;Password=polman; initial catalog=HonorariumDosenEksternal";
         string id_absensi, id_dosen, id_matkul, id_prodi, kelas, tanggal_mengajar, sks;
 
-        public Absensi()
+        ADTUser user;
+        public Absensi(ADTUser login)
         {
             InitializeComponent();
+            user = login;
         }
 
         public void ShowDefaultAbsensi()
@@ -51,7 +53,7 @@ namespace C__honorarium_dosen_eksternal
                 cmbIDProdi.Text = id_prodi;
                 txtKelas.Text = kelas;
                 txtTanggalMengajar.Value = DateTime.Parse(tanggal_mengajar);
-                txtSKS.Text = sks;
+                txtTotalSKS.Text = sks;
                 btnDelete.Enabled = true;
                 btnSave.Enabled = false;
             }
@@ -66,15 +68,24 @@ namespace C__honorarium_dosen_eksternal
             com.CommandText = "sp_CreateAbsensi";
             com.CommandType = CommandType.StoredProcedure;
 
+            if (cmbIDDosen.SelectedValue == null || cmbIDMatkul.SelectedValue == null ||
+                cmbIDProdi.SelectedValue == null || string.IsNullOrEmpty(txtKelas.Text) ||
+                string.IsNullOrEmpty(txtTotalSKS.Text))
+            {
+                MessageBox.Show("Data Tidak boleh kosong!");
+                return;
+            }
+
+
             com.Parameters.AddWithValue("@id_dosen", (string)cmbIDDosen.SelectedValue);
             com.Parameters.AddWithValue("@id_matkul", (string)cmbIDMatkul.SelectedValue);
             com.Parameters.AddWithValue("@id_prodi", (string)cmbIDProdi.SelectedValue);
             com.Parameters.AddWithValue("@kelas", txtKelas.Text);
             com.Parameters.AddWithValue("@tanggal_mengajar", txtTanggalMengajar.Value);
-            com.Parameters.AddWithValue("@sks", txtSKS.Text);
-            com.Parameters.AddWithValue("@id_user", "USR005");
+            com.Parameters.AddWithValue("@sks", txtTotalSKS.Text);
+            com.Parameters.AddWithValue("@id_user", user.getId_user());
             try
-            {
+            { 
                 connection.Open();
                 com.ExecuteNonQuery();
                 MessageBox.Show("Data berhasil diSave ", "Information",
@@ -135,11 +146,37 @@ namespace C__honorarium_dosen_eksternal
             btnDelete.Enabled = false;
         }
 
+        private void txtKelas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void txtTanggalMengajar_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime tanggalMengajar = txtTanggalMengajar.Value.Date;
+            DateTime tanggalHariIni = DateTime.Now.Date;
+
+            if (tanggalMengajar > tanggalHariIni)
+            {
+                MessageBox.Show("Tanggal tidak boleh lebih dari hari sekarang!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTanggalMengajar.Value = tanggalHariIni;
+            }
+        }
+
+        private void txtTotalSKS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Kolom ini hanya boleh diisi angka.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void clear()
         {
             txtIDAbsensi.Text = "Otomatis";
             txtKelas.Text = "";
-            txtSKS.Text = "";
+            txtTotalSKS.Text = "";
             cmbIDDosen.Text = "";
             cmbIDMatkul.Text = "";
             cmbIDProdi.Text = "";

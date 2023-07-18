@@ -292,9 +292,16 @@ namespace C__honorarium_dosen_eksternal
         {
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand com = new SqlCommand();
-            com.Connection = connection;  // Assign the SqlConnection object
+            com.Connection = connection; 
             com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "sp_CreateJenisDosen";  // Set the stored procedure name
+            com.CommandText = "sp_CreateJenisDosen";
+
+            if (txtNamaJenis.Text == "" || txtKompensasiMengajar.Text == "" || txtTranspotMengajar.Text == "" ||
+                txtPersentasePPH21NPWP.Text == "" || txtPresentasePPH21NonNpwp.Text == "" || cmbReferensiDosen.SelectedItem == null)
+            {
+                MessageBox.Show("Semua data harus diisi!");
+                return;
+            }
 
             com.Parameters.AddWithValue("@nama_jenis", txtNamaJenis.Text);
             com.Parameters.AddWithValue("@kompensasi_mengajar", txtKompensasiMengajar.Text);

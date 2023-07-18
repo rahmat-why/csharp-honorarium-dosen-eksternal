@@ -182,9 +182,15 @@ namespace C__honorarium_dosen_eksternal
         {
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand com = new SqlCommand();
-            com.Connection = connection;  // Assign the SqlConnection object
+            com.Connection = connection;  
             com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "sp_CreateGolongan";  // Set the stored procedure name
+            com.CommandText = "sp_CreateGolongan";  
+
+            if (txtNamaGolongan.Text == "" || txtInsentifKehadiran.Text == "" || txtTahunBatasBawah.Text == "" || txtTahunBatasAtas.Text == "")
+            {
+                MessageBox.Show("Semua data harus diisi!");
+                return;
+            }
 
             com.Parameters.AddWithValue("@nama", txtNamaGolongan.Text);
             com.Parameters.AddWithValue("@insentif_kehadiran", txtInsentifKehadiran.Text);

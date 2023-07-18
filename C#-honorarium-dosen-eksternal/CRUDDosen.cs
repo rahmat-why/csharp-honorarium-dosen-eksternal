@@ -350,7 +350,7 @@ namespace C__honorarium_dosen_eksternal
                 e.Handled = true;
 
                 // Menampilkan pesan kesalahan
-                MessageBox.Show("Hanya huruf dan spasi yang diizinkan.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Kolom ini hanya boleh diisi huruf dan spasi.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -364,7 +364,7 @@ namespace C__honorarium_dosen_eksternal
                 e.Handled = true;
 
                 // Menampilkan pesan kesalahan
-                MessageBox.Show("Hanya huruf dan spasi yang diizinkan.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Kolom ini hanya boleh diisi huruf dan spasi.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -378,7 +378,7 @@ namespace C__honorarium_dosen_eksternal
                 e.Handled = true;
 
                 // Menampilkan pesan kesalahan
-                MessageBox.Show("Hanya huruf dan spasi yang diizinkan.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Kolom ini hanya boleh diisi huruf dan spasi.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -393,7 +393,7 @@ namespace C__honorarium_dosen_eksternal
                 // Mengabaikan karakter yang tidak valid dengan mengeset Handled ke true
                 e.Handled = true;
 
-                MessageBox.Show("Hanya angka yang diperbolehkan!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Kolom ini hanya boleh diisi angka. ", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             string input = txtNoRekening.Text + e.KeyChar;
@@ -417,7 +417,7 @@ namespace C__honorarium_dosen_eksternal
                 // Mengabaikan karakter yang tidak valid dengan mengeset Handled ke true
                 e.Handled = true;
 
-                MessageBox.Show("Hanya angka yang diperbolehkan!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Kolom ini hanya boleh diisi angka.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             // Menggabungkan karakter yang ditekan dengan teks yang ada
@@ -452,7 +452,7 @@ namespace C__honorarium_dosen_eksternal
                 e.Handled = true;
 
                 // Menampilkan pesan kesalahan
-                MessageBox.Show("Hanya huruf dan spasi yang diizinkan.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Kolom ini hanya boleh diisi huruf dan spasi.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -540,7 +540,7 @@ namespace C__honorarium_dosen_eksternal
                 e.Handled = true;
 
                 // Menampilkan pesan kesalahan
-                MessageBox.Show("Hanya huruf dan spasi yang diizinkan.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Kolom ini hanya boleh diisi huruf dan spasi.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -559,7 +559,7 @@ namespace C__honorarium_dosen_eksternal
             {
                 if (imgDosen.Image == null)
                 {
-                    MessageBox.Show("Foto dosen harus diisi!");
+                    MessageBox.Show("harap lengkapi semua data!");
                     return;
                 }
 
@@ -567,7 +567,7 @@ namespace C__honorarium_dosen_eksternal
                     txtCabangBank.Text == "" || txtNoRekening.Text == "" || txtAtasNama.Text == "" ||
                     txtKota.Text == "")
                 {
-                    MessageBox.Show("Semua data harus diisi!");
+                    MessageBox.Show("harap lengkapi semua data!");
                     return;
                 }
 

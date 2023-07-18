@@ -178,6 +178,13 @@ namespace C__honorarium_dosen_eksternal
             insert.Parameters.AddWithValue("Role", cmbRole.Text);
             try
             {
+
+                if (string.IsNullOrEmpty(txtNamaUser.Text) || string.IsNullOrEmpty(txtUsername.Text) ||
+                    string.IsNullOrEmpty(txtPassword.Text) || string.IsNullOrEmpty(cmbRole.Text))
+                {
+                    MessageBox.Show("Semua data harus diisi!");
+                    return;
+                }
                 connection.Open();
                 insert.ExecuteNonQuery();
                 MessageBox.Show("Data berhasil diSave", "Information",
@@ -220,6 +227,12 @@ namespace C__honorarium_dosen_eksternal
 
             try
             {
+                if (string.IsNullOrEmpty(txtNamaUser.Text) || string.IsNullOrEmpty(txtUsername.Text) ||
+                    string.IsNullOrEmpty(txtPassword.Text) || string.IsNullOrEmpty(cmbRole.Text))
+                {
+                    MessageBox.Show("Semua data harus diisi!");
+                    return;
+                }
                 connection.Open();
                 update.ExecuteNonQuery();
                 MessageBox.Show("Data berhasil diubah", "Information",
@@ -238,7 +251,38 @@ namespace C__honorarium_dosen_eksternal
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            DialogResult result1 = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result1 == DialogResult.Yes)
+            {
+                try
+                {
+                    SqlConnection connection = new SqlConnection(connectionString);
+                    SqlCommand com = new SqlCommand();
+                    com.Connection = connection;
+                    com.CommandText = "sp_DeleteUser";
+                    com.CommandType = CommandType.StoredProcedure;
 
+                    com.Parameters.AddWithValue("@id_user", txtIDUser.Text);
+
+                    connection.Open();
+                    int result = Convert.ToInt32(com.ExecuteNonQuery());
+                    connection.Close();
+
+                    if (result != 0)
+                    {
+                        MessageBox.Show("Data berhasil dihapus!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnSave.Enabled = true;
+                        btnDelete.Enabled = false;
+                        btnUpdate.Enabled = false;
+                        clear();
+                        loadUser(emp);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Hubungi tim IT! " + ex.Message);
+                }
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ namespace C__honorarium_dosen_eksternal
     public partial class CRUDPerusahaan : Form
     {
         string connectionString = ConfigurationManager.AppSettings["Connectionstring"];
-        string ID_perusahaan, nama_perusahaan;
+        string ID_perusahaan, nama_perusahaan, singkatan;
 
         public CRUDPerusahaan()
         {
@@ -69,9 +69,11 @@ namespace C__honorarium_dosen_eksternal
                 DataGridViewRow selectedRow = tblPerusahaan.Rows[e.RowIndex];
                 ID_perusahaan = selectedRow.Cells["col_id_perusahaan"].Value.ToString();
                 nama_perusahaan = selectedRow.Cells["col_nama_perusahaan"].Value.ToString();
+                singkatan = selectedRow.Cells["col_singkatan_perusahaan"].Value.ToString();
 
                 txtIDPerusahaan.Text = ID_perusahaan;
                 txtNamaPerusahaan.Text = nama_perusahaan;
+                txtSingkatan.Text = singkatan;
 
                 btnSave.Enabled = false;
                 btnUpdate.Enabled = true;

@@ -75,7 +75,7 @@ namespace C__honorarium_dosen_eksternal
                 MessageBox.Show("Data berhasil diupdate", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 btnSave.Enabled = true;
-                btnDelete.Enabled = false;
+                // btnDelete.Enabled = false;
                 btnUpdate.Enabled = false;
                 clear();
                 loadDosen(emp);
@@ -106,42 +106,6 @@ namespace C__honorarium_dosen_eksternal
             imgDosen.Image = null;
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            DialogResult result1 = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result1 == DialogResult.Yes)
-            {
-                try
-                {
-                    SqlConnection connection = new SqlConnection(connectionString);
-                    SqlCommand com = new SqlCommand();
-                    com.Connection = connection;
-                    com.CommandText = "sp_DeleteDosen";
-                    com.CommandType = CommandType.StoredProcedure;
-
-                    com.Parameters.AddWithValue("@id_dosen", txtIDDosen.Text);
-
-                    connection.Open();
-                    int result = Convert.ToInt32(com.ExecuteNonQuery());
-                    connection.Close();
-
-                    if (result != 0)
-                    {
-                        MessageBox.Show("Data Berhasil Dihapus!");
-                        clear();
-                        btnDelete.Enabled = true;
-                        btnSave.Enabled = false;
-                        btnUpdate.Enabled = false;
-                        loadDosen(emp);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Hubungi tim IT! " + ex.Message);
-                }
-            }
-        }
-
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
             loadDosen(txtSearch.Text);
@@ -152,17 +116,56 @@ namespace C__honorarium_dosen_eksternal
             clear();
             btnSave.Enabled = true;
             btnUpdate.Enabled = false;
-            btnDelete.Enabled = false;
+            // btnDelete.Enabled = false;
         }
 
-        private void guna2Panel5_Paint(object sender, PaintEventArgs e)
+        private void txtSearch_KeyUp_1(object sender, KeyEventArgs e)
         {
+            loadDosen(txtSearch.Text);
+        }
+
+        public string GetReferensiDosen(string id_jenis_dosen)
+        {
+            string referensiDosen = "";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM dbo.getSpecificJenisDosen(@id_jenis_dosen)";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id_jenis_dosen", id_jenis_dosen);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        if (dataTable.Rows.Count > 0)
+                        {
+                            referensiDosen = dataTable.Rows[0]["referensi_dosen"].ToString();
+                        }
+                    }
+                }
+            }
+
+            return referensiDosen;
 
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+        private void cbJenisDosen_SelectionChangeCommitted(object sender, EventArgs e)
         {
-
+            string referensi_dosen = GetReferensiDosen(cbJenisDosen.SelectedValue.ToString());
+            
+            cbAsalPerusahaan.Enabled = true;
+            txtGabungIndustri.Enabled = true;
+            if(referensi_dosen == "UMUM")
+            {
+                cbAsalPerusahaan.Enabled = false;
+                txtGabungIndustri.Enabled = false;
+            }
         }
 
         private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -179,15 +182,38 @@ namespace C__honorarium_dosen_eksternal
                 cabang_bank = selectedRow.Cells["col_cabang_bank"].Value.ToString();
                 no_rekening = selectedRow.Cells["col_no_rekening"].Value.ToString();
                 npwp = selectedRow.Cells["col_npwp"].Value.ToString();
-                tanggal_gabung_kampus = selectedRow.Cells["col_tanggal_gabung_kampus"].Value.ToString();
-                tanggal_gabung_industri = selectedRow.Cells["col_tanggal_gabung_industri"].Value.ToString();
                 status = selectedRow.Cells["col_status"].Value.ToString();
                 atasnama = selectedRow.Cells["col_atasnama"].Value.ToString();
                 kota = selectedRow.Cells["col_kota"].Value.ToString();
                 asal_perusahaan = selectedRow.Cells["col_asal_perusahaan"].Value.ToString();
 
-               // txtGabungKampus.Text = tanggal_gabung_kampus;
-                //txtGabungIndustri.Text = tanggal_gabung_industri;
+                txtGabungKampus.Enabled = true;
+                tanggal_gabung_kampus = selectedRow.Cells["col_tanggal_gabung_kampus"].Value.ToString();
+                if (!string.IsNullOrEmpty(tanggal_gabung_kampus))
+                {
+                    if (DateTime.TryParse(tanggal_gabung_kampus, out DateTime tanggal))
+                    {
+                        txtGabungKampus.Value = tanggal;
+                    }
+                }
+                else
+                {
+                    txtGabungKampus.Enabled = false; // Menonaktifkan txtGabungKampus karena nilai null
+                }
+
+                txtGabungIndustri.Enabled = true;
+                tanggal_gabung_industri = selectedRow.Cells["col_tanggal_gabung_industri"].Value.ToString();
+                if (!string.IsNullOrEmpty(tanggal_gabung_industri))
+                {
+                    if (DateTime.TryParse(tanggal_gabung_industri, out DateTime tanggal))
+                    {
+                        txtGabungIndustri.Value = tanggal;
+                    }
+                }
+                else
+                {
+                    txtGabungIndustri.Enabled = false; // Menonaktifkan txtGabungKampus karena nilai null
+                }
 
                 txtIDDosen.Text = id_dosen;
                 txtNamaDosen.Text = nama_dosen;
@@ -254,7 +280,7 @@ namespace C__honorarium_dosen_eksternal
 
                 btnSave.Enabled = false;
                 btnUpdate.Enabled = true;
-                btnDelete.Enabled = true;
+                // btnDelete.Enabled = true;
             }
         }
 
@@ -299,7 +325,7 @@ namespace C__honorarium_dosen_eksternal
         {
             btnSave.Enabled = true;
             btnUpdate.Enabled = false;
-            btnDelete.Enabled = false;
+            // btnDelete.Enabled = false;
             try
             {
                 loadDosen(emp);
@@ -310,6 +336,8 @@ namespace C__honorarium_dosen_eksternal
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+
+            cbStatus.Text = "AKTIF";
         }
 
         //Validasi Nama Dosen
@@ -359,20 +387,24 @@ namespace C__honorarium_dosen_eksternal
         //Validasi No Rek
         private void txtNoRekening_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Memeriksa apakah karakter yang ditekan adalah angka
+            // Memeriksa apakah karakter yang ditekan bukan angka atau kontrol (termasuk Backspace)
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
-                string input = txtNoRekening.Text + e.KeyChar;
+                // Mengabaikan karakter yang tidak valid dengan mengeset Handled ke true
+                e.Handled = true;
 
-                // Memeriksa panjang input
-                if (input.Length > 16)
-                {
-                    // Mengabaikan karakter yang tidak valid dengan mengeset Handled ke true
-                    e.Handled = true;
+                MessageBox.Show("Hanya angka yang diperbolehkan!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-                    // Menampilkan pesan kesalahan
-                    MessageBox.Show("Hanya Boleh Angka dan Panjang maksimum adalah 16 karakter.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            string input = txtNoRekening.Text + e.KeyChar;
+            // Memeriksa panjang input
+            if (input.Length > 16)
+            {
+                // Mengabaikan karakter yang tidak valid dengan mengeset Handled ke true
+                e.Handled = true;
+
+                // Menampilkan pesan kesalahan
+                MessageBox.Show("Hanya Boleh Angka dan Panjang maksimum adalah 16 karakter.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -531,6 +563,20 @@ namespace C__honorarium_dosen_eksternal
                     return;
                 }
 
+                if (txtNamaDosen.Text == "" || txtEmail.Text == "" || cbStatus.Text == "" || txtNamaBank.Text == "" ||
+                    txtCabangBank.Text == "" || txtNoRekening.Text == "" || txtAtasNama.Text == "" ||
+                    txtKota.Text == "")
+                {
+                    MessageBox.Show("Semua data harus diisi!");
+                    return;
+                }
+
+                if (ValidasiEmail(txtEmail.Text))
+                {
+                    MessageBox.Show("Format email tidak valid!");
+                    return;
+                }
+
                 MemoryStream stream = new MemoryStream();
                 imgDosen.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
 
@@ -563,7 +609,7 @@ namespace C__honorarium_dosen_eksternal
 
                 btnSave.Enabled = true;
                 btnUpdate.Enabled = false;
-                btnDelete.Enabled = false;
+                // btnDelete.Enabled = false;
                 loadDosen(emp);
 
                 clear();

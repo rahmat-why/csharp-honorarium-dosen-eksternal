@@ -143,7 +143,7 @@ namespace C__honorarium_dosen_eksternal
             {
                 DataGridViewRow selectedRow = tblUser.Rows[e.RowIndex];
                 string id_user = selectedRow.Cells["col_id_user"].Value.ToString();
-                string nama_user = selectedRow.Cells["col_nama_user"].Value.ToString();
+                string nama_user = selectedRow.Cells["col_nama"].Value.ToString();
                 string username = selectedRow.Cells["col_username"].Value.ToString();
                 string role = selectedRow.Cells["col_role"].Value.ToString();
 
@@ -190,7 +190,7 @@ namespace C__honorarium_dosen_eksternal
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to saved : " + ex.Message);
+                MessageBox.Show("Username tidak boleh sama!");
             }
 
             this.getListUsersTableAdapter.Filter(this.honorariumDosenEksternalDataSet.getListUsers, emp);
@@ -222,7 +222,7 @@ namespace C__honorarium_dosen_eksternal
             {
                 connection.Open();
                 update.ExecuteNonQuery();
-                MessageBox.Show("Data berhasil diDelete", "Information",
+                MessageBox.Show("Data berhasil diubah", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnSave.Enabled = true;
                 btnDelete.Enabled = false;
@@ -236,8 +236,7 @@ namespace C__honorarium_dosen_eksternal
             }
         }
 
-        //Delete User
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
 
         }

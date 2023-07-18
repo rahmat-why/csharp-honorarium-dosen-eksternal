@@ -13,12 +13,12 @@ namespace C__honorarium_dosen_eksternal
 {
     public partial class Adminpage : Form
     {
-        public Adminpage()
+        
+        public Adminpage(ADTUser login)
         {
             InitializeComponent();
+            labelLogin.Text = login.getNama() + " - " +login.getRole();
         }
-
-
 
         private void btnUser_Click(object sender, EventArgs e)
         {

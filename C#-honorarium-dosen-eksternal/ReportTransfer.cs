@@ -7,15 +7,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace C__honorarium_dosen_eksternal
 {
     public partial class ReportTransfer : Form
     {
-        public ReportTransfer()
+        ADTUser userlogin;
+        public ReportTransfer(ADTUser login)
         {
             InitializeComponent();
+            userlogin = login;
         }
 
         string emp = "";
@@ -101,7 +104,7 @@ namespace C__honorarium_dosen_eksternal
             return "";
         }
 
-        private void btnFilter_Click_1(object sender, EventArgs e)
+        private void btnTampilkan_Click(object sender, EventArgs e)
         {
             DateTime tanggal_awal = txtTglAwal.Value;
             string tanggal_Awal = txtTglAwal.Value.ToString("yyyy-MM-dd");
@@ -110,10 +113,13 @@ namespace C__honorarium_dosen_eksternal
             string nama_jenis = cbIDJenis.Text;
             string tahun_akademik = GetTahunAkademik(tanggal_awal);
 
-
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter("TAHUN", tahun_akademik));
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter("PERIODE", txtTglAwal.Text + " - " + txtTglAkhir.Text));
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter("JenisDosen", nama_jenis));
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("MEMBUAT", userlogin.getNama()));
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("MENYETUJUI", "Agung Kaswadi, S.T., M.T."));
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("MENGETAHUI", "Agung Kurniawan"));
+
             this.getReportTransferTableAdapter.FillBy(this.honorariumDosenEksternalDataSet.getReportTransfer, tanggal_Awal, tanggal_akhir, IDjenis);
 
             DataTable reportTransferTable = this.honorariumDosenEksternalDataSet.getReportTransfer; // Ganti dengan objek DataTable yang sesuai dengan hasil query
@@ -126,7 +132,7 @@ namespace C__honorarium_dosen_eksternal
             }
 
             string terbilang = FormatTerbilang(totalTransfer);
-            if(totalTransfer == 0)
+            if (totalTransfer == 0)
             {
                 terbilang = "-";
             }
@@ -134,26 +140,6 @@ namespace C__honorarium_dosen_eksternal
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter("TERBILANG", terbilang));
 
             this.reportViewer1.RefreshReport();
-        }
-
-        private void cbIDJenis_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTglAkhir_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

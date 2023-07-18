@@ -109,7 +109,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>1.26682cm</Top>
-            <Left>5.7912cm</Left>
+            <Left>3.89029cm</Left>
             <Height>0.6cm</Height>
             <Width>9.61729cm</Width>
             <Style>
@@ -143,10 +143,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
-            <Top>2.00793cm</Top>
-            <Left>2.53682cm</Left>
+            <Top>2.04321cm</Top>
+            <Left>1.36793cm</Left>
             <Height>0.6cm</Height>
-            <Width>5.56917cm</Width>
+            <Width>4.83715cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -180,7 +180,7 @@
             </Paragraphs>
             <rd:DefaultName>PERIODE</rd:DefaultName>
             <Top>2.04321cm</Top>
-            <Left>8.28238cm</Left>
+            <Left>6.38147cm</Left>
             <Height>0.6cm</Height>
             <Width>7.79167cm</Width>
             <ZIndex>2</ZIndex>
@@ -225,8 +225,7 @@
                           <rd:DefaultName>nama_dosen</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -252,7 +251,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetReportSlipGaji</DataSetName>
             <Top>3.77127cm</Top>
-            <Left>5.94523cm</Left>
+            <Left>4.04432cm</Left>
             <Height>0.6cm</Height>
             <Width>10.58743cm</Width>
             <ZIndex>3</ZIndex>
@@ -278,7 +277,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>3.77127cm</Top>
-            <Left>3.40995cm</Left>
+            <Left>1.50904cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>4</ZIndex>
@@ -308,7 +307,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>4.54766cm</Top>
-            <Left>3.40995cm</Left>
+            <Left>1.50904cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>5</ZIndex>
@@ -352,8 +351,7 @@
                           <rd:DefaultName>nama_dosen</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -379,7 +377,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetReportSlipGaji</DataSetName>
             <Top>4.54766cm</Top>
-            <Left>5.90995cm</Left>
+            <Left>4.00904cm</Left>
             <Height>0.6cm</Height>
             <Width>10.62271cm</Width>
             <ZIndex>6</ZIndex>
@@ -405,7 +403,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>5.32405cm</Top>
-            <Left>3.40995cm</Left>
+            <Left>1.50904cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>7</ZIndex>
@@ -449,8 +447,7 @@
                           <rd:DefaultName>nama_dosen</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -476,7 +473,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetReportSlipGaji</DataSetName>
             <Top>5.32405cm</Top>
-            <Left>5.90995cm</Left>
+            <Left>4.00904cm</Left>
             <Height>0.6cm</Height>
             <Width>10.62271cm</Width>
             <ZIndex>8</ZIndex>
@@ -502,7 +499,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>6.10044cm</Top>
-            <Left>3.40995cm</Left>
+            <Left>1.50904cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>9</ZIndex>
@@ -548,8 +545,7 @@
                           <rd:DefaultName>nama_dosen</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -575,7 +571,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetReportSlipGaji</DataSetName>
             <Top>6.10044cm</Top>
-            <Left>5.94523cm</Left>
+            <Left>4.04432cm</Left>
             <Height>0.6cm</Height>
             <Width>1.57396cm</Width>
             <ZIndex>10</ZIndex>
@@ -604,7 +600,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>7.30016cm</Top>
-            <Left>3.40995cm</Left>
+            <Left>1.50904cm</Left>
             <Height>0.6cm</Height>
             <Width>2.96334cm</Width>
             <ZIndex>11</ZIndex>
@@ -637,7 +633,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>7.30016cm</Top>
-            <Left>7.27287cm</Left>
+            <Left>5.68946cm</Left>
             <Height>0.6cm</Height>
             <Width>2.84396cm</Width>
             <ZIndex>12</ZIndex>
@@ -670,7 +666,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>7.30016cm</Top>
-            <Left>11.06005cm</Left>
+            <Left>9.79414cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>13</ZIndex>
@@ -702,9 +698,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>8.52386cm</Top>
-            <Left>3.40995cm</Left>
+            <Left>1.50904cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>2.96334cm</Width>
             <ZIndex>14</ZIndex>
             <Style>
               <Border>
@@ -732,7 +728,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>9.30025cm</Top>
-            <Left>3.40995cm</Left>
+            <Left>1.50904cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>15</ZIndex>
@@ -762,7 +758,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>10.07664cm</Top>
-            <Left>3.40995cm</Left>
+            <Left>1.50904cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>16</ZIndex>
@@ -792,7 +788,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>10.85303cm</Top>
-            <Left>3.40995cm</Left>
+            <Left>1.50904cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>17</ZIndex>
@@ -822,7 +818,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>11.62941cm</Top>
-            <Left>3.40995cm</Left>
+            <Left>1.50904cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>18</ZIndex>
@@ -852,7 +848,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>12.4058cm</Top>
-            <Left>3.40995cm</Left>
+            <Left>1.50904cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>19</ZIndex>
@@ -882,7 +878,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>13.18219cm</Top>
-            <Left>3.40995cm</Left>
+            <Left>1.50904cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>20</ZIndex>
@@ -914,7 +910,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>14.56063cm</Top>
-            <Left>3.40995cm</Left>
+            <Left>1.50904cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>21</ZIndex>
@@ -944,7 +940,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>15.33702cm</Top>
-            <Left>3.40995cm</Left>
+            <Left>1.50904cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>22</ZIndex>
@@ -962,7 +958,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.34385cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -988,8 +984,7 @@
                           <rd:DefaultName>nama_dosen</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1015,9 +1010,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetReportSlipGaji</DataSetName>
             <Top>9.30025cm</Top>
-            <Left>7.27287cm</Left>
+            <Left>5.37196cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>3.34385cm</Width>
             <ZIndex>23</ZIndex>
             <Style>
               <Border>
@@ -1029,7 +1024,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.34385cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1055,8 +1050,7 @@
                           <rd:DefaultName>nama_dosen</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1082,9 +1076,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetReportSlipGaji</DataSetName>
             <Top>10.07664cm</Top>
-            <Left>7.27287cm</Left>
+            <Left>5.37196cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>3.34385cm</Width>
             <ZIndex>24</ZIndex>
             <Style>
               <Border>
@@ -1096,7 +1090,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.34385cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1122,8 +1116,7 @@
                           <rd:DefaultName>nama_dosen</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1149,9 +1142,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetReportSlipGaji</DataSetName>
             <Top>10.85303cm</Top>
-            <Left>7.27287cm</Left>
+            <Left>5.37196cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>3.34385cm</Width>
             <ZIndex>25</ZIndex>
             <Style>
               <Border>
@@ -1175,9 +1168,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>11.62941cm</Top>
-            <Left>7.27287cm</Left>
+            <Left>5.37196cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>3.30857cm</Width>
             <ZIndex>26</ZIndex>
             <Style>
               <Border>
@@ -1205,9 +1198,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>12.4058cm</Top>
-            <Left>7.27287cm</Left>
+            <Left>5.37196cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>3.30857cm</Width>
             <ZIndex>27</ZIndex>
             <Style>
               <Border>
@@ -1223,7 +1216,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.34385cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1249,8 +1242,7 @@
                           <rd:DefaultName>nama_dosen</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1276,9 +1268,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetReportSlipGaji</DataSetName>
             <Top>13.18219cm</Top>
-            <Left>7.27287cm</Left>
+            <Left>5.37196cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>3.34385cm</Width>
             <ZIndex>28</ZIndex>
             <Style>
               <Border>
@@ -1290,7 +1282,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.76694cm</Width>
+                  <Width>3.53059cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1316,8 +1308,7 @@
                           <rd:DefaultName>nama_dosen</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1343,9 +1334,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetReportSlipGaji</DataSetName>
             <Top>15.33702cm</Top>
-            <Left>10.79311cm</Left>
+            <Left>9.24498cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.76694cm</Width>
+            <Width>3.53059cm</Width>
             <ZIndex>29</ZIndex>
             <Style>
               <Border>
@@ -1371,9 +1362,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>17.21542cm</Top>
-            <Left>7.27287cm</Left>
+            <Left>5.37196cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>3.34385cm</Width>
             <ZIndex>30</ZIndex>
             <Style>
               <Border>
@@ -1389,7 +1380,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.76694cm</Width>
+                  <Width>3.53059cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1415,8 +1406,7 @@
                           <rd:DefaultName>nama_dosen</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1442,9 +1432,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetReportSlipGaji</DataSetName>
             <Top>17.21542cm</Top>
-            <Left>10.79311cm</Left>
+            <Left>9.17442cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.76694cm</Width>
+            <Width>3.53059cm</Width>
             <ZIndex>31</ZIndex>
             <Style>
               <Border>
@@ -1452,42 +1442,12 @@
               </Border>
             </Style>
           </Tablix>
-          <Textbox Name="Textbox34">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Arsip Polman Astra</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox14</rd:DefaultName>
-            <Top>21.1223cm</Top>
-            <Left>3.40995cm</Left>
-            <Height>0.6cm</Height>
-            <Width>3.38667cm</Width>
-            <ZIndex>32</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Line Name="Line1">
             <Top>7.97071cm</Top>
-            <Left>3.26884cm</Left>
+            <Left>1.36793cm</Left>
             <Height>0cm</Height>
-            <Width>10.59625cm</Width>
-            <ZIndex>33</ZIndex>
+            <Width>11.54875cm</Width>
+            <ZIndex>32</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1496,10 +1456,10 @@
           </Line>
           <Line Name="Line2">
             <Top>7.30016cm</Top>
-            <Left>3.26884cm</Left>
+            <Left>1.36793cm</Left>
             <Height>0cm</Height>
-            <Width>10.59625cm</Width>
-            <ZIndex>34</ZIndex>
+            <Width>11.54875cm</Width>
+            <ZIndex>33</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1508,7 +1468,19 @@
           </Line>
           <Line Name="Line3">
             <Top>18.21162cm</Top>
-            <Left>3.26884cm</Left>
+            <Left>1.36793cm</Left>
+            <Height>-10.91146cm</Height>
+            <Width>0cm</Width>
+            <ZIndex>34</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Line Name="Line4">
+            <Top>18.21162cm</Top>
+            <Left>12.91668cm</Left>
             <Height>-10.91146cm</Height>
             <Width>0cm</Width>
             <ZIndex>35</ZIndex>
@@ -1518,9 +1490,9 @@
               </Border>
             </Style>
           </Line>
-          <Line Name="Line4">
+          <Line Name="Line5">
             <Top>18.21162cm</Top>
-            <Left>13.86509cm</Left>
+            <Left>9.03331cm</Left>
             <Height>-10.91146cm</Height>
             <Width>0cm</Width>
             <ZIndex>36</ZIndex>
@@ -1530,24 +1502,12 @@
               </Border>
             </Style>
           </Line>
-          <Line Name="Line5">
-            <Top>18.21162cm</Top>
-            <Left>10.61672cm</Left>
-            <Height>-10.91146cm</Height>
-            <Width>0cm</Width>
-            <ZIndex>37</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-            </Style>
-          </Line>
           <Line Name="Line6">
             <Top>18.21162cm</Top>
-            <Left>3.26884cm</Left>
+            <Left>1.36793cm</Left>
             <Height>0cm</Height>
-            <Width>10.59625cm</Width>
-            <ZIndex>38</ZIndex>
+            <Width>11.54875cm</Width>
+            <ZIndex>37</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1556,54 +1516,22 @@
           </Line>
           <Line Name="Line7">
             <Top>16.74813cm</Top>
-            <Left>6.70842cm</Left>
+            <Left>4.80751cm</Left>
             <Height>0cm</Height>
-            <Width>7.15667cm</Width>
-            <ZIndex>39</ZIndex>
+            <Width>8.10917cm</Width>
+            <ZIndex>38</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
               </Border>
             </Style>
           </Line>
-          <Textbox Name="Textbox35">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>(Tanda Tangan)</Value>
-                    <Style>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox14</rd:DefaultName>
-            <Top>18.90876cm</Top>
-            <Left>3.40995cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.96334cm</Width>
-            <ZIndex>40</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Line Name="Line8">
             <Top>2.8196cm</Top>
-            <Left>2.06422cm</Left>
+            <Left>1.36793cm</Left>
             <Height>0cm</Height>
-            <Width>16.84088cm</Width>
-            <ZIndex>41</ZIndex>
+            <Width>13.59897cm</Width>
+            <ZIndex>39</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1625,11 +1553,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
-            <Top>2.99599cm</Top>
-            <Left>16.0876cm</Left>
+            <Top>2.92543cm</Top>
+            <Left>12.13175cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
-            <ZIndex>42</ZIndex>
+            <ZIndex>40</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1670,8 +1598,7 @@
                           <rd:DefaultName>nama_dosen</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1697,10 +1624,10 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetReportSlipGaji</DataSetName>
             <Top>6.10044cm</Top>
-            <Left>7.69558cm</Left>
+            <Left>5.79467cm</Left>
             <Height>0.6cm</Height>
             <Width>2.68521cm</Width>
-            <ZIndex>43</ZIndex>
+            <ZIndex>41</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1723,9 +1650,69 @@
             </Paragraphs>
             <rd:DefaultName>Textbox14</rd:DefaultName>
             <Top>6.10044cm</Top>
-            <Left>10.45134cm</Left>
+            <Left>8.55043cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
+            <ZIndex>42</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Penerima,</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox1</rd:DefaultName>
+            <Top>20.26391cm</Top>
+            <Left>1.36793cm</Left>
+            <Height>0.6cm</Height>
+            <Width>3.95521cm</Width>
+            <ZIndex>43</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="PENERIMA">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!PENERIMA.Value</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>PENERIMA</rd:DefaultName>
+            <Top>22.08953cm</Top>
+            <Left>1.36793cm</Left>
+            <Height>0.6cm</Height>
+            <Width>7.47417cm</Width>
             <ZIndex>44</ZIndex>
             <Style>
               <Border>
@@ -1739,7 +1726,11 @@
           </Textbox>
         </ReportItems>
         <Height>9.5in</Height>
-        <Style />
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
       </Body>
       <Width>7.63045in</Width>
       <Page>
@@ -1759,6 +1750,10 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="PENERIMA">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -1769,6 +1764,11 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>PERIODE</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>PENERIMA</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

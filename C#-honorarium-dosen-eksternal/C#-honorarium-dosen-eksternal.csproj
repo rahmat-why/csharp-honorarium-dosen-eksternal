@@ -106,6 +106,7 @@
     <Compile Include="Adminpage.Designer.cs">
       <DependentUpon>Adminpage.cs</DependentUpon>
     </Compile>
+    <Compile Include="ADTUser.cs" />
     <Compile Include="DAAAPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +248,7 @@
     <EmbeddedResource Include="ReportProdi.resx">
       <DependentUpon>ReportProdi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportSlip.rdlc" />
     <EmbeddedResource Include="ReportTransfer.rdlc" />
     <EmbeddedResource Include="ReportSlipGaji.rdlc" />
     <EmbeddedResource Include="ReportSlipGaji.resx">
@@ -353,6 +355,12 @@
     <None Include="Resources\file.png" />
     <None Include="Resources\filter-filled-tool-symbol.png" />
     <None Include="Resources\Wallpaper.jpg" />
+    <None Include="Resources\filter.png" />
+    <None Include="Resources\reload.png" />
+    <None Include="Resources\trash-can.png" />
+    <None Include="Resources\diskette1.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\upload.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

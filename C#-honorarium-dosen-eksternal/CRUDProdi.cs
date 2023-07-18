@@ -89,8 +89,7 @@ namespace C__honorarium_dosen_eksternal
         }
 
 
-
-        // delete prodi
+        // delete
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
             DialogResult result1 = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

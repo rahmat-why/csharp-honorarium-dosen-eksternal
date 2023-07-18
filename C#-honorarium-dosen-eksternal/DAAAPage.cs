@@ -6,30 +6,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace C__honorarium_dosen_eksternal
 {
     public partial class DAAAPage : Form
     {
-        public DAAAPage()
+        ADTUser userlogin;
+        public DAAAPage(ADTUser login)
         {
             InitializeComponent();
-        }
-
-        private void PanelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void DAAAPage_Load(object sender, EventArgs e)
-        {
-
+            labelLogin.Text = login.getNama() + " - " + login.getRole();
+            userlogin = login;
         }
 
         private void btnAbsensi_Click(object sender, EventArgs e)
@@ -43,7 +32,7 @@ namespace C__honorarium_dosen_eksternal
 
         private void btnLaporanDosen_Click(object sender, EventArgs e)
         {
-            ReportDosen reportDosen = new ReportDosen();
+            ReportDosen reportDosen = new ReportDosen(userlogin);
             reportDosen.TopLevel = false;
             PanelMenu.Controls.Add(reportDosen);
             reportDosen.BringToFront();
@@ -52,7 +41,7 @@ namespace C__honorarium_dosen_eksternal
 
         private void btnLaporanProdi_Click(object sender, EventArgs e)
         {
-            ReportProdi reportProdi = new ReportProdi();
+            ReportProdi reportProdi = new ReportProdi(userlogin);
             reportProdi.TopLevel = false;
             PanelMenu.Controls.Add(reportProdi);
             reportProdi.BringToFront();
@@ -61,7 +50,7 @@ namespace C__honorarium_dosen_eksternal
 
         private void btnLaporanTransfer_Click(object sender, EventArgs e)
         {
-            ReportTransfer reportTransfer = new ReportTransfer();
+            ReportTransfer reportTransfer = new ReportTransfer(userlogin);
             reportTransfer.TopLevel = false;
             PanelMenu.Controls.Add(reportTransfer);
             reportTransfer.BringToFront();

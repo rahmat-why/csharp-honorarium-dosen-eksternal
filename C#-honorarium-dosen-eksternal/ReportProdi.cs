@@ -7,15 +7,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace C__honorarium_dosen_eksternal
 {
     public partial class ReportProdi : Form
     {
-        public ReportProdi()
+        ADTUser userlogin;
+        public ReportProdi(ADTUser login)
         {
             InitializeComponent();
+            userlogin = login;
         }
 
         string emp = "";
@@ -51,7 +54,8 @@ namespace C__honorarium_dosen_eksternal
             DateTime end = start.AddMonths(1).AddDays(15 - start.Day);
             txtTanggalAkhir.Value = end;
         }
-        private void btnFilter_Click_1(object sender, EventArgs e)
+
+        private void btnTampilkan_Click(object sender, EventArgs e)
         {
             DateTime tanggal_awal = txtTanggalAwal.Value;
             string tanggal_Awal = txtTanggalAwal.Value.ToString("yyyy-MM-dd");
@@ -63,13 +67,10 @@ namespace C__honorarium_dosen_eksternal
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter("TAHUN", tahun_akademik));
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter("PERIODE", txtTanggalAwal.Text + " - " + txtTanggalAkhir.Text));
             this.reportViewer1.LocalReport.SetParameters(new ReportParameter("JenisDosen", nama_jenis));
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("PREPAREDBY", userlogin.getNama()));
+            this.reportViewer1.LocalReport.SetParameters(new ReportParameter("CHECKEDBY", "Kepala DAAA"));
             this.getReportProdiTableAdapter.Fill(this.honorariumDosenEksternalDataSet.getReportProdi, tanggal_Awal, tanggal_akhir, jenis);
             this.reportViewer1.RefreshReport();
-        }
-
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

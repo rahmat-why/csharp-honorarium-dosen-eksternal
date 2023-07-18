@@ -52,56 +52,96 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.55392cm</Width>
+                  <Width>3.19233cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.55392cm</Width>
+                  <Width>4.41066cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.55392cm</Width>
+                  <Width>3.23517cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.55392cm</Width>
+                  <Width>4.49003cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.99688cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox1">
+                        <Textbox Name="Textbox2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Prodi</Value>
-                                  <Style />
+                                  <Value>Program Studi</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>MidnightBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox4">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
-                                  <Style />
+                                  <Value>Gross Up</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
                           <Style>
                             <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            </BottomBorder>
+                            <BackgroundColor>MidnightBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -119,8 +159,12 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Gross Up</Value>
-                                  <Style />
+                                  <Value>PPH21</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -128,13 +172,17 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
                           <Style>
                             <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            </BottomBorder>
+                            <BackgroundColor>MidnightBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -145,40 +193,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox7">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Pph21</Value>
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox7</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>CornflowerBlue</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox5">
+                        <Textbox Name="Textbox6">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -186,7 +201,11 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Net Income</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily />
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -194,13 +213,17 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
                           <Style>
                             <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BottomBorder>
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            </BottomBorder>
+                            <BackgroundColor>MidnightBlue</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -491,10 +514,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DatasetReportProdi</DataSetName>
-            <Top>5.80884cm</Top>
-            <Left>3.41846cm</Left>
-            <Height>1.8cm</Height>
-            <Width>14.21568cm</Width>
+            <Top>4.19488cm</Top>
+            <Left>2.8011cm</Left>
+            <Height>2.19688cm</Height>
+            <Width>15.32819cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -502,7 +525,7 @@
             </Style>
           </Tablix>
           <Line Name="Line1">
-            <Top>4.80342cm</Top>
+            <Top>3.63925cm</Top>
             <Left>2.8011cm</Left>
             <Height>0cm</Height>
             <Width>15.32819cm</Width>
@@ -534,7 +557,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox9</rd:DefaultName>
             <Top>0.62301cm</Top>
-            <Left>7.62155cm</Left>
+            <Left>7.93905cm</Left>
             <Height>0.6cm</Height>
             <Width>5.12819cm</Width>
             <ZIndex>2</ZIndex>
@@ -564,13 +587,13 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Right</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
             <Top>1.29356cm</Top>
-            <Left>4.79429cm</Left>
+            <Left>3.41846cm</Left>
             <Height>0.6cm</Height>
             <Width>8.84497cm</Width>
             <ZIndex>3</ZIndex>
@@ -603,8 +626,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>TAHUN</rd:DefaultName>
-            <Top>1.89356cm</Top>
-            <Left>13.51262cm</Left>
+            <Top>1.96412cm</Top>
+            <Left>13.70982cm</Left>
             <Height>0.6cm</Height>
             <Width>2.85278cm</Width>
             <ZIndex>4</ZIndex>
@@ -636,8 +659,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>JenisDosen</rd:DefaultName>
-            <Top>1.29356cm</Top>
-            <Left>13.51262cm</Left>
+            <Top>1.32884cm</Top>
+            <Left>12.26343cm</Left>
             <Height>0.6cm</Height>
             <Width>3.15264cm</Width>
             <ZIndex>5</ZIndex>
@@ -666,7 +689,7 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Right</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
@@ -707,10 +730,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox9</rd:DefaultName>
-            <Top>2.56412cm</Top>
-            <Left>1.20572cm</Left>
+            <Top>2.66995cm</Top>
+            <Left>5.99343cm</Left>
             <Height>0.6cm</Height>
-            <Width>5.12819cm</Width>
+            <Width>2.98601cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -741,8 +764,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>PERIODE</rd:DefaultName>
-            <Top>2.56412cm</Top>
-            <Left>6.5103cm</Left>
+            <Top>2.66995cm</Top>
+            <Left>9.01472cm</Left>
             <Height>0.6cm</Height>
             <Width>10.0126cm</Width>
             <ZIndex>8</ZIndex>
@@ -768,13 +791,13 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Left</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox13</rd:DefaultName>
-            <Top>9.10731cm</Top>
-            <Left>4.47238cm</Left>
+            <Top>7.49335cm</Top>
+            <Left>2.8011cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
             <ZIndex>9</ZIndex>
@@ -801,13 +824,13 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Right</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox13</rd:DefaultName>
-            <Top>9.10731cm</Top>
-            <Left>13.41971cm</Left>
+            <Top>7.49335cm</Top>
+            <Left>14.57537cm</Left>
             <Height>0.6cm</Height>
             <Width>3.55392cm</Width>
             <ZIndex>10</ZIndex>
@@ -834,13 +857,13 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Left</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>PREPAREDBY</rd:DefaultName>
-            <Top>10.96215cm</Top>
-            <Left>3.41846cm</Left>
+            <Top>9.34819cm</Top>
+            <Left>2.8011cm</Left>
             <Height>0.6cm</Height>
             <Width>4.86361cm</Width>
             <ZIndex>11</ZIndex>
@@ -867,13 +890,13 @@
                   </TextRun>
                 </TextRuns>
                 <Style>
-                  <TextAlign>Center</TextAlign>
+                  <TextAlign>Right</TextAlign>
                 </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>CHECKEDBY</rd:DefaultName>
-            <Top>10.97703cm</Top>
-            <Left>12.71415cm</Left>
+            <Top>9.36307cm</Top>
+            <Left>13.2093cm</Left>
             <Height>0.6cm</Height>
             <Width>4.91999cm</Width>
             <ZIndex>12</ZIndex>

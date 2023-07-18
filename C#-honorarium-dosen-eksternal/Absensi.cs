@@ -37,11 +37,11 @@ namespace C__honorarium_dosen_eksternal
             if (e.RowIndex >= 0 && e.RowIndex < tblAbsensi.Rows.Count)
             {
                 DataGridViewRow selectedRow = tblAbsensi.Rows[e.RowIndex];
-                id_absensi = selectedRow.Cells["col_Absensi"].Value.ToString();
-                id_dosen = selectedRow.Cells["col_nama_dosen"].Value.ToString();
-                id_matkul = selectedRow.Cells["nama_matkul"].Value.ToString();
-                id_prodi = selectedRow.Cells["col_Nama_Prodi"].Value.ToString();
-                kelas = selectedRow.Cells["col_Kelas"].Value.ToString();
+                id_absensi = selectedRow.Cells["col_id_absensi"].Value.ToString();
+                id_dosen = selectedRow.Cells["col_dosen"].Value.ToString();
+                id_matkul = selectedRow.Cells["col_matkul"].Value.ToString();
+                id_prodi = selectedRow.Cells["col_prodi"].Value.ToString();
+                kelas = selectedRow.Cells["col_kelas"].Value.ToString();
                 tanggal_mengajar = selectedRow.Cells["col_tanggal_mengajar"].Value.ToString();
                 sks = selectedRow.Cells["col_sks"].Value.ToString();
 
@@ -57,7 +57,7 @@ namespace C__honorarium_dosen_eksternal
             }
         }
 
-       // Save absensi
+        // Save absensi
         private void btnSave_Click_1(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(connectionString);

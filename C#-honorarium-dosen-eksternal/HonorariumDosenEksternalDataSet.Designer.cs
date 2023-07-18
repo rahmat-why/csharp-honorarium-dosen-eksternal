@@ -3027,6 +3027,8 @@ namespace C__honorarium_dosen_eksternal {
             
             private global::System.Data.DataColumn columnnama_perusahaan;
             
+            private global::System.Data.DataColumn columnsingkatan_perusahaan;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public perusahaan_astraDataTable() {
@@ -3078,6 +3080,14 @@ namespace C__honorarium_dosen_eksternal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn singkatan_perusahaanColumn {
+                get {
+                    return this.columnsingkatan_perusahaan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3113,11 +3123,12 @@ namespace C__honorarium_dosen_eksternal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public perusahaan_astraRow Addperusahaan_astraRow(string id_perusahaan, string nama_perusahaan) {
+            public perusahaan_astraRow Addperusahaan_astraRow(string id_perusahaan, string nama_perusahaan, string singkatan_perusahaan) {
                 perusahaan_astraRow rowperusahaan_astraRow = ((perusahaan_astraRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_perusahaan,
-                        nama_perusahaan};
+                        nama_perusahaan,
+                        singkatan_perusahaan};
                 rowperusahaan_astraRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowperusahaan_astraRow);
                 return rowperusahaan_astraRow;
@@ -3149,6 +3160,7 @@ namespace C__honorarium_dosen_eksternal {
             internal void InitVars() {
                 this.columnid_perusahaan = base.Columns["id_perusahaan"];
                 this.columnnama_perusahaan = base.Columns["nama_perusahaan"];
+                this.columnsingkatan_perusahaan = base.Columns["singkatan_perusahaan"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3158,6 +3170,8 @@ namespace C__honorarium_dosen_eksternal {
                 base.Columns.Add(this.columnid_perusahaan);
                 this.columnnama_perusahaan = new global::System.Data.DataColumn("nama_perusahaan", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnama_perusahaan);
+                this.columnsingkatan_perusahaan = new global::System.Data.DataColumn("singkatan_perusahaan", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsingkatan_perusahaan);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_perusahaan}, true));
                 this.columnid_perusahaan.AllowDBNull = false;
@@ -7055,6 +7069,8 @@ namespace C__honorarium_dosen_eksternal {
             
             private global::System.Data.DataColumn columnnama_perusahaan;
             
+            private global::System.Data.DataColumn columnsingkatan_perusahaan;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public getListPerusahaanDataTable() {
@@ -7106,6 +7122,14 @@ namespace C__honorarium_dosen_eksternal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn singkatan_perusahaanColumn {
+                get {
+                    return this.columnsingkatan_perusahaan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7141,11 +7165,12 @@ namespace C__honorarium_dosen_eksternal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public getListPerusahaanRow AddgetListPerusahaanRow(string id_perusahaan, string nama_perusahaan) {
+            public getListPerusahaanRow AddgetListPerusahaanRow(string id_perusahaan, string nama_perusahaan, string singkatan_perusahaan) {
                 getListPerusahaanRow rowgetListPerusahaanRow = ((getListPerusahaanRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_perusahaan,
-                        nama_perusahaan};
+                        nama_perusahaan,
+                        singkatan_perusahaan};
                 rowgetListPerusahaanRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowgetListPerusahaanRow);
                 return rowgetListPerusahaanRow;
@@ -7177,6 +7202,7 @@ namespace C__honorarium_dosen_eksternal {
             internal void InitVars() {
                 this.columnid_perusahaan = base.Columns["id_perusahaan"];
                 this.columnnama_perusahaan = base.Columns["nama_perusahaan"];
+                this.columnsingkatan_perusahaan = base.Columns["singkatan_perusahaan"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7186,6 +7212,8 @@ namespace C__honorarium_dosen_eksternal {
                 base.Columns.Add(this.columnid_perusahaan);
                 this.columnnama_perusahaan = new global::System.Data.DataColumn("nama_perusahaan", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnama_perusahaan);
+                this.columnsingkatan_perusahaan = new global::System.Data.DataColumn("singkatan_perusahaan", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsingkatan_perusahaan);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_perusahaan}, true));
                 this.columnid_perusahaan.AllowDBNull = false;
@@ -10577,6 +10605,23 @@ namespace C__honorarium_dosen_eksternal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string singkatan_perusahaan {
+                get {
+                    try {
+                        return ((string)(this[this.tableperusahaan_astra.singkatan_perusahaanColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'singkatan_perusahaan\' in table \'perusahaan_astra\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableperusahaan_astra.singkatan_perusahaanColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isnama_perusahaanNull() {
                 return this.IsNull(this.tableperusahaan_astra.nama_perusahaanColumn);
             }
@@ -10585,6 +10630,18 @@ namespace C__honorarium_dosen_eksternal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setnama_perusahaanNull() {
                 this[this.tableperusahaan_astra.nama_perusahaanColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Issingkatan_perusahaanNull() {
+                return this.IsNull(this.tableperusahaan_astra.singkatan_perusahaanColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setsingkatan_perusahaanNull() {
+                this[this.tableperusahaan_astra.singkatan_perusahaanColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12026,6 +12083,23 @@ namespace C__honorarium_dosen_eksternal {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string singkatan_perusahaan {
+                get {
+                    try {
+                        return ((string)(this[this.tablegetListPerusahaan.singkatan_perusahaanColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'singkatan_perusahaan\' in table \'getListPerusahaan\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablegetListPerusahaan.singkatan_perusahaanColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool Isnama_perusahaanNull() {
                 return this.IsNull(this.tablegetListPerusahaan.nama_perusahaanColumn);
             }
@@ -12034,6 +12108,18 @@ namespace C__honorarium_dosen_eksternal {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setnama_perusahaanNull() {
                 this[this.tablegetListPerusahaan.nama_perusahaanColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Issingkatan_perusahaanNull() {
+                return this.IsNull(this.tablegetListPerusahaan.singkatan_perusahaanColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setsingkatan_perusahaanNull() {
+                this[this.tablegetListPerusahaan.singkatan_perusahaanColumn] = global::System.Convert.DBNull;
             }
         }
         

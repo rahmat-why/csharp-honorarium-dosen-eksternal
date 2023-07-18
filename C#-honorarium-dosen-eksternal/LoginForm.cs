@@ -25,11 +25,6 @@ namespace C__honorarium_dosen_eksternal
             txtUser.Focus();
         }
 
-        private void txtUser_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
@@ -50,17 +45,19 @@ namespace C__honorarium_dosen_eksternal
 
                         txtUser.Text = namaUser;
 
+                        ADTUser login = new ADTUser(idUser, namaUser, role);
+
                         if (role == "ADMIN")
                         {
                             // Mengatur keadaan halaman sesuai dengan peran (role)
-                            Adminpage adminPage = new Adminpage();
+                            Adminpage adminPage = new Adminpage(login);
                             adminPage.Show();
                             MessageBox.Show("Selamat datang, Admin!");
                         }
                         else if (role == "DAAA")
                         {
                             // Mengatur keadaan halaman sesuai dengan peran (role)
-                            DAAAPage daaaPage = new DAAAPage();
+                            DAAAPage daaaPage = new DAAAPage(login);
                             daaaPage.Show();
                             MessageBox.Show("Selamat datang, DAAA!");
                         }

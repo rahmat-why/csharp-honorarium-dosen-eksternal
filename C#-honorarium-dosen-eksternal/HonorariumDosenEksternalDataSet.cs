@@ -6,6 +6,9 @@ namespace C__honorarium_dosen_eksternal
 
     partial class HonorariumDosenEksternalDataSet
     {
+        partial class perusahaan_astraDataTable
+        {
+        }
     }
 }
 

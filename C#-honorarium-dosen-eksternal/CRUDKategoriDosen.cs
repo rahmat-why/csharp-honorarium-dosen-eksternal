@@ -208,6 +208,11 @@ namespace C__honorarium_dosen_eksternal
             btnDelete.Enabled = false;
         }
 
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             loadkategori(txtSearch.Text);
@@ -218,7 +223,6 @@ namespace C__honorarium_dosen_eksternal
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow selectedRow = tblKategoriDosen.Rows[e.RowIndex];
-             
 
                 // Retrieve the data from the selected row
                 id_jenis_dosen = selectedRow.Cells["col_id_jenis_dosen"].Value.ToString();

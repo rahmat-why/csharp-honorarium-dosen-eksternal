@@ -56,6 +56,7 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.tblKategoriDosen = new Guna.UI2.WinForms.Guna2DataGridView();
             this.col_nama_jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_id_jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_kompensasi_mengajar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_transport_mengajar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_persentase_pph21_npwp = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -516,6 +517,7 @@
             this.tblKategoriDosen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tblKategoriDosen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_nama_jenis,
+            this.col_id_jenis,
             this.col_kompensasi_mengajar,
             this.col_transport_mengajar,
             this.col_persentase_pph21_npwp,
@@ -558,12 +560,19 @@
             this.tblKategoriDosen.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tblKategoriDosen.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.MidnightBlue;
             this.tblKategoriDosen.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblKategoriDosen_CellClick_1);
+            this.tblKategoriDosen.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.tblKategoriDosen_CellFormatting);
             // 
             // col_nama_jenis
             // 
             this.col_nama_jenis.DataPropertyName = "nama_jenis";
             this.col_nama_jenis.HeaderText = "Nama Jenis";
             this.col_nama_jenis.Name = "col_nama_jenis";
+            // 
+            // col_id_jenis
+            // 
+            this.col_id_jenis.DataPropertyName = "id_jenis_dosen";
+            this.col_id_jenis.HeaderText = "ID Jenis";
+            this.col_id_jenis.Name = "col_id_jenis";
             // 
             // col_kompensasi_mengajar
             // 
@@ -618,6 +627,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.BackgroundImage = global::C__honorarium_dosen_eksternal.Properties.Resources.BG10;
             this.ClientSize = new System.Drawing.Size(1366, 786);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel3);
@@ -669,6 +679,7 @@
         private Guna.UI2.WinForms.Guna2DataGridView tblKategoriDosen;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id_jenis_dosen;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_nama_jenis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_id_jenis;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_kompensasi_mengajar;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_transport_mengajar;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_persentase_pph21_npwp;

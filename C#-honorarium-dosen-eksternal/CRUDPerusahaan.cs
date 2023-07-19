@@ -133,6 +133,7 @@ namespace C__honorarium_dosen_eksternal
 
             com.Parameters.AddWithValue("@id_perusahaan", txtIDPerusahaan.Text);
             com.Parameters.AddWithValue("@nama_perusahaan", txtNamaPerusahaan.Text);
+            com.Parameters.AddWithValue("@singkatan_perusahaan", txtSingkatan.Text);
 
             try
             {
@@ -172,6 +173,7 @@ namespace C__honorarium_dosen_eksternal
                     com.CommandText = "sp_CreatePerusahaan";
 
                     com.Parameters.AddWithValue("@nama_perusahaan", txtNamaPerusahaan.Text);
+                    com.Parameters.AddWithValue("@singkatan_perusahaan", txtSingkatan.Text);
 
                     try
                     {

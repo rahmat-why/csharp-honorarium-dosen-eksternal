@@ -177,7 +177,7 @@
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "Search Name";
+            this.txtSearch.PlaceholderText = "Cari disini...";
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(159, 32);
             this.txtSearch.TabIndex = 43;
@@ -349,6 +349,7 @@
             this.txtMataKuliah.SelectedText = "";
             this.txtMataKuliah.Size = new System.Drawing.Size(264, 34);
             this.txtMataKuliah.TabIndex = 22;
+            this.txtMataKuliah.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMataKuliah_KeyPress);
             // 
             // txtSks
             // 
@@ -375,6 +376,7 @@
             this.txtSks.SelectedText = "";
             this.txtSks.Size = new System.Drawing.Size(264, 34);
             this.txtSks.TabIndex = 21;
+            this.txtSks.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSks_KeyPress);
             // 
             // txtIDMatkul
             // 
@@ -411,6 +413,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.BackgroundImage = global::C__honorarium_dosen_eksternal.Properties.Resources.BG10;
             this.ClientSize = new System.Drawing.Size(1366, 786);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel4);

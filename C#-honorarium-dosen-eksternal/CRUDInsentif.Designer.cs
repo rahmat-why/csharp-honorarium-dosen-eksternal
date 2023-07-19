@@ -46,15 +46,15 @@
             this.txtNamaGolongan = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.tblGolongan = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.col_id_golongan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_nama_golongan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_insentif = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tahun_batas_bawah = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tahun_batas_atas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getListGolonganBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.honorariumDosenEksternalDataSet = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSet();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.getListGolonganTableAdapter = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSetTableAdapters.getListGolonganTableAdapter();
-            this.col_id_golongan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nama_golongan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_insentif_kehadiran = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_tahun_batas_bawah = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_tahun_batas_atas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblGolongan)).BeginInit();
@@ -377,7 +377,7 @@
             this.tblGolongan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_id_golongan,
             this.col_nama_golongan,
-            this.col_insentif_kehadiran,
+            this.col_insentif,
             this.col_tahun_batas_bawah,
             this.col_tahun_batas_atas});
             this.tblGolongan.DataSource = this.getListGolonganBindingSource;
@@ -417,6 +417,37 @@
             this.tblGolongan.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tblGolongan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.MidnightBlue;
             this.tblGolongan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblGolongan_CellClick);
+            this.tblGolongan.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.tblGolongan_CellFormatting);
+            // 
+            // col_id_golongan
+            // 
+            this.col_id_golongan.DataPropertyName = "id_golongan";
+            this.col_id_golongan.HeaderText = "ID Golongan";
+            this.col_id_golongan.Name = "col_id_golongan";
+            // 
+            // col_nama_golongan
+            // 
+            this.col_nama_golongan.DataPropertyName = "nama";
+            this.col_nama_golongan.HeaderText = "Nama";
+            this.col_nama_golongan.Name = "col_nama_golongan";
+            // 
+            // col_insentif
+            // 
+            this.col_insentif.DataPropertyName = "insentif_kehadiran";
+            this.col_insentif.HeaderText = "Insentif";
+            this.col_insentif.Name = "col_insentif";
+            // 
+            // col_tahun_batas_bawah
+            // 
+            this.col_tahun_batas_bawah.DataPropertyName = "tahun_batas_bawah";
+            this.col_tahun_batas_bawah.HeaderText = "Tahun Atas";
+            this.col_tahun_batas_bawah.Name = "col_tahun_batas_bawah";
+            // 
+            // col_tahun_batas_atas
+            // 
+            this.col_tahun_batas_atas.DataPropertyName = "tahun_batas_atas";
+            this.col_tahun_batas_atas.HeaderText = "Tahun Bawah";
+            this.col_tahun_batas_atas.Name = "col_tahun_batas_atas";
             // 
             // getListGolonganBindingSource
             // 
@@ -459,41 +490,12 @@
             // 
             this.getListGolonganTableAdapter.ClearBeforeFill = true;
             // 
-            // col_id_golongan
-            // 
-            this.col_id_golongan.DataPropertyName = "id_golongan";
-            this.col_id_golongan.HeaderText = "ID Golongan";
-            this.col_id_golongan.Name = "col_id_golongan";
-            // 
-            // col_nama_golongan
-            // 
-            this.col_nama_golongan.DataPropertyName = "nama";
-            this.col_nama_golongan.HeaderText = "Nama";
-            this.col_nama_golongan.Name = "col_nama_golongan";
-            // 
-            // col_insentif_kehadiran
-            // 
-            this.col_insentif_kehadiran.DataPropertyName = "insentif_kehadiran";
-            this.col_insentif_kehadiran.HeaderText = "Insentif";
-            this.col_insentif_kehadiran.Name = "col_insentif_kehadiran";
-            // 
-            // col_tahun_batas_bawah
-            // 
-            this.col_tahun_batas_bawah.DataPropertyName = "tahun_batas_bawah";
-            this.col_tahun_batas_bawah.HeaderText = "Tahun Atas";
-            this.col_tahun_batas_bawah.Name = "col_tahun_batas_bawah";
-            // 
-            // col_tahun_batas_atas
-            // 
-            this.col_tahun_batas_atas.DataPropertyName = "tahun_batas_atas";
-            this.col_tahun_batas_atas.HeaderText = "Tahun Bawah";
-            this.col_tahun_batas_atas.Name = "col_tahun_batas_atas";
-            // 
             // CRUDInsentif
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.BackgroundImage = global::C__honorarium_dosen_eksternal.Properties.Resources.BG10;
             this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
@@ -533,7 +535,7 @@
         private Guna.UI2.WinForms.Guna2DataGridView tblGolongan;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id_golongan;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_nama_golongan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_insentif_kehadiran;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_insentif;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_tahun_batas_bawah;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_tahun_batas_atas;
     }

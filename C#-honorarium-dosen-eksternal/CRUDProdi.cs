@@ -109,15 +109,12 @@ namespace C__honorarium_dosen_eksternal
                     int result = Convert.ToInt32(com.ExecuteNonQuery());
                     connection.Close();
 
-                    if (result != 0)
-                    {
-                        MessageBox.Show("Data berhasil diDelete!");
-                        btnSave.Enabled = true;
-                        btnDelete.Enabled = false;
-                        btnUpdate.Enabled = false;
-                        clear();
-                        loadProdi(emp);
-                    }
+                    MessageBox.Show("Program studi berhasil dihapus!");
+                    btnSave.Enabled = true;
+                    btnDelete.Enabled = false;
+                    btnUpdate.Enabled = false;
+                    clear();
+                    loadProdi(emp);
                 }
                 catch (Exception ex)
                 {
@@ -129,22 +126,28 @@ namespace C__honorarium_dosen_eksternal
         //btn Update
         private void btnUpdate_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand com = new SqlCommand();
-            com.Connection = connection;  // Assign the SqlConnection object
-            com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "sp_UpdateProdi";  // Set the stored procedure name
+            if (txtNamaProdi.Text == "" || txtSingkatan.Text == "" || cmbTransport.Text == "")
+            {
+                MessageBox.Show("Harap lengkapi semua data!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            com.Parameters.AddWithValue("@id_prodi", txtIDProdi.Text);
-            com.Parameters.AddWithValue("@nama_prodi", txtNamaProdi.Text);
-            com.Parameters.AddWithValue("@singkatan", txtSingkatan.Text);
-            com.Parameters.AddWithValue("@transport", cmbTransport.SelectedItem.ToString());
             try
             {
+                SqlConnection connection = new SqlConnection(connectionString);
+                SqlCommand com = new SqlCommand();
+                com.Connection = connection;  // Assign the SqlConnection object
+                com.CommandType = CommandType.StoredProcedure;
+                com.CommandText = "sp_UpdateProdi";  // Set the stored procedure name
+
+                com.Parameters.AddWithValue("@id_prodi", txtIDProdi.Text);
+                com.Parameters.AddWithValue("@nama_prodi", txtNamaProdi.Text);
+                com.Parameters.AddWithValue("@singkatan", txtSingkatan.Text);
+                com.Parameters.AddWithValue("@transport", cmbTransport.SelectedItem.ToString());
+
                 connection.Open();
                 com.ExecuteNonQuery();
-                MessageBox.Show("Data berhasil diUpdate! ", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Program studi berhasil diubah!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnSave.Enabled = true;
                 btnDelete.Enabled = false;
                 btnUpdate.Enabled = false;
@@ -161,20 +164,27 @@ namespace C__honorarium_dosen_eksternal
         //btn Save
         private void btnSave_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand com = new SqlCommand();
-            com.Connection = connection;  // Assign the SqlConnection object
-            com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "sp_CreateProdi";  // Set the stored procedure name
+            if(txtNamaProdi.Text == "" || txtSingkatan.Text == "" || cmbTransport.Text == "")
+            {
+                MessageBox.Show("Harap lengkapi semua data!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            com.Parameters.AddWithValue("@nama_prodi", txtNamaProdi.Text);
-            com.Parameters.AddWithValue("@singkatan", txtSingkatan.Text);
-            com.Parameters.AddWithValue("@transport", cmbTransport.Text);
             try
             {
+                SqlConnection connection = new SqlConnection(connectionString);
+                SqlCommand com = new SqlCommand();
+                com.Connection = connection;  // Assign the SqlConnection object
+                com.CommandType = CommandType.StoredProcedure;
+                com.CommandText = "sp_CreateProdi";  // Set the stored procedure name
+
+                com.Parameters.AddWithValue("@nama_prodi", txtNamaProdi.Text);
+                com.Parameters.AddWithValue("@singkatan", txtSingkatan.Text);
+                com.Parameters.AddWithValue("@transport", cmbTransport.Text);
+
                 connection.Open();
                 com.ExecuteNonQuery();
-                MessageBox.Show("Data berhasil diSave", "Information",
+                MessageBox.Show("Program studi berhasil disimpan!", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnSave.Enabled = true;
                 btnDelete.Enabled = false;

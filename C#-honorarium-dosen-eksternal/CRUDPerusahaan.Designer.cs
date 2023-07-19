@@ -33,6 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtSingkatan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnClear = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
@@ -40,23 +42,21 @@
             this.txtNamaPerusahaan = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtIDPerusahaan = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tblPerusahaan = new Guna.UI2.WinForms.Guna2DataGridView();
             this.getListPerusahaanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.honorariumDosenEksternalDataSet = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSet();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.getListPerusahaanTableAdapter = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSetTableAdapters.getListPerusahaanTableAdapter();
             this.getListPerusahaanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tblPerusahaan = new Guna.UI2.WinForms.Guna2DataGridView();
             this.col_id_perusahaan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_nama_perusahaan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_singkatan_perusahaan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtSingkatan = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblPerusahaan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getListPerusahaanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.honorariumDosenEksternalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getListPerusahaanBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblPerusahaan)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel4
@@ -78,6 +78,43 @@
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(298, 629);
             this.guna2Panel4.TabIndex = 4;
+            // 
+            // txtSingkatan
+            // 
+            this.txtSingkatan.AutoRoundedCorners = true;
+            this.txtSingkatan.BorderColor = System.Drawing.Color.MidnightBlue;
+            this.txtSingkatan.BorderRadius = 16;
+            this.txtSingkatan.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txtSingkatan.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSingkatan.DefaultText = "";
+            this.txtSingkatan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSingkatan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSingkatan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSingkatan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSingkatan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSingkatan.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSingkatan.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtSingkatan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSingkatan.Location = new System.Drawing.Point(17, 179);
+            this.txtSingkatan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSingkatan.Name = "txtSingkatan";
+            this.txtSingkatan.PasswordChar = '\0';
+            this.txtSingkatan.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtSingkatan.PlaceholderText = "Singkatan";
+            this.txtSingkatan.SelectedText = "";
+            this.txtSingkatan.Size = new System.Drawing.Size(264, 34);
+            this.txtSingkatan.TabIndex = 84;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 37);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(211, 32);
+            this.label1.TabIndex = 83;
+            this.label1.Text = "Form Perusahaan";
             // 
             // btnClear
             // 
@@ -242,62 +279,6 @@
             this.guna2Panel2.Size = new System.Drawing.Size(691, 629);
             this.guna2Panel2.TabIndex = 5;
             // 
-            // txtSearch
-            // 
-            this.txtSearch.AutoRoundedCorners = true;
-            this.txtSearch.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtSearch.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.txtSearch.BorderRadius = 18;
-            this.txtSearch.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(509, 24);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "Search Name";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(176, 39);
-            this.txtSearch.TabIndex = 35;
-            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 32);
-            this.label1.TabIndex = 83;
-            this.label1.Text = "Form Perusahaan";
-            // 
-            // getListPerusahaanBindingSource
-            // 
-            this.getListPerusahaanBindingSource.DataMember = "getListPerusahaan";
-            this.getListPerusahaanBindingSource.DataSource = this.honorariumDosenEksternalDataSet;
-            // 
-            // honorariumDosenEksternalDataSet
-            // 
-            this.honorariumDosenEksternalDataSet.DataSetName = "HonorariumDosenEksternalDataSet";
-            this.honorariumDosenEksternalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // getListPerusahaanTableAdapter
-            // 
-            this.getListPerusahaanTableAdapter.ClearBeforeFill = true;
-            // 
-            // getListPerusahaanBindingSource1
-            // 
-            this.getListPerusahaanBindingSource1.DataMember = "getListPerusahaan";
-            this.getListPerusahaanBindingSource1.DataSource = this.honorariumDosenEksternalDataSet;
-            // 
             // tblPerusahaan
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -355,6 +336,51 @@
             this.tblPerusahaan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.tblPerusahaan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblPerusahaan_CellClick);
             // 
+            // getListPerusahaanBindingSource
+            // 
+            this.getListPerusahaanBindingSource.DataMember = "getListPerusahaan";
+            this.getListPerusahaanBindingSource.DataSource = this.honorariumDosenEksternalDataSet;
+            // 
+            // honorariumDosenEksternalDataSet
+            // 
+            this.honorariumDosenEksternalDataSet.DataSetName = "HonorariumDosenEksternalDataSet";
+            this.honorariumDosenEksternalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.AutoRoundedCorners = true;
+            this.txtSearch.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtSearch.BorderColor = System.Drawing.Color.MidnightBlue;
+            this.txtSearch.BorderRadius = 18;
+            this.txtSearch.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Location = new System.Drawing.Point(509, 24);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderText = "Search Name";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(176, 39);
+            this.txtSearch.TabIndex = 35;
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
+            // 
+            // getListPerusahaanTableAdapter
+            // 
+            this.getListPerusahaanTableAdapter.ClearBeforeFill = true;
+            // 
+            // getListPerusahaanBindingSource1
+            // 
+            this.getListPerusahaanBindingSource1.DataMember = "getListPerusahaan";
+            this.getListPerusahaanBindingSource1.DataSource = this.honorariumDosenEksternalDataSet;
+            // 
             // col_id_perusahaan
             // 
             this.col_id_perusahaan.DataPropertyName = "id_perusahaan";
@@ -373,37 +399,12 @@
             this.col_singkatan_perusahaan.HeaderText = "Singkatan";
             this.col_singkatan_perusahaan.Name = "col_singkatan_perusahaan";
             // 
-            // txtSingkatan
-            // 
-            this.txtSingkatan.AutoRoundedCorners = true;
-            this.txtSingkatan.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.txtSingkatan.BorderRadius = 16;
-            this.txtSingkatan.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            this.txtSingkatan.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSingkatan.DefaultText = "";
-            this.txtSingkatan.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSingkatan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSingkatan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSingkatan.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSingkatan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSingkatan.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSingkatan.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtSingkatan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSingkatan.Location = new System.Drawing.Point(17, 179);
-            this.txtSingkatan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtSingkatan.Name = "txtSingkatan";
-            this.txtSingkatan.PasswordChar = '\0';
-            this.txtSingkatan.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtSingkatan.PlaceholderText = "Singkatan";
-            this.txtSingkatan.SelectedText = "";
-            this.txtSingkatan.Size = new System.Drawing.Size(264, 34);
-            this.txtSingkatan.TabIndex = 84;
-            // 
             // CRUDPerusahaan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.BackgroundImage = global::C__honorarium_dosen_eksternal.Properties.Resources.BG10;
             this.ClientSize = new System.Drawing.Size(1366, 786);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel4);
@@ -416,10 +417,10 @@
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tblPerusahaan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getListPerusahaanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.honorariumDosenEksternalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getListPerusahaanBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblPerusahaan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -441,9 +442,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource getListPerusahaanBindingSource1;
         private Guna.UI2.WinForms.Guna2DataGridView tblPerusahaan;
+        private Guna.UI2.WinForms.Guna2TextBox txtSingkatan;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id_perusahaan;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_nama_perusahaan;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_singkatan_perusahaan;
-        private Guna.UI2.WinForms.Guna2TextBox txtSingkatan;
     }
 }

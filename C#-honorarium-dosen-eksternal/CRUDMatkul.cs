@@ -56,7 +56,7 @@ namespace C__honorarium_dosen_eksternal
                 e.Handled = true;
 
                 // Menampilkan pesan kesalahan
-                MessageBox.Show("Hanya huruf dan spasi yang diizinkan.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Kolom ini hanya boleh diisi huruf!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -71,7 +71,7 @@ namespace C__honorarium_dosen_eksternal
                 e.Handled = true;
 
                 // Menampilkan pesan kesalahan
-                MessageBox.Show("Hanya angka yang diizinkan.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("SKS hanya boleh diisi Angka!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -105,15 +105,12 @@ namespace C__honorarium_dosen_eksternal
                     int result = Convert.ToInt32(com.ExecuteNonQuery());
                     connection.Close();
 
-                    if (result != 0)
-                    {
-                        MessageBox.Show("Data Berhasil Dihapus!");
-                        btnSave.Enabled = true;
-                        btnDelete.Enabled = false;
-                        btnUpdate.Enabled = false;
-                        clear();
-                        loadMatkul(emp);
-                    }
+                    MessageBox.Show("Mata Kuliah berhasil dihapus!");
+                    btnSave.Enabled = true;
+                    btnDelete.Enabled = false;
+                    btnUpdate.Enabled = false;
+                    clear();
+                    loadMatkul(emp);
                 }
                 catch (Exception ex)
                 {
@@ -130,20 +127,27 @@ namespace C__honorarium_dosen_eksternal
         // Update Matkul
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand com = new SqlCommand();
-            com.Connection = connection;  // Assign the SqlConnection object
-            com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "sp_UpdateMatkul";  // Set the stored procedure name
+            if (txtMataKuliah.Text == "" || txtSks.Text == "")
+            {
+                MessageBox.Show("Harap lengkapi semua data!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            com.Parameters.AddWithValue("@id_matkul", txtIDMatkul.Text);
-            com.Parameters.AddWithValue("@nama_matkul", txtMataKuliah.Text);
-            com.Parameters.AddWithValue("@sks", txtSks.Text);
             try
             {
+                SqlConnection connection = new SqlConnection(connectionString);
+                SqlCommand com = new SqlCommand();
+                com.Connection = connection;  // Assign the SqlConnection object
+                com.CommandType = CommandType.StoredProcedure;
+                com.CommandText = "sp_UpdateMatkul";  // Set the stored procedure name
+
+                com.Parameters.AddWithValue("@id_matkul", txtIDMatkul.Text);
+                com.Parameters.AddWithValue("@nama_matkul", txtMataKuliah.Text);
+                com.Parameters.AddWithValue("@sks", txtSks.Text);
+
                 connection.Open();
                 com.ExecuteNonQuery();
-                MessageBox.Show("Update berhasil", "Information",
+                MessageBox.Show("Mata Kuliah berhasil diubah!", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnSave.Enabled = true;
                 btnDelete.Enabled = false;
@@ -170,20 +174,28 @@ namespace C__honorarium_dosen_eksternal
         //Save Matku
         private void btnSave_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand com = new SqlCommand();
-            com.Connection = connection;  // Assign the SqlConnection object
-            com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "sp_CreateMatkul";  // Set the stored procedure name
+            if(txtMataKuliah.Text == "" || txtSks.Text == "")
+            {
+                MessageBox.Show("Harap lengkapi semua data!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            com.Parameters.AddWithValue("@nama_matkul", txtMataKuliah.Text);
-            com.Parameters.AddWithValue("@sks", txtSks.Text);
             try
             {
+                SqlConnection connection = new SqlConnection(connectionString);
+                SqlCommand com = new SqlCommand();
+                com.Connection = connection;  // Assign the SqlConnection object
+                com.CommandType = CommandType.StoredProcedure;
+                com.CommandText = "sp_CreateMatkul";  // Set the stored procedure name
+
+                com.Parameters.AddWithValue("@nama_matkul", txtMataKuliah.Text);
+                com.Parameters.AddWithValue("@sks", txtSks.Text);
+
                 connection.Open();
                 com.ExecuteNonQuery();
-                MessageBox.Show("Data saved successfully", "Information",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                MessageBox.Show("Mata kuliah berhasil disimpan!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 btnSave.Enabled = true;
                 btnDelete.Enabled = false;
                 btnUpdate.Enabled = false;

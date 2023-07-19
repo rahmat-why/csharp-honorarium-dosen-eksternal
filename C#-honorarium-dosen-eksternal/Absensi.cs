@@ -62,12 +62,6 @@ namespace C__honorarium_dosen_eksternal
         // Save absensi
         private void btnSave_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand com = new SqlCommand();
-            com.Connection = connection;
-            com.CommandText = "sp_CreateAbsensi";
-            com.CommandType = CommandType.StoredProcedure;
-
             if (cmbIDDosen.SelectedValue == null || cmbIDMatkul.SelectedValue == null ||
                 cmbIDProdi.SelectedValue == null || string.IsNullOrEmpty(txtKelas.Text) ||
                 string.IsNullOrEmpty(txtTotalSKS.Text))
@@ -76,6 +70,11 @@ namespace C__honorarium_dosen_eksternal
                 return;
             }
 
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand com = new SqlCommand();
+            com.Connection = connection;
+            com.CommandText = "sp_CreateAbsensi";
+            com.CommandType = CommandType.StoredProcedure;
 
             com.Parameters.AddWithValue("@id_dosen", (string)cmbIDDosen.SelectedValue);
             com.Parameters.AddWithValue("@id_matkul", (string)cmbIDMatkul.SelectedValue);
@@ -108,6 +107,17 @@ namespace C__honorarium_dosen_eksternal
             DialogResult result1 = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result1 == DialogResult.Yes)
             {
+                DateTime tanggal_mengajar_selected = txtTanggalMengajar.Value;
+                DateTime currentDate = DateTime.Now;
+                DateTime last_month = currentDate.AddDays(-30);
+
+                // Memeriksa apakah tanggal transaksi dikurangi 30 hari >= tanggal 16
+                if (tanggal_mengajar_selected.CompareTo(last_month) <= 0)
+                {
+                    MessageBox.Show("Transaksi ini tidak dapat dihapus karena sudah dibukukan");
+                    return;
+                }
+
                 try
                 {
                     SqlConnection connection = new SqlConnection(connectionString);

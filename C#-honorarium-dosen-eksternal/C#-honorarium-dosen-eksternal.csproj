@@ -361,6 +361,8 @@
     <None Include="Resources\diskette1.png" />
     <None Include="Resources\edit.png" />
     <None Include="Resources\upload.png" />
+    <None Include="Resources\BG6.png" />
+    <None Include="Resources\BG10.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

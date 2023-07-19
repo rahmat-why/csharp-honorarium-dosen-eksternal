@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DAAAPage));
             this.PanelMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelLogin = new System.Windows.Forms.Label();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -58,8 +59,9 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.guna2Panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("guna2Panel2.BackgroundImage")));
+            this.guna2Panel2.BackgroundImage = global::C__honorarium_dosen_eksternal.Properties.Resources.BG6;
             this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.guna2Panel2.Controls.Add(this.label2);
             this.guna2Panel2.Controls.Add(this.label1);
             this.guna2Panel2.Controls.Add(this.labelLogin);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
@@ -75,6 +77,17 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(248, 512);
             this.guna2Panel2.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label2.Location = new System.Drawing.Point(12, 242);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 21);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Laporan";
             // 
             // label1
             // 
@@ -145,7 +158,7 @@
             this.btnLaporanSlipGaji.ForeColor = System.Drawing.Color.MidnightBlue;
             this.btnLaporanSlipGaji.Image = ((System.Drawing.Image)(resources.GetObject("btnLaporanSlipGaji.Image")));
             this.btnLaporanSlipGaji.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLaporanSlipGaji.Location = new System.Drawing.Point(1, 404);
+            this.btnLaporanSlipGaji.Location = new System.Drawing.Point(1, 444);
             this.btnLaporanSlipGaji.Name = "btnLaporanSlipGaji";
             this.btnLaporanSlipGaji.Size = new System.Drawing.Size(245, 51);
             this.btnLaporanSlipGaji.TabIndex = 8;
@@ -167,7 +180,7 @@
             this.btnLaporanDosen.ForeColor = System.Drawing.Color.MidnightBlue;
             this.btnLaporanDosen.Image = ((System.Drawing.Image)(resources.GetObject("btnLaporanDosen.Image")));
             this.btnLaporanDosen.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLaporanDosen.Location = new System.Drawing.Point(3, 229);
+            this.btnLaporanDosen.Location = new System.Drawing.Point(3, 269);
             this.btnLaporanDosen.Name = "btnLaporanDosen";
             this.btnLaporanDosen.Size = new System.Drawing.Size(246, 51);
             this.btnLaporanDosen.TabIndex = 7;
@@ -212,7 +225,7 @@
             this.btnLaporanTransfer.ForeColor = System.Drawing.Color.MidnightBlue;
             this.btnLaporanTransfer.Image = ((System.Drawing.Image)(resources.GetObject("btnLaporanTransfer.Image")));
             this.btnLaporanTransfer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLaporanTransfer.Location = new System.Drawing.Point(1, 346);
+            this.btnLaporanTransfer.Location = new System.Drawing.Point(1, 386);
             this.btnLaporanTransfer.Name = "btnLaporanTransfer";
             this.btnLaporanTransfer.Size = new System.Drawing.Size(243, 51);
             this.btnLaporanTransfer.TabIndex = 5;
@@ -235,7 +248,7 @@
             this.btnLaporanProdi.ForeColor = System.Drawing.Color.MidnightBlue;
             this.btnLaporanProdi.Image = ((System.Drawing.Image)(resources.GetObject("btnLaporanProdi.Image")));
             this.btnLaporanProdi.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLaporanProdi.Location = new System.Drawing.Point(1, 287);
+            this.btnLaporanProdi.Location = new System.Drawing.Point(1, 327);
             this.btnLaporanProdi.Name = "btnLaporanProdi";
             this.btnLaporanProdi.Size = new System.Drawing.Size(245, 51);
             this.btnLaporanProdi.TabIndex = 4;
@@ -274,5 +287,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelLogin;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -50,8 +50,6 @@
             this.getListMatkulTableAdapter = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSetTableAdapters.getListMatkulTableAdapter();
             this.getListProdiTableAdapter = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSetTableAdapters.getListProdiTableAdapter();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbIDProdi = new System.Windows.Forms.ComboBox();
             this.txtTanggalMengajar = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtIDAbsensi = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSKS = new Guna.UI2.WinForms.Guna2TextBox();
@@ -65,6 +63,8 @@
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.cmbIDProdi = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtTotalSKS = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTanggalAwal = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtTanggalAkhir = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -181,34 +181,12 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(20, 217);
+            this.label4.Location = new System.Drawing.Point(13, 141);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 28);
+            this.label4.Size = new System.Drawing.Size(114, 17);
             this.label4.TabIndex = 72;
             this.label4.Text = "Tanggal Mengajar";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(52, 283);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 28);
-            this.label3.TabIndex = 71;
-            this.label3.Text = "Program Studi";
-            // 
-            // cmbIDProdi
-            // 
-            this.cmbIDProdi.DataSource = this.getListProdiBindingSource;
-            this.cmbIDProdi.DisplayMember = "nama_prodi";
-            this.cmbIDProdi.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbIDProdi.FormattingEnabled = true;
-            this.cmbIDProdi.Location = new System.Drawing.Point(190, 278);
-            this.cmbIDProdi.Name = "cmbIDProdi";
-            this.cmbIDProdi.Size = new System.Drawing.Size(256, 36);
-            this.cmbIDProdi.TabIndex = 76;
-            this.cmbIDProdi.ValueMember = "id_prodi";
             // 
             // txtTanggalMengajar
             // 
@@ -216,11 +194,12 @@
             this.txtTanggalMengajar.FillColor = System.Drawing.Color.White;
             this.txtTanggalMengajar.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTanggalMengajar.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.txtTanggalMengajar.Location = new System.Drawing.Point(216, 212);
+            this.txtTanggalMengajar.Location = new System.Drawing.Point(144, 138);
+            this.txtTanggalMengajar.Margin = new System.Windows.Forms.Padding(2);
             this.txtTanggalMengajar.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.txtTanggalMengajar.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.txtTanggalMengajar.Name = "txtTanggalMengajar";
-            this.txtTanggalMengajar.Size = new System.Drawing.Size(232, 35);
+            this.txtTanggalMengajar.Size = new System.Drawing.Size(195, 23);
             this.txtTanggalMengajar.TabIndex = 45;
             this.txtTanggalMengajar.Value = new System.DateTime(2023, 7, 5, 9, 34, 35, 102);
             this.txtTanggalMengajar.ValueChanged += new System.EventHandler(this.txtTanggalMengajar_ValueChanged);
@@ -230,7 +209,7 @@
             this.txtIDAbsensi.AutoRoundedCorners = true;
             this.txtIDAbsensi.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtIDAbsensi.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.txtIDAbsensi.BorderRadius = 23;
+            this.txtIDAbsensi.BorderRadius = 15;
             this.txtIDAbsensi.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.txtIDAbsensi.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtIDAbsensi.DefaultText = "ID Absensi (Otomatis)";
@@ -244,14 +223,14 @@
             this.txtIDAbsensi.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDAbsensi.ForeColor = System.Drawing.Color.Black;
             this.txtIDAbsensi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIDAbsensi.Location = new System.Drawing.Point(24, 140);
-            this.txtIDAbsensi.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.txtIDAbsensi.Location = new System.Drawing.Point(16, 91);
+            this.txtIDAbsensi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtIDAbsensi.Name = "txtIDAbsensi";
             this.txtIDAbsensi.PasswordChar = '\0';
             this.txtIDAbsensi.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtIDAbsensi.PlaceholderText = "ID Absensi (Otomatis)";
             this.txtIDAbsensi.SelectedText = "";
-            this.txtIDAbsensi.Size = new System.Drawing.Size(288, 49);
+            this.txtIDAbsensi.Size = new System.Drawing.Size(194, 32);
             this.txtIDAbsensi.TabIndex = 38;
             // 
             // txtSKS
@@ -259,7 +238,7 @@
             this.txtSKS.AutoRoundedCorners = true;
             this.txtSKS.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtSKS.BorderColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtSKS.BorderRadius = 23;
+            this.txtSKS.BorderRadius = 15;
             this.txtSKS.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.txtSKS.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSKS.DefaultText = "";
@@ -271,14 +250,14 @@
             this.txtSKS.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSKS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtSKS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSKS.Location = new System.Drawing.Point(36, 409);
-            this.txtSKS.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.txtSKS.Location = new System.Drawing.Point(24, 266);
+            this.txtSKS.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSKS.Name = "txtSKS";
             this.txtSKS.PasswordChar = '\0';
             this.txtSKS.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtSKS.PlaceholderText = "SKS";
             this.txtSKS.SelectedText = "";
-            this.txtSKS.Size = new System.Drawing.Size(820, 49);
+            this.txtSKS.Size = new System.Drawing.Size(547, 32);
             this.txtSKS.TabIndex = 46;
             // 
             // txtKelas
@@ -286,7 +265,7 @@
             this.txtKelas.AutoRoundedCorners = true;
             this.txtKelas.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtKelas.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.txtKelas.BorderRadius = 23;
+            this.txtKelas.BorderRadius = 15;
             this.txtKelas.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.txtKelas.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtKelas.DefaultText = "";
@@ -298,14 +277,14 @@
             this.txtKelas.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKelas.ForeColor = System.Drawing.Color.Black;
             this.txtKelas.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtKelas.Location = new System.Drawing.Point(362, 140);
-            this.txtKelas.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.txtKelas.Location = new System.Drawing.Point(220, 91);
+            this.txtKelas.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtKelas.Name = "txtKelas";
             this.txtKelas.PasswordChar = '\0';
             this.txtKelas.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtKelas.PlaceholderText = "Kelas";
             this.txtKelas.SelectedText = "";
-            this.txtKelas.Size = new System.Drawing.Size(215, 49);
+            this.txtKelas.Size = new System.Drawing.Size(194, 32);
             this.txtKelas.TabIndex = 77;
             this.txtKelas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKelas_KeyPress);
             // 
@@ -315,9 +294,10 @@
             this.cmbIDMatkul.DisplayMember = "nama_matkul";
             this.cmbIDMatkul.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIDMatkul.FormattingEnabled = true;
-            this.cmbIDMatkul.Location = new System.Drawing.Point(615, 278);
+            this.cmbIDMatkul.Location = new System.Drawing.Point(142, 176);
+            this.cmbIDMatkul.Margin = new System.Windows.Forms.Padding(2);
             this.cmbIDMatkul.Name = "cmbIDMatkul";
-            this.cmbIDMatkul.Size = new System.Drawing.Size(310, 36);
+            this.cmbIDMatkul.Size = new System.Drawing.Size(197, 25);
             this.cmbIDMatkul.TabIndex = 90;
             this.cmbIDMatkul.ValueMember = "id_matkul";
             // 
@@ -326,9 +306,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(482, 277);
+            this.label2.Location = new System.Drawing.Point(50, 179);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 28);
+            this.label2.Size = new System.Drawing.Size(77, 17);
             this.label2.TabIndex = 89;
             this.label2.Text = "Mata Kuliah";
             // 
@@ -338,9 +319,10 @@
             this.cmbIDDosen.DisplayMember = "nama_dosen";
             this.cmbIDDosen.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIDDosen.FormattingEnabled = true;
-            this.cmbIDDosen.Location = new System.Drawing.Point(615, 212);
+            this.cmbIDDosen.Location = new System.Drawing.Point(410, 138);
+            this.cmbIDDosen.Margin = new System.Windows.Forms.Padding(2);
             this.cmbIDDosen.Name = "cmbIDDosen";
-            this.cmbIDDosen.Size = new System.Drawing.Size(310, 36);
+            this.cmbIDDosen.Size = new System.Drawing.Size(208, 25);
             this.cmbIDDosen.TabIndex = 92;
             this.cmbIDDosen.ValueMember = "id_dosen";
             // 
@@ -349,9 +331,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(530, 217);
+            this.label1.Location = new System.Drawing.Point(353, 141);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 28);
+            this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 91;
             this.label1.Text = "Dosen";
             // 
@@ -359,7 +342,7 @@
             // 
             this.btnSave.AutoRoundedCorners = true;
             this.btnSave.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.btnSave.BorderRadius = 20;
+            this.btnSave.BorderRadius = 13;
             this.btnSave.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.btnSave.BorderThickness = 1;
             this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -371,9 +354,10 @@
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSave.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.diskette1;
             this.btnSave.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnSave.Location = new System.Drawing.Point(486, 32);
+            this.btnSave.Location = new System.Drawing.Point(324, 21);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(135, 43);
+            this.btnSave.Size = new System.Drawing.Size(90, 28);
             this.btnSave.TabIndex = 93;
             this.btnSave.Text = "Tambah";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
@@ -383,7 +367,7 @@
             this.btnClear.AutoRoundedCorners = true;
             this.btnClear.BackColor = System.Drawing.Color.White;
             this.btnClear.BorderColor = System.Drawing.Color.Navy;
-            this.btnClear.BorderRadius = 20;
+            this.btnClear.BorderRadius = 13;
             this.btnClear.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.btnClear.BorderThickness = 1;
             this.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -395,9 +379,10 @@
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnClear.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.reload;
             this.btnClear.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnClear.Location = new System.Drawing.Point(798, 32);
+            this.btnClear.Location = new System.Drawing.Point(532, 21);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(135, 43);
+            this.btnClear.Size = new System.Drawing.Size(90, 28);
             this.btnClear.TabIndex = 94;
             this.btnClear.Text = "Bersihkan";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -406,7 +391,7 @@
             // 
             this.btnDelete.AutoRoundedCorners = true;
             this.btnDelete.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.btnDelete.BorderRadius = 20;
+            this.btnDelete.BorderRadius = 13;
             this.btnDelete.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.btnDelete.BorderThickness = 1;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -418,9 +403,10 @@
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDelete.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.trash_can;
             this.btnDelete.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnDelete.Location = new System.Drawing.Point(642, 32);
+            this.btnDelete.Location = new System.Drawing.Point(428, 21);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(135, 43);
+            this.btnDelete.Size = new System.Drawing.Size(90, 28);
             this.btnDelete.TabIndex = 95;
             this.btnDelete.Text = "Hapus";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
@@ -429,9 +415,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 26);
+            this.label6.Location = new System.Drawing.Point(10, 17);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(248, 48);
+            this.label6.Size = new System.Drawing.Size(169, 32);
             this.label6.TabIndex = 43;
             this.label6.Text = "Form Absensi";
             // 
@@ -441,6 +428,8 @@
             this.guna2Panel3.BorderRadius = 25;
             this.guna2Panel3.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.guna2Panel3.BorderThickness = 1;
+            this.guna2Panel3.Controls.Add(this.cmbIDProdi);
+            this.guna2Panel3.Controls.Add(this.label3);
             this.guna2Panel3.Controls.Add(this.txtTotalSKS);
             this.guna2Panel3.Controls.Add(this.label6);
             this.guna2Panel3.Controls.Add(this.btnDelete);
@@ -454,20 +443,44 @@
             this.guna2Panel3.Controls.Add(this.txtSKS);
             this.guna2Panel3.Controls.Add(this.txtIDAbsensi);
             this.guna2Panel3.Controls.Add(this.txtTanggalMengajar);
-            this.guna2Panel3.Controls.Add(this.cmbIDProdi);
-            this.guna2Panel3.Controls.Add(this.label3);
             this.guna2Panel3.Controls.Add(this.label4);
-            this.guna2Panel3.Location = new System.Drawing.Point(510, 32);
+            this.guna2Panel3.Location = new System.Drawing.Point(340, 21);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(963, 348);
+            this.guna2Panel3.Size = new System.Drawing.Size(642, 226);
             this.guna2Panel3.TabIndex = 86;
+            // 
+            // cmbIDProdi
+            // 
+            this.cmbIDProdi.DataSource = this.getListProdiBindingSource;
+            this.cmbIDProdi.DisplayMember = "nama_prodi";
+            this.cmbIDProdi.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbIDProdi.FormattingEnabled = true;
+            this.cmbIDProdi.Location = new System.Drawing.Point(446, 176);
+            this.cmbIDProdi.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbIDProdi.Name = "cmbIDProdi";
+            this.cmbIDProdi.Size = new System.Drawing.Size(172, 25);
+            this.cmbIDProdi.TabIndex = 98;
+            this.cmbIDProdi.ValueMember = "id_prodi";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(354, 179);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 17);
+            this.label3.TabIndex = 97;
+            this.label3.Text = "Program Studi";
             // 
             // txtTotalSKS
             // 
             this.txtTotalSKS.AutoRoundedCorners = true;
             this.txtTotalSKS.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtTotalSKS.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.txtTotalSKS.BorderRadius = 23;
+            this.txtTotalSKS.BorderRadius = 15;
             this.txtTotalSKS.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.txtTotalSKS.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTotalSKS.DefaultText = "";
@@ -479,14 +492,14 @@
             this.txtTotalSKS.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtTotalSKS.ForeColor = System.Drawing.Color.Black;
             this.txtTotalSKS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalSKS.Location = new System.Drawing.Point(615, 140);
-            this.txtTotalSKS.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.txtTotalSKS.Location = new System.Drawing.Point(424, 91);
+            this.txtTotalSKS.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTotalSKS.Name = "txtTotalSKS";
             this.txtTotalSKS.PasswordChar = '\0';
             this.txtTotalSKS.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtTotalSKS.PlaceholderText = "SKS";
             this.txtTotalSKS.SelectedText = "";
-            this.txtTotalSKS.Size = new System.Drawing.Size(310, 49);
+            this.txtTotalSKS.Size = new System.Drawing.Size(194, 32);
             this.txtTotalSKS.TabIndex = 96;
             this.txtTotalSKS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotalSKS_KeyPress);
             // 
@@ -497,11 +510,12 @@
             this.txtTanggalAwal.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTanggalAwal.ForeColor = System.Drawing.Color.Black;
             this.txtTanggalAwal.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.txtTanggalAwal.Location = new System.Drawing.Point(174, 49);
+            this.txtTanggalAwal.Location = new System.Drawing.Point(116, 32);
+            this.txtTanggalAwal.Margin = new System.Windows.Forms.Padding(2);
             this.txtTanggalAwal.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.txtTanggalAwal.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.txtTanggalAwal.Name = "txtTanggalAwal";
-            this.txtTanggalAwal.Size = new System.Drawing.Size(262, 35);
+            this.txtTanggalAwal.Size = new System.Drawing.Size(175, 23);
             this.txtTanggalAwal.TabIndex = 75;
             this.txtTanggalAwal.Value = new System.DateTime(2023, 7, 5, 9, 34, 35, 102);
             // 
@@ -512,11 +526,12 @@
             this.txtTanggalAkhir.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTanggalAkhir.ForeColor = System.Drawing.Color.Black;
             this.txtTanggalAkhir.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.txtTanggalAkhir.Location = new System.Drawing.Point(174, 122);
+            this.txtTanggalAkhir.Location = new System.Drawing.Point(116, 79);
+            this.txtTanggalAkhir.Margin = new System.Windows.Forms.Padding(2);
             this.txtTanggalAkhir.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.txtTanggalAkhir.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.txtTanggalAkhir.Name = "txtTanggalAkhir";
-            this.txtTanggalAkhir.Size = new System.Drawing.Size(262, 35);
+            this.txtTanggalAkhir.Size = new System.Drawing.Size(175, 23);
             this.txtTanggalAkhir.TabIndex = 74;
             this.txtTanggalAkhir.Value = new System.DateTime(2023, 7, 5, 9, 34, 35, 102);
             // 
@@ -525,9 +540,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(22, 49);
+            this.label5.Location = new System.Drawing.Point(15, 32);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 28);
+            this.label5.Size = new System.Drawing.Size(85, 17);
             this.label5.TabIndex = 74;
             this.label5.Text = "Tanggal Awal";
             // 
@@ -536,9 +552,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(22, 122);
+            this.label7.Location = new System.Drawing.Point(15, 79);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(131, 28);
+            this.label7.Size = new System.Drawing.Size(87, 17);
             this.label7.TabIndex = 76;
             this.label7.Text = "Tanggal Akhir";
             // 
@@ -547,7 +564,7 @@
             this.btnFilter.AutoRoundedCorners = true;
             this.btnFilter.BackColor = System.Drawing.Color.GhostWhite;
             this.btnFilter.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.btnFilter.BorderRadius = 20;
+            this.btnFilter.BorderRadius = 13;
             this.btnFilter.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.btnFilter.BorderThickness = 1;
             this.btnFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -559,9 +576,10 @@
             this.btnFilter.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnFilter.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.filter;
             this.btnFilter.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnFilter.Location = new System.Drawing.Point(27, 258);
+            this.btnFilter.Location = new System.Drawing.Point(18, 168);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(2);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(410, 43);
+            this.btnFilter.Size = new System.Drawing.Size(273, 28);
             this.btnFilter.TabIndex = 41;
             this.btnFilter.Text = "Cari";
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
@@ -571,9 +589,10 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(22, 188);
+            this.label8.Location = new System.Drawing.Point(15, 122);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 28);
+            this.label8.Size = new System.Drawing.Size(77, 17);
             this.label8.TabIndex = 77;
             this.label8.Text = "Jenis Dosen";
             // 
@@ -583,9 +602,10 @@
             this.cmbJenis.DisplayMember = "nama_jenis";
             this.cmbJenis.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbJenis.FormattingEnabled = true;
-            this.cmbJenis.Location = new System.Drawing.Point(174, 188);
+            this.cmbJenis.Location = new System.Drawing.Point(116, 122);
+            this.cmbJenis.Margin = new System.Windows.Forms.Padding(2);
             this.cmbJenis.Name = "cmbJenis";
-            this.cmbJenis.Size = new System.Drawing.Size(260, 36);
+            this.cmbJenis.Size = new System.Drawing.Size(175, 25);
             this.cmbJenis.TabIndex = 77;
             this.cmbJenis.ValueMember = "id_jenis_dosen";
             // 
@@ -603,9 +623,10 @@
             this.guna2Panel1.Controls.Add(this.txtTanggalAkhir);
             this.guna2Panel1.Controls.Add(this.txtTanggalAwal);
             this.guna2Panel1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.guna2Panel1.Location = new System.Drawing.Point(26, 32);
+            this.guna2Panel1.Location = new System.Drawing.Point(17, 21);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(454, 348);
+            this.guna2Panel1.Size = new System.Drawing.Size(303, 226);
             this.guna2Panel1.TabIndex = 81;
             // 
             // txtSearch
@@ -613,7 +634,7 @@
             this.txtSearch.AutoRoundedCorners = true;
             this.txtSearch.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtSearch.BorderColor = System.Drawing.Color.MidnightBlue;
-            this.txtSearch.BorderRadius = 23;
+            this.txtSearch.BorderRadius = 15;
             this.txtSearch.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.DefaultText = "";
@@ -625,13 +646,13 @@
             this.txtSearch.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(1179, 25);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtSearch.Location = new System.Drawing.Point(786, 16);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Cari disini...";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(238, 49);
+            this.txtSearch.Size = new System.Drawing.Size(159, 32);
             this.txtSearch.TabIndex = 35;
             this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp_1);
             // 
@@ -639,9 +660,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(26, 25);
+            this.label9.Location = new System.Drawing.Point(17, 16);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(294, 48);
+            this.label9.Size = new System.Drawing.Size(200, 32);
             this.label9.TabIndex = 42;
             this.label9.Text = "Riwayat Absensi";
             // 
@@ -668,12 +690,11 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(585, 209);
-            this.guna2DataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(390, 136);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 62;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(360, 231);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(240, 150);
             this.guna2DataGridView1.TabIndex = 43;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -735,12 +756,11 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tblAbsensi.DefaultCellStyle = dataGridViewCellStyle6;
             this.tblAbsensi.GridColor = System.Drawing.Color.Silver;
-            this.tblAbsensi.Location = new System.Drawing.Point(27, 112);
-            this.tblAbsensi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tblAbsensi.Location = new System.Drawing.Point(18, 73);
             this.tblAbsensi.Name = "tblAbsensi";
             this.tblAbsensi.RowHeadersVisible = false;
             this.tblAbsensi.RowHeadersWidth = 62;
-            this.tblAbsensi.Size = new System.Drawing.Size(1390, 563);
+            this.tblAbsensi.Size = new System.Drawing.Size(927, 366);
             this.tblAbsensi.TabIndex = 44;
             this.tblAbsensi.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.tblAbsensi.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -860,21 +880,24 @@
             this.guna2Panel2.Controls.Add(this.guna2DataGridView1);
             this.guna2Panel2.Controls.Add(this.label9);
             this.guna2Panel2.Controls.Add(this.txtSearch);
-            this.guna2Panel2.Location = new System.Drawing.Point(26, 403);
+            this.guna2Panel2.Location = new System.Drawing.Point(17, 262);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(1448, 725);
+            this.guna2Panel2.Size = new System.Drawing.Size(965, 471);
             this.guna2Panel2.TabIndex = 44;
             // 
             // Absensi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(1946, 1106);
+            this.BackgroundImage = global::C__honorarium_dosen_eksternal.Properties.Resources.BG10;
+            this.ClientSize = new System.Drawing.Size(1386, 786);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Absensi";
             this.Text = "Absensi";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -918,8 +941,6 @@
         private HonorariumDosenEksternalDataSetTableAdapters.getListMatkulTableAdapter getListMatkulTableAdapter;
         private HonorariumDosenEksternalDataSetTableAdapters.getListProdiTableAdapter getListProdiTableAdapter;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbIDProdi;
         private Guna.UI2.WinForms.Guna2DateTimePicker txtTanggalMengajar;
         private Guna.UI2.WinForms.Guna2TextBox txtIDAbsensi;
         private Guna.UI2.WinForms.Guna2TextBox txtSKS;
@@ -959,5 +980,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pph21DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn persentasepph21DataGridViewTextBoxColumn;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private System.Windows.Forms.ComboBox cmbIDProdi;
+        private System.Windows.Forms.Label label3;
     }
 }

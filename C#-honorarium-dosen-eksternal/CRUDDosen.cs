@@ -28,15 +28,34 @@ namespace C__honorarium_dosen_eksternal
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (txtNamaDosen.Text == "" || txtEmail.Text == "" || cbStatus.Text == "" || txtNamaBank.Text == "" ||
+                    txtCabangBank.Text == "" || txtNoRekening.Text == "" || txtAtasNama.Text == "" ||
+                    txtKota.Text == "")
+            {
+                MessageBox.Show("harap lengkapi semua data!");
+                return;
+            }
+
+            if (ValidasiEmail(txtEmail.Text) == false)
+            {
+                MessageBox.Show("Format email tidak valid!");
+                return;
+            }
+
+            if (txtGabungKampus.Value > DateTime.Today || txtGabungIndustri.Value > DateTime.Today)
+            {
+                MessageBox.Show("Tanggal gabung tidak boleh lebih dari hari ini.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if(imgDosen.Image == null)
+            {
+                MessageBox.Show("Foto dosen harus diisi!");
+                return;
+            }
+
             try
             {
-                if(imgDosen.Image == null)
-                {
-                    MessageBox.Show("Foto dosen" +
-                        " harus diisi!");
-                    return;
-                }
-
                 using (Bitmap bitmap = new Bitmap(imgDosen.Image))
                 {
                     using (MemoryStream stream = new MemoryStream())
@@ -58,8 +77,8 @@ namespace C__honorarium_dosen_eksternal
                         com.Parameters.AddWithValue("@cabang_bank", txtCabangBank.Text);
                         com.Parameters.AddWithValue("@no_rekening", txtNoRekening.Text);
                         com.Parameters.AddWithValue("@npwp", txtNpwp.Text);
-                        com.Parameters.AddWithValue("@tanggal_gabung_kampus", txtGabungKampus.Text);
-                        com.Parameters.AddWithValue("@tanggal_gabung_industri", txtGabungIndustri.Text);
+                        com.Parameters.AddWithValue("@tanggal_gabung_kampus", txtGabungKampus.Value);
+                        com.Parameters.AddWithValue("@tanggal_gabung_industri", txtGabungIndustri.Value);
                         com.Parameters.AddWithValue("@status", cbStatus.SelectedItem.ToString());
                         com.Parameters.AddWithValue("@atasnama", txtAtasNama.Text);
                         com.Parameters.AddWithValue("@kota", txtKota.Text);
@@ -72,7 +91,7 @@ namespace C__honorarium_dosen_eksternal
                     }
                 }
 
-                MessageBox.Show("Data berhasil diupdate", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Dosen berhasil diubah!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 btnSave.Enabled = true;
                 // btnDelete.Enabled = false;
@@ -571,9 +590,15 @@ namespace C__honorarium_dosen_eksternal
                     return;
                 }
 
-                if (ValidasiEmail(txtEmail.Text))
+                if (ValidasiEmail(txtEmail.Text) == false)
                 {
                     MessageBox.Show("Format email tidak valid!");
+                    return;
+                }
+
+                if (txtGabungKampus.Value > DateTime.Today || txtGabungIndustri.Value > DateTime.Today)
+                {
+                    MessageBox.Show("Tanggal gabung tidak boleh lebih dari hari ini.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -606,6 +631,8 @@ namespace C__honorarium_dosen_eksternal
                 connection.Open();
                 int result = Convert.ToInt32(com.ExecuteNonQuery());
                 connection.Close();
+
+                MessageBox.Show("Dosen berhasil ditambah!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 btnSave.Enabled = true;
                 btnUpdate.Enabled = false;

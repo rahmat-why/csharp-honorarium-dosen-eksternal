@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace C__honorarium_dosen_eksternal
 {
@@ -58,7 +59,7 @@ namespace C__honorarium_dosen_eksternal
                 e.Handled = true;
 
                 // Menampilkan pesan kesalahan
-                MessageBox.Show("Hanya huruf dan spasi yang diizinkan.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Kolom ini hanya boleh diisi Huruf", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -71,7 +72,7 @@ namespace C__honorarium_dosen_eksternal
             {
                 e.Handled = true; // Mengabaikan karakter yang tidak valid dengan mengeset Handled ke true
 
-                MessageBox.Show("Hanya angka yang diperbolehkan!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Kolom ini hanya boleh diisi Angka", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             // Menggabungkan karakter yang ditekan dengan teks yang ada
@@ -102,6 +103,8 @@ namespace C__honorarium_dosen_eksternal
             {
                 // Mencegah karakter yang tidak valid ditampilkan pada TextBox
                 e.Handled = true;
+
+                MessageBox.Show("Kolom ini hanya boleh diisi Angka", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -137,15 +140,12 @@ namespace C__honorarium_dosen_eksternal
                     int result = Convert.ToInt32(com.ExecuteNonQuery());
                     connection.Close();
 
-                    if (result != 0)
-                    {
-                        MessageBox.Show("Data berhasil dihapus!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        btnSave.Enabled = true;
-                        btnDelete.Enabled = false;
-                        btnUpdate.Enabled = false;
-                        clear();
-                        loadkategori(emp);
-                    }
+                    MessageBox.Show("Jenis Dosen ini berhasil dihapus!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnSave.Enabled = true;
+                    btnDelete.Enabled = false;
+                    btnUpdate.Enabled = false;
+                    clear();
+                    loadkategori(emp);
                 }
                 catch (Exception ex)
                 {
@@ -157,6 +157,13 @@ namespace C__honorarium_dosen_eksternal
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (txtNamaJenis.Text == "" || txtKompensasiMengajar.Text == "" || txtTranspotMengajar.Text == "" ||
+                txtPersentasePPH21NPWP.Text == "" || txtPresentasePPH21NonNpwp.Text == "" || cmbReferensiDosen.SelectedItem == null)
+            {
+                MessageBox.Show("Semua data harus diisi!");
+                return;
+            }
+
             try
             {
                 SqlConnection connection = new SqlConnection(connectionString);
@@ -177,14 +184,7 @@ namespace C__honorarium_dosen_eksternal
                 int result = com.ExecuteNonQuery();
                 connection.Close();
 
-                if (result > 0)
-                {
-                    MessageBox.Show("Update berhasil!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Update gagal!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Jenis Dosen berhasil diubah!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 btnSave.Enabled = true;
                 btnUpdate.Enabled = false;
@@ -213,6 +213,15 @@ namespace C__honorarium_dosen_eksternal
 
         }
 
+        private void tblKategoriDosen_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if ((e.ColumnIndex == 2 || e.ColumnIndex == 3) && e.Value != null && e.Value is decimal decimalValue)
+            {
+                e.Value = decimalValue.ToString("N0", new CultureInfo("id-ID"));
+                e.FormattingApplied = true;
+            }
+        }
+
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             loadkategori(txtSearch.Text);
@@ -225,21 +234,28 @@ namespace C__honorarium_dosen_eksternal
                 DataGridViewRow selectedRow = tblKategoriDosen.Rows[e.RowIndex];
 
                 // Retrieve the data from the selected row
-                id_jenis_dosen = selectedRow.Cells["col_id_jenis_dosen"].Value.ToString();
+                id_jenis_dosen = selectedRow.Cells["col_id_jenis"].Value.ToString();
                 nama_jenis = selectedRow.Cells["col_nama_jenis"].Value.ToString();
-                kompensasi_mengajar = selectedRow.Cells["col_kompensasi"].Value.ToString();
-                transport_mengajar = selectedRow.Cells["col_Transport"].Value.ToString();
-                persentasePph21Npwp = selectedRow.Cells["col_npwp"].Value.ToString();
-                persentasePph21NoNpwp = selectedRow.Cells["col_NonNpwp"].Value.ToString();
-                referensi_dosen = selectedRow.Cells["col_referensi"].Value.ToString() ;
+                kompensasi_mengajar = selectedRow.Cells["col_kompensasi_mengajar"].Value.ToString();
 
+                transport_mengajar = selectedRow.Cells["col_transport_mengajar"].Value.ToString();
+                persentasePph21Npwp = selectedRow.Cells["col_persentase_pph21_npwp"].Value.ToString();
+                persentasePph21NoNpwp = selectedRow.Cells["col_persentase_pph21_nonnpwp"].Value.ToString();
+                referensi_dosen = selectedRow.Cells["col_referensi_dosen"].Value.ToString() ;
 
                 txtIDJenisDosen.Text = id_jenis_dosen;
                 txtNamaJenis.Text = nama_jenis;
-                txtKompensasiMengajar.Text = kompensasi_mengajar;
-                txtPersentasePPH21NPWP.Text = persentasePph21Npwp;
-                txtPresentasePPH21NonNpwp.Text = persentasePph21NoNpwp;
-                txtTranspotMengajar.Text = transport_mengajar;
+
+                decimal decimal_transport_mengajar = decimal.Parse(transport_mengajar);
+                string format_transport_mengajar = decimal_transport_mengajar.ToString("N0", new CultureInfo("id-ID"));
+                txtTranspotMengajar.Text = format_transport_mengajar.Replace(".", "");
+
+                decimal decimal_kompensasi_mengajar = decimal.Parse(kompensasi_mengajar);
+                string format_kompensasi_mengajar = decimal_kompensasi_mengajar.ToString("N0", new CultureInfo("id-ID"));
+                txtKompensasiMengajar.Text = format_kompensasi_mengajar.Replace(".", "");
+
+                txtPersentasePPH21NPWP.Text = persentasePph21Npwp.Replace(",", ".");
+                txtPresentasePPH21NonNpwp.Text = persentasePph21NoNpwp.Replace(",", ".");
 
                 foreach (var item in cmbReferensiDosen.Items)
                 {
@@ -314,7 +330,7 @@ namespace C__honorarium_dosen_eksternal
             {
                 connection.Open();
                 com.ExecuteNonQuery();
-                MessageBox.Show("Data saved successfully", "Information",
+                MessageBox.Show("Jenis Dosen berhasil disimpan", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnSave.Enabled = true;
                 btnDelete.Enabled = false;

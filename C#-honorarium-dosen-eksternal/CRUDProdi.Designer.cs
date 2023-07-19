@@ -442,6 +442,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::C__honorarium_dosen_eksternal.Properties.Resources.BG10;
             this.ClientSize = new System.Drawing.Size(1366, 786);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);

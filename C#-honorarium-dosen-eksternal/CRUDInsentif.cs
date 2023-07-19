@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,16 +75,19 @@ namespace C__honorarium_dosen_eksternal
                 DataGridViewRow selectedRow = tblGolongan.Rows[e.RowIndex];
                 id_golongan = selectedRow.Cells["col_id_golongan"].Value.ToString();
                 nama_golongan = selectedRow.Cells["col_nama_golongan"].Value.ToString();
+                
                 insentif = selectedRow.Cells["col_insentif"].Value.ToString();
-                tahun_bawah = selectedRow.Cells["col_tahun_bawah"].Value.ToString();
-                tahun_atas = selectedRow.Cells["col_tahun_atas"].Value.ToString() ;
+                decimal decimal_insentif = decimal.Parse(insentif);
+                string format_decimal = decimal_insentif.ToString("N0", new CultureInfo("id-ID"));
+                txtInsentifKehadiran.Text = format_decimal.Replace(".", "");
+
+                tahun_bawah = selectedRow.Cells["col_tahun_batas_bawah"].Value.ToString();
+                tahun_atas = selectedRow.Cells["col_tahun_batas_atas"].Value.ToString() ;
 
                 txtIDGolongan.Text = id_golongan;
                 txtNamaGolongan.Text = nama_golongan;
-                txtInsentifKehadiran.Text = insentif;
                 txtTahunBatasBawah.Text = tahun_bawah;
                 txtTahunBatasAtas.Text = tahun_atas;
-
 
                 btnSave.Enabled = false;
                 btnUpdate.Enabled = true;
@@ -95,22 +99,29 @@ namespace C__honorarium_dosen_eksternal
         // Update golongan
         private void btnUpdate_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand com = new SqlCommand();
-            com.Connection = connection;  // Assign the SqlConnection object
-            com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "sp_UpdateGolongan";  // Set the stored procedure name
+            if (txtNamaGolongan.Text == "" || txtInsentifKehadiran.Text == "" || txtTahunBatasBawah.Text == "")
+            {
+                MessageBox.Show("Semua data harus diisi!");
+                return;
+            }
 
-            com.Parameters.AddWithValue("@id_golongan", txtIDGolongan.Text);
-            com.Parameters.AddWithValue("@nama", txtNamaGolongan.Text);
-            com.Parameters.AddWithValue("@insentif_kehadiran", txtInsentifKehadiran.Text);
-            com.Parameters.AddWithValue("@tahun_batas_bawah", txtTahunBatasBawah.Text);
-            com.Parameters.AddWithValue("@tahun_batas_atas", txtTahunBatasAtas.Text);
             try
             {
+                SqlConnection connection = new SqlConnection(connectionString);
+                SqlCommand com = new SqlCommand();
+                com.Connection = connection;  // Assign the SqlConnection object
+                com.CommandType = CommandType.StoredProcedure;
+                com.CommandText = "sp_UpdateGolongan";  // Set the stored procedure name
+
+                com.Parameters.AddWithValue("@id_golongan", txtIDGolongan.Text);
+                com.Parameters.AddWithValue("@nama", txtNamaGolongan.Text);
+                com.Parameters.AddWithValue("@insentif_kehadiran", txtInsentifKehadiran.Text);
+                com.Parameters.AddWithValue("@tahun_batas_bawah", txtTahunBatasBawah.Text);
+                com.Parameters.AddWithValue("@tahun_batas_atas", txtTahunBatasAtas.Text);
+
                 connection.Open();
                 com.ExecuteNonQuery();
-                MessageBox.Show("Update data berhasil ", "Information",
+                MessageBox.Show("Insentif berhasil diubah!", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnSave.Enabled = true;
                 btnUpdate.Enabled = false;
@@ -160,7 +171,7 @@ namespace C__honorarium_dosen_eksternal
 
                     if (result != 0)
                     {
-                        MessageBox.Show("Data Berhasil Dihapus!");
+                        MessageBox.Show("Insentif berhasil dihapus!");
                       
 
                         btnSave.Enabled = true;
@@ -177,30 +188,40 @@ namespace C__honorarium_dosen_eksternal
             }
         }
 
+        private void tblGolongan_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if ((e.ColumnIndex == 2) && e.Value != null && e.Value is decimal decimalValue)
+            {
+                e.Value = decimalValue.ToString("N0", new CultureInfo("id-ID"));
+                e.FormattingApplied = true;
+            }
+        }
+
         // save golongan
         private void btnSave_Click_1(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand com = new SqlCommand();
-            com.Connection = connection;  
-            com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "sp_CreateGolongan";  
-
-            if (txtNamaGolongan.Text == "" || txtInsentifKehadiran.Text == "" || txtTahunBatasBawah.Text == "" || txtTahunBatasAtas.Text == "")
+            if (txtNamaGolongan.Text == "" || txtInsentifKehadiran.Text == "" || txtTahunBatasBawah.Text == "")
             {
                 MessageBox.Show("Semua data harus diisi!");
                 return;
             }
 
-            com.Parameters.AddWithValue("@nama", txtNamaGolongan.Text);
-            com.Parameters.AddWithValue("@insentif_kehadiran", txtInsentifKehadiran.Text);
-            com.Parameters.AddWithValue("@tahun_batas_bawah", txtTahunBatasBawah.Text);
-            com.Parameters.AddWithValue("@tahun_batas_atas", txtTahunBatasAtas.Text);
             try
             {
+                SqlConnection connection = new SqlConnection(connectionString);
+                SqlCommand com = new SqlCommand();
+                com.Connection = connection;
+                com.CommandType = CommandType.StoredProcedure;
+                com.CommandText = "sp_CreateGolongan";
+
+                com.Parameters.AddWithValue("@nama", txtNamaGolongan.Text);
+                com.Parameters.AddWithValue("@insentif_kehadiran", txtInsentifKehadiran.Text);
+                com.Parameters.AddWithValue("@tahun_batas_bawah", txtTahunBatasBawah.Text);
+
+                com.Parameters.AddWithValue("@tahun_batas_atas", txtTahunBatasAtas.Text);
                 connection.Open();
                 com.ExecuteNonQuery();
-                MessageBox.Show("Simpan data berhasil ", "Information",
+                MessageBox.Show("Insentif berhasil disimpan!", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnSave.Enabled = true;
                 btnDelete.Enabled = false;

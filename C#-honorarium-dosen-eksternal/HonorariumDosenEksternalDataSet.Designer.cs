@@ -19926,6 +19926,7 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
             tableMapping.DataSetTable = "getListPerusahaan";
             tableMapping.ColumnMappings.Add("id_perusahaan", "id_perusahaan");
             tableMapping.ColumnMappings.Add("nama_perusahaan", "nama_perusahaan");
+            tableMapping.ColumnMappings.Add("singkatan_perusahaan", "singkatan_perusahaan");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -19942,62 +19943,62 @@ SELECT id_user, nama, username, password, role FROM users WHERE (id_user = @id_u
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[10];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id_perusahaan, nama_perusahaan FROM dbo.getListPerusahaan(@nama_perusahaan" +
-                ")";
+            this._commandCollection[0].CommandText = "SELECT id_perusahaan, nama_perusahaan, singkatan_perusahaan FROM dbo.getListPerus" +
+                "ahaan(@nama_perusahaan)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_perusahaan", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT id_perusahaan, nama_perusahaan FROM dbo.getListPerusahaan(@nama_perusahaan" +
-                ")";
+            this._commandCollection[1].CommandText = "SELECT id_perusahaan, nama_perusahaan, singkatan_perusahaan FROM dbo.getListPerus" +
+                "ahaan(@nama_perusahaan) AS getListPerusahaan_1";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_perusahaan", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT id_perusahaan, nama_perusahaan FROM dbo.getListPerusahaan(@nama_perusahaan" +
-                ")";
+            this._commandCollection[2].CommandText = "SELECT id_perusahaan, nama_perusahaan, singkatan_perusahaan FROM dbo.getListPerus" +
+                "ahaan(@nama_perusahaan) AS getListPerusahaan_1";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_perusahaan", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT id_perusahaan, nama_perusahaan FROM dbo.getListPerusahaan(@nama_perusahaan" +
-                ")";
+            this._commandCollection[3].CommandText = "SELECT id_perusahaan, nama_perusahaan, singkatan_perusahaan FROM dbo.getListPerus" +
+                "ahaan(@nama_perusahaan) AS getListPerusahaan_1";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_perusahaan", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT id_perusahaan, nama_perusahaan\r\nFROM   dbo.getListPerusahaan(@nama_perusah" +
-                "aan) AS getListPerusahaan_1";
+            this._commandCollection[4].CommandText = "SELECT id_perusahaan, nama_perusahaan, singkatan_perusahaan FROM dbo.getListPerus" +
+                "ahaan(@nama_perusahaan) AS getListPerusahaan_1";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_perusahaan", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT id_perusahaan, nama_perusahaan FROM dbo.getListPerusahaan(@nama_perusahaan" +
-                ")";
+            this._commandCollection[5].CommandText = "SELECT id_perusahaan, nama_perusahaan, singkatan_perusahaan FROM dbo.getListPerus" +
+                "ahaan(@nama_perusahaan) AS getListPerusahaan_1";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_perusahaan", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "SELECT id_perusahaan, nama_perusahaan FROM dbo.getListPerusahaan(@nama_perusahaan" +
-                ")";
+            this._commandCollection[6].CommandText = "SELECT id_perusahaan, nama_perusahaan, singkatan_perusahaan FROM dbo.getListPerus" +
+                "ahaan(@nama_perusahaan) AS getListPerusahaan_1";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_perusahaan", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "SELECT id_perusahaan, nama_perusahaan FROM dbo.getListPerusahaan(@nama_perusahaan" +
-                ")";
+            this._commandCollection[7].CommandText = "SELECT id_perusahaan, nama_perusahaan, singkatan_perusahaan FROM dbo.getListPerus" +
+                "ahaan(@nama_perusahaan) AS getListPerusahaan_1";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_perusahaan", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "SELECT id_perusahaan, nama_perusahaan FROM dbo.getListPerusahaan(@nama_perusahaan" +
-                ")";
+            this._commandCollection[8].CommandText = "SELECT id_perusahaan, nama_perusahaan, singkatan_perusahaan FROM dbo.getListPerus" +
+                "ahaan(@nama_perusahaan) AS getListPerusahaan_1";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_perusahaan", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = "SELECT id_perusahaan, nama_perusahaan FROM dbo.getListPerusahaan(@nama_perusahaan" +
-                ")";
+            this._commandCollection[9].CommandText = "SELECT id_perusahaan, nama_perusahaan, singkatan_perusahaan FROM dbo.getListPerus" +
+                "ahaan(@nama_perusahaan) AS getListPerusahaan_1";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_perusahaan", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

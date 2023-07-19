@@ -91,6 +91,7 @@
             this.pph21DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.persentasepph21DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnTampilkanSemua = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.getListJenisDosenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.honorariumDosenEksternalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getListAbsensiBindingSource1)).BeginInit();
@@ -181,7 +182,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(13, 141);
+            this.label4.Location = new System.Drawing.Point(13, 120);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 17);
@@ -194,7 +195,7 @@
             this.txtTanggalMengajar.FillColor = System.Drawing.Color.White;
             this.txtTanggalMengajar.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTanggalMengajar.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.txtTanggalMengajar.Location = new System.Drawing.Point(144, 138);
+            this.txtTanggalMengajar.Location = new System.Drawing.Point(144, 117);
             this.txtTanggalMengajar.Margin = new System.Windows.Forms.Padding(2);
             this.txtTanggalMengajar.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.txtTanggalMengajar.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -223,7 +224,7 @@
             this.txtIDAbsensi.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDAbsensi.ForeColor = System.Drawing.Color.Black;
             this.txtIDAbsensi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIDAbsensi.Location = new System.Drawing.Point(16, 91);
+            this.txtIDAbsensi.Location = new System.Drawing.Point(16, 70);
             this.txtIDAbsensi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtIDAbsensi.Name = "txtIDAbsensi";
             this.txtIDAbsensi.PasswordChar = '\0';
@@ -277,7 +278,7 @@
             this.txtKelas.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKelas.ForeColor = System.Drawing.Color.Black;
             this.txtKelas.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtKelas.Location = new System.Drawing.Point(220, 91);
+            this.txtKelas.Location = new System.Drawing.Point(220, 70);
             this.txtKelas.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtKelas.Name = "txtKelas";
             this.txtKelas.PasswordChar = '\0';
@@ -294,7 +295,7 @@
             this.cmbIDMatkul.DisplayMember = "nama_matkul";
             this.cmbIDMatkul.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIDMatkul.FormattingEnabled = true;
-            this.cmbIDMatkul.Location = new System.Drawing.Point(142, 176);
+            this.cmbIDMatkul.Location = new System.Drawing.Point(142, 155);
             this.cmbIDMatkul.Margin = new System.Windows.Forms.Padding(2);
             this.cmbIDMatkul.Name = "cmbIDMatkul";
             this.cmbIDMatkul.Size = new System.Drawing.Size(197, 25);
@@ -306,7 +307,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(50, 179);
+            this.label2.Location = new System.Drawing.Point(50, 158);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 17);
@@ -319,7 +320,7 @@
             this.cmbIDDosen.DisplayMember = "nama_dosen";
             this.cmbIDDosen.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIDDosen.FormattingEnabled = true;
-            this.cmbIDDosen.Location = new System.Drawing.Point(410, 138);
+            this.cmbIDDosen.Location = new System.Drawing.Point(410, 117);
             this.cmbIDDosen.Margin = new System.Windows.Forms.Padding(2);
             this.cmbIDDosen.Name = "cmbIDDosen";
             this.cmbIDDosen.Size = new System.Drawing.Size(208, 25);
@@ -331,7 +332,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(353, 141);
+            this.label1.Location = new System.Drawing.Point(353, 120);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 17);
@@ -354,7 +355,7 @@
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSave.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.diskette1;
             this.btnSave.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnSave.Location = new System.Drawing.Point(324, 21);
+            this.btnSave.Location = new System.Drawing.Point(320, 209);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 28);
@@ -379,7 +380,7 @@
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnClear.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.reload;
             this.btnClear.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnClear.Location = new System.Drawing.Point(532, 21);
+            this.btnClear.Location = new System.Drawing.Point(528, 209);
             this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(90, 28);
@@ -403,7 +404,7 @@
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnDelete.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.trash_can;
             this.btnDelete.ImageSize = new System.Drawing.Size(15, 15);
-            this.btnDelete.Location = new System.Drawing.Point(428, 21);
+            this.btnDelete.Location = new System.Drawing.Point(424, 209);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 28);
@@ -447,7 +448,7 @@
             this.guna2Panel3.Location = new System.Drawing.Point(340, 21);
             this.guna2Panel3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(642, 226);
+            this.guna2Panel3.Size = new System.Drawing.Size(642, 256);
             this.guna2Panel3.TabIndex = 86;
             // 
             // cmbIDProdi
@@ -456,7 +457,7 @@
             this.cmbIDProdi.DisplayMember = "nama_prodi";
             this.cmbIDProdi.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIDProdi.FormattingEnabled = true;
-            this.cmbIDProdi.Location = new System.Drawing.Point(446, 176);
+            this.cmbIDProdi.Location = new System.Drawing.Point(446, 155);
             this.cmbIDProdi.Margin = new System.Windows.Forms.Padding(2);
             this.cmbIDProdi.Name = "cmbIDProdi";
             this.cmbIDProdi.Size = new System.Drawing.Size(172, 25);
@@ -468,7 +469,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(354, 179);
+            this.label3.Location = new System.Drawing.Point(354, 158);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 17);
@@ -492,7 +493,7 @@
             this.txtTotalSKS.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
             this.txtTotalSKS.ForeColor = System.Drawing.Color.Black;
             this.txtTotalSKS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalSKS.Location = new System.Drawing.Point(424, 91);
+            this.txtTotalSKS.Location = new System.Drawing.Point(424, 70);
             this.txtTotalSKS.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtTotalSKS.Name = "txtTotalSKS";
             this.txtTotalSKS.PasswordChar = '\0';
@@ -626,7 +627,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(17, 21);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(303, 226);
+            this.guna2Panel1.Size = new System.Drawing.Size(303, 256);
             this.guna2Panel1.TabIndex = 81;
             // 
             // txtSearch
@@ -784,6 +785,7 @@
             this.tblAbsensi.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tblAbsensi.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.MidnightBlue;
             this.tblAbsensi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblAbsensi_CellClick);
+            this.tblAbsensi.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.tblAbsensi_CellFormatting);
             // 
             // col_id_absensi
             // 
@@ -880,11 +882,35 @@
             this.guna2Panel2.Controls.Add(this.guna2DataGridView1);
             this.guna2Panel2.Controls.Add(this.label9);
             this.guna2Panel2.Controls.Add(this.txtSearch);
-            this.guna2Panel2.Location = new System.Drawing.Point(17, 262);
+            this.guna2Panel2.Location = new System.Drawing.Point(17, 292);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(965, 471);
             this.guna2Panel2.TabIndex = 44;
+            // 
+            // btnTampilkanSemua
+            // 
+            this.btnTampilkanSemua.AutoRoundedCorners = true;
+            this.btnTampilkanSemua.BackColor = System.Drawing.Color.GhostWhite;
+            this.btnTampilkanSemua.BorderColor = System.Drawing.Color.MidnightBlue;
+            this.btnTampilkanSemua.BorderRadius = 13;
+            this.btnTampilkanSemua.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            this.btnTampilkanSemua.BorderThickness = 1;
+            this.btnTampilkanSemua.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTampilkanSemua.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTampilkanSemua.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTampilkanSemua.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTampilkanSemua.FillColor = System.Drawing.Color.White;
+            this.btnTampilkanSemua.Font = new System.Drawing.Font("Nirmala UI", 10F);
+            this.btnTampilkanSemua.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnTampilkanSemua.ImageSize = new System.Drawing.Size(15, 15);
+            this.btnTampilkanSemua.Location = new System.Drawing.Point(35, 230);
+            this.btnTampilkanSemua.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTampilkanSemua.Name = "btnTampilkanSemua";
+            this.btnTampilkanSemua.Size = new System.Drawing.Size(273, 28);
+            this.btnTampilkanSemua.TabIndex = 78;
+            this.btnTampilkanSemua.Text = "Tampilkan Semua";
+            this.btnTampilkanSemua.Click += new System.EventHandler(this.btnTampilkanSemua_Click);
             // 
             // Absensi
             // 
@@ -893,6 +919,7 @@
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.BackgroundImage = global::C__honorarium_dosen_eksternal.Properties.Resources.BG10;
             this.ClientSize = new System.Drawing.Size(1386, 786);
+            this.Controls.Add(this.btnTampilkanSemua);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
@@ -982,5 +1009,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.ComboBox cmbIDProdi;
         private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Button btnTampilkanSemua;
     }
 }

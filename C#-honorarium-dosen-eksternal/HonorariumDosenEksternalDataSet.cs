@@ -6,6 +6,14 @@ namespace C__honorarium_dosen_eksternal
 
     partial class HonorariumDosenEksternalDataSet
     {
+        partial class getReportTransferDataTable
+        {
+        }
+
+        partial class DataTable1DataTable
+        {
+        }
+
         partial class perusahaan_astraDataTable
         {
         }

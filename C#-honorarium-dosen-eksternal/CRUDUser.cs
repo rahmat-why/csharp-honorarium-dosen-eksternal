@@ -197,7 +197,14 @@ namespace C__honorarium_dosen_eksternal
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Username tidak boleh sama!");
+                if (ex.Message.Contains("duplicate key") || ex.Message.Contains("unique constraint"))
+                {
+                    MessageBox.Show("Username sudah digunakan!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Hubungi tim IT! " + ex.Message);
+                }
             }
 
             this.getListUsersTableAdapter.Filter(this.honorariumDosenEksternalDataSet.getListUsers, emp);
@@ -245,7 +252,14 @@ namespace C__honorarium_dosen_eksternal
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to saved: " + ex.Message);
+                if (ex.Message.Contains("duplicate key") || ex.Message.Contains("unique constraint"))
+                {
+                    MessageBox.Show("Username sudah digunakan!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Hubungi tim IT! " + ex.Message);
+                }
             }
         }
 

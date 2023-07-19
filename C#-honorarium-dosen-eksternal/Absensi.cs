@@ -8,12 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Configuration;
 
 namespace C__honorarium_dosen_eksternal
 {
     public partial class Absensi : Form
     {
-        string connectionString = "integrated security=false; Data Source=10.8.9.99;User ID=sa;Password=polman; initial catalog=HonorariumDosenEksternal";
+        string connectionString = ConfigurationManager.AppSettings["Connectionstring"];
         string id_absensi, id_dosen, id_matkul, id_prodi, kelas, tanggal_mengajar, sks;
 
         ADTUser user;
@@ -70,6 +72,12 @@ namespace C__honorarium_dosen_eksternal
                 return;
             }
 
+            if (txtTanggalMengajar.Value > DateTime.Today)
+            {
+                MessageBox.Show("Tanggal mengajar tidak boleh lebih dari hari ini.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand com = new SqlCommand();
             com.Connection = connection;
@@ -84,7 +92,7 @@ namespace C__honorarium_dosen_eksternal
             com.Parameters.AddWithValue("@sks", txtTotalSKS.Text);
             com.Parameters.AddWithValue("@id_user", user.getId_user());
             try
-            { 
+            {
                 connection.Open();
                 com.ExecuteNonQuery();
                 MessageBox.Show("Data berhasil diSave ", "Information",
@@ -158,7 +166,7 @@ namespace C__honorarium_dosen_eksternal
 
         private void txtKelas_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+
         }
 
         private void txtTanggalMengajar_ValueChanged(object sender, EventArgs e)
@@ -179,6 +187,20 @@ namespace C__honorarium_dosen_eksternal
             {
                 e.Handled = true;
                 MessageBox.Show("Kolom ini hanya boleh diisi angka.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnTampilkanSemua_Click(object sender, EventArgs e)
+        {
+            loadAbsensi("", "", "", "");
+        }
+
+        private void tblAbsensi_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if ((e.ColumnIndex == 7 || e.ColumnIndex == 8 || e.ColumnIndex == 9 || e.ColumnIndex == 10) && e.Value != null && e.Value is decimal decimalValue)
+            {
+                e.Value = decimalValue.ToString("N0", new CultureInfo("id-ID"));
+                e.FormattingApplied = true;
             }
         }
 

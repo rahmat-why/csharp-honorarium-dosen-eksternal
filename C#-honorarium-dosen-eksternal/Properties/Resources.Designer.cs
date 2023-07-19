@@ -343,6 +343,26 @@ namespace C__honorarium_dosen_eksternal.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap office_building1 {
+            get {
+                object obj = ResourceManager.GetObject("office-building1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap power_off__1_ {
+            get {
+                object obj = ResourceManager.GetObject("power-off (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap prodi {
             get {
                 object obj = ResourceManager.GetObject("prodi", resourceCulture);

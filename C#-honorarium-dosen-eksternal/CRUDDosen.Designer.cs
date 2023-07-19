@@ -575,7 +575,7 @@
             this.txtGabungIndustri.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.txtGabungIndustri.Location = new System.Drawing.Point(479, 289);
             this.txtGabungIndustri.Margin = new System.Windows.Forms.Padding(2);
-            this.txtGabungIndustri.MaxDate = new System.DateTime(2023, 7, 18, 0, 0, 0, 0);
+            this.txtGabungIndustri.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.txtGabungIndustri.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.txtGabungIndustri.Name = "txtGabungIndustri";
             this.txtGabungIndustri.Size = new System.Drawing.Size(167, 24);
@@ -604,7 +604,7 @@
             this.txtGabungKampus.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.txtGabungKampus.Location = new System.Drawing.Point(138, 289);
             this.txtGabungKampus.Margin = new System.Windows.Forms.Padding(2);
-            this.txtGabungKampus.MaxDate = new System.DateTime(2023, 7, 18, 0, 0, 0, 0);
+            this.txtGabungKampus.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.txtGabungKampus.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.txtGabungKampus.Name = "txtGabungKampus";
             this.txtGabungKampus.Size = new System.Drawing.Size(167, 24);

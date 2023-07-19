@@ -53,7 +53,7 @@
             this.PanelMenu.Location = new System.Drawing.Point(248, 0);
             this.PanelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 2, 2);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(676, 512);
+            this.PanelMenu.Size = new System.Drawing.Size(1118, 786);
             this.PanelMenu.TabIndex = 11;
             // 
             // guna2Panel2
@@ -75,7 +75,7 @@
             this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel2.Margin = new System.Windows.Forms.Padding(0);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(248, 512);
+            this.guna2Panel2.Size = new System.Drawing.Size(248, 786);
             this.guna2Panel2.TabIndex = 10;
             // 
             // label2
@@ -132,8 +132,8 @@
             this.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLogout.FillColor = System.Drawing.Color.Transparent;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.Black;
-            this.btnLogout.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.logoutt;
+            this.btnLogout.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnLogout.Image = global::C__honorarium_dosen_eksternal.Properties.Resources.power_off__1_;
             this.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLogout.Location = new System.Drawing.Point(2, 585);
             this.btnLogout.Name = "btnLogout";
@@ -260,7 +260,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 512);
+            this.ClientSize = new System.Drawing.Size(1366, 786);
             this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.guna2Panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

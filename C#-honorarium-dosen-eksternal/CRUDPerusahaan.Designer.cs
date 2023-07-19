@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtSingkatan = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,14 +43,14 @@
             this.txtIDPerusahaan = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.tblPerusahaan = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.col_id_perusahaan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_nama_perusahaan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_singkatan_perusahaan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getListPerusahaanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.honorariumDosenEksternalDataSet = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSet();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.getListPerusahaanTableAdapter = new C__honorarium_dosen_eksternal.HonorariumDosenEksternalDataSetTableAdapters.getListPerusahaanTableAdapter();
             this.getListPerusahaanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.col_id_perusahaan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nama_perusahaan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_singkatan_perusahaan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblPerusahaan)).BeginInit();
@@ -104,6 +104,7 @@
             this.txtSingkatan.SelectedText = "";
             this.txtSingkatan.Size = new System.Drawing.Size(264, 34);
             this.txtSingkatan.TabIndex = 84;
+            this.txtSingkatan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSingkatan_KeyPress);
             // 
             // label1
             // 
@@ -138,7 +139,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(264, 28);
             this.btnClear.TabIndex = 40;
-            this.btnClear.Text = "Clear";
+            this.btnClear.Text = "Bersihkan";
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
             // 
             // btnSave
@@ -162,7 +163,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(83, 28);
             this.btnSave.TabIndex = 37;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Tambah";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);
             // 
             // btnUpdate
@@ -186,7 +187,7 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(79, 28);
             this.btnUpdate.TabIndex = 38;
-            this.btnUpdate.Text = "Update";
+            this.btnUpdate.Text = "Ubah";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
@@ -210,7 +211,7 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(79, 28);
             this.btnDelete.TabIndex = 39;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Hapus";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtNamaPerusahaan
@@ -281,17 +282,17 @@
             // 
             // tblPerusahaan
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.tblPerusahaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.tblPerusahaan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tblPerusahaan.AutoGenerateColumns = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblPerusahaan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tblPerusahaan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.tblPerusahaan.ColumnHeadersHeight = 40;
             this.tblPerusahaan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.tblPerusahaan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -299,14 +300,14 @@
             this.col_nama_perusahaan,
             this.col_singkatan_perusahaan});
             this.tblPerusahaan.DataSource = this.getListPerusahaanBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tblPerusahaan.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tblPerusahaan.DefaultCellStyle = dataGridViewCellStyle6;
             this.tblPerusahaan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tblPerusahaan.Location = new System.Drawing.Point(27, 91);
             this.tblPerusahaan.Name = "tblPerusahaan";
@@ -335,6 +336,24 @@
             this.tblPerusahaan.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tblPerusahaan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.tblPerusahaan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblPerusahaan_CellClick);
+            // 
+            // col_id_perusahaan
+            // 
+            this.col_id_perusahaan.DataPropertyName = "id_perusahaan";
+            this.col_id_perusahaan.HeaderText = "ID Perusahaan";
+            this.col_id_perusahaan.Name = "col_id_perusahaan";
+            // 
+            // col_nama_perusahaan
+            // 
+            this.col_nama_perusahaan.DataPropertyName = "nama_perusahaan";
+            this.col_nama_perusahaan.HeaderText = "Nama Perusahaan";
+            this.col_nama_perusahaan.Name = "col_nama_perusahaan";
+            // 
+            // col_singkatan_perusahaan
+            // 
+            this.col_singkatan_perusahaan.DataPropertyName = "singkatan_perusahaan";
+            this.col_singkatan_perusahaan.HeaderText = "Singkatan";
+            this.col_singkatan_perusahaan.Name = "col_singkatan_perusahaan";
             // 
             // getListPerusahaanBindingSource
             // 
@@ -380,24 +399,6 @@
             // 
             this.getListPerusahaanBindingSource1.DataMember = "getListPerusahaan";
             this.getListPerusahaanBindingSource1.DataSource = this.honorariumDosenEksternalDataSet;
-            // 
-            // col_id_perusahaan
-            // 
-            this.col_id_perusahaan.DataPropertyName = "id_perusahaan";
-            this.col_id_perusahaan.HeaderText = "ID Perusahaan";
-            this.col_id_perusahaan.Name = "col_id_perusahaan";
-            // 
-            // col_nama_perusahaan
-            // 
-            this.col_nama_perusahaan.DataPropertyName = "nama_perusahaan";
-            this.col_nama_perusahaan.HeaderText = "Nama Perusahaan";
-            this.col_nama_perusahaan.Name = "col_nama_perusahaan";
-            // 
-            // col_singkatan_perusahaan
-            // 
-            this.col_singkatan_perusahaan.DataPropertyName = "singkatan_perusahaan";
-            this.col_singkatan_perusahaan.HeaderText = "Singkatan";
-            this.col_singkatan_perusahaan.Name = "col_singkatan_perusahaan";
             // 
             // CRUDPerusahaan
             // 

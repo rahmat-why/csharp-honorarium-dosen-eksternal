@@ -61,6 +61,7 @@ namespace C__honorarium_dosen_eksternal
         {
             txtIDPerusahaan.Text = "Otomatis";
             txtNamaPerusahaan.Text = "";
+            txtSingkatan.Text = "";
         }
         private void tblPerusahaan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -107,7 +108,7 @@ namespace C__honorarium_dosen_eksternal
 
                     if (result != 0)
                     {
-                        MessageBox.Show("Data Berhasil Dihapus!");
+                        MessageBox.Show("Perusahaan berhasil dihapus!");
                         btnSave.Enabled = true;
                         btnDelete.Enabled = false;
                         btnUpdate.Enabled = false;
@@ -139,7 +140,7 @@ namespace C__honorarium_dosen_eksternal
             {
                 connection.Open();
                 com.ExecuteNonQuery();
-                MessageBox.Show("Update berhasil", "Information",
+                MessageBox.Show("Perusahaan berhasil diubah!", "Information",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnSave.Enabled = true;
                 btnDelete.Enabled = false;
@@ -149,7 +150,34 @@ namespace C__honorarium_dosen_eksternal
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hubungi tim IT! " + ex.Message);
+                if (ex.Message.Contains("duplicate key") || ex.Message.Contains("unique constraint"))
+                {
+                    MessageBox.Show("Singkatan sudah digunakan!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Hubungi tim IT! " + ex.Message);
+                }
+            }
+        }
+
+        private void txtSingkatan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Memeriksa apakah karakter yang dimasukkan adalah huruf (A-Z atau a-z)
+            if (!char.IsLetter(e.KeyChar))
+            {
+                // Cek apakah karakter yang ditekan adalah huruf atau backspace
+                if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                {
+                    // Jika bukan huruf atau backspace, maka batalkan input karakter tersebut
+                    e.Handled = true;
+                    MessageBox.Show("Hanya huruf kapital yang diizinkan.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                // Mengubah huruf menjadi huruf kapital (uppercase)
+                e.KeyChar = char.ToUpper(e.KeyChar);
             }
         }
 
@@ -179,7 +207,7 @@ namespace C__honorarium_dosen_eksternal
                     {
                         connection.Open();
                         com.ExecuteNonQuery();
-                        MessageBox.Show("Save data berhasil", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Perusahaan berhasil ditambah!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnSave.Enabled = true;
                         btnDelete.Enabled = false;
                         btnUpdate.Enabled = false;
@@ -188,7 +216,14 @@ namespace C__honorarium_dosen_eksternal
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Hubungi tim IT! " + ex.Message);
+                        if (ex.Message.Contains("duplicate key") || ex.Message.Contains("unique constraint"))
+                        {
+                            MessageBox.Show("Singkatan sudah digunakan!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hubungi tim IT! " + ex.Message);
+                        }
                     }
                 }
             }

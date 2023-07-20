@@ -909,7 +909,7 @@
             this.btnTampilkanSemua.Name = "btnTampilkanSemua";
             this.btnTampilkanSemua.Size = new System.Drawing.Size(273, 28);
             this.btnTampilkanSemua.TabIndex = 78;
-            this.btnTampilkanSemua.Text = "Tampilkan Semua";
+            this.btnTampilkanSemua.Text = "Tampilkan Dosen Terkait";
             this.btnTampilkanSemua.Click += new System.EventHandler(this.btnTampilkanSemua_Click);
             // 
             // Absensi

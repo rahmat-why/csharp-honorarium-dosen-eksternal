@@ -192,7 +192,7 @@ namespace C__honorarium_dosen_eksternal
 
         private void btnTampilkanSemua_Click(object sender, EventArgs e)
         {
-            loadAbsensi("", "", "", "");
+            loadAbsensi("", "", "", cmbIDDosen.Text);
         }
 
         private void tblAbsensi_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

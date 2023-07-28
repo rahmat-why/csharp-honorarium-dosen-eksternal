@@ -176,14 +176,20 @@ namespace C__honorarium_dosen_eksternal
 
         private void cbJenisDosen_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            string referensi_dosen = GetReferensiDosen(cbJenisDosen.SelectedValue.ToString());
-            
-            cbAsalPerusahaan.Enabled = true;
-            txtGabungIndustri.Enabled = true;
-            if(referensi_dosen == "UMUM")
+            try
             {
-                cbAsalPerusahaan.Enabled = false;
-                txtGabungIndustri.Enabled = false;
+                string referensi_dosen = GetReferensiDosen(cbJenisDosen.SelectedValue.ToString());
+
+                cbAsalPerusahaan.Enabled = true;
+                txtGabungIndustri.Enabled = true;
+                if (referensi_dosen == "UMUM")
+                {
+                    cbAsalPerusahaan.Enabled = false;
+                    txtGabungIndustri.Enabled = false;
+                }
+            } catch (Exception exc)
+            {
+
             }
         }
 
